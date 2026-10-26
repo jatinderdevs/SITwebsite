@@ -1,0 +1,168 @@
+/* ==========================================
+       NAVBAR BASE STYLES
+       ========================================== */
+.navbar {
+  padding: 0.4rem 1.2rem;
+  position: relative; /* Anchor for full-width mega menu */
+}
+
+.navbar-brand {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-blue) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand i {
+  color: var(--sky-blue);
+  margin-right: 8px;
+}
+
+/* Center Nav Links */
+.navbar-nav .nav-link {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark) !important;
+  padding: 0.75rem 1.1rem !important;
+  transition: color 0.2s ease-in-out;
+  text-transform: capitalize;
+  letter-spacing: 0.03em;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-item.active .nav-link {
+  color: var(--primary-blue) !important;
+}
+
+/* ==========================================
+       MEGA MENU STYLING & HOVER LOGIC
+       ========================================== */
+/* Make mega dropdown stretch across navbar */
+.mega-dropdown {
+  position: static !important;
+}
+
+.mega-menu {
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 100%;
+  border: none;
+  border-top: 3px solid var(--sky-blue);
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  padding: 2rem 1.5rem;
+  margin-top: 0;
+}
+
+.mega-menu h6 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  text-transform: uppercase;
+
+  border-bottom: 2px solid var(--bg-light);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.mega-menu-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 0.6rem 0.75rem;
+  border-radius: 6px;
+  color: var(--text-dark);
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.mega-menu-item:hover {
+  background-color: #f0f7ff;
+  text-decoration: none;
+  color: var(--primary-blue);
+}
+
+.mega-menu-item i {
+  font-size: 1.25rem;
+  color: var(--steel);
+  margin-right: 12px;
+  margin-top: 2px;
+  width: 20px;
+  text-align: center;
+}
+
+.mega-menu-item .title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: block;
+  line-height: 1.2;
+}
+
+.mega-menu-item .desc {
+  font-size: 0.825rem;
+  color: #64748b;
+  display: block;
+  margin-top: 2px;
+}
+
+/* Desktop Hover Trigger (min-width: 992px) */
+@media (min-width: 992px) {
+  .mega-menu {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      visibility 0.2s;
+  }
+
+  .mega-dropdown.show .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 991.98px) {
+  .mega-menu {
+    box-shadow: none;
+    border-top: none;
+    padding: 1rem 0;
+  }
+  .navbar-buttons {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e2e8f0;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .btn-portal,
+  .btn-apply {
+    width: 100%;
+    text-align: center;
+  }
+}

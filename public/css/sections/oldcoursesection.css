@@ -1,0 +1,198 @@
+/* ===== UNIQUE LEARNING RESOURCES ===== */
+.ulr-section {
+  padding: clamp(60px, 8vw, 100px) 0;
+  background: #f8f9fb;
+  overflow: hidden;
+}
+
+.ulr-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.ulr-heading {
+  font-family: "Khand", "Khand-semibold", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+  letter-spacing: 0.04em;
+  color: #1a2a4a;
+  text-align: center;
+  margin: 0 0 clamp(36px, 5vw, 56px);
+  text-transform: uppercase;
+}
+
+/* Slider */
+.ulr-slider-wrapper {
+  position: relative;
+}
+
+.ulr-track {
+  display: flex;
+  gap: 20px;
+  will-change: transform;
+}
+
+/* Cards */
+.ulr-card {
+  flex: 0 0 clamp(260px, 28vw, 340px);
+  height: clamp(380px, 48vw, 480px);
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0 12px 32px rgba(26, 17, 166, 0.12);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.ulr-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(26, 17, 166, 0.18);
+}
+
+.ulr-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.ulr-card:hover img {
+  transform: scale(1.06);
+}
+
+/* Overlay text */
+.ulr-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 20, 40, 0.15) 0%,
+    rgba(15, 20, 40, 0.45) 60%,
+    rgba(15, 20, 40, 0.65) 100%
+  );
+  transition: background 0.35s ease;
+}
+
+.ulr-card:hover .ulr-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 20, 40, 0.25) 0%,
+    rgba(15, 20, 40, 0.55) 60%,
+    rgba(15, 20, 40, 0.75) 100%
+  );
+}
+
+.ulr-overlay h3 {
+  font-family: "Khand", "Khand-Bold", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.55rem, 2.4vw, 1.95rem);
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  margin: 0 0 12px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.ulr-discover {
+  font-family: "Hind", system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.92;
+  position: relative;
+}
+
+.ulr-discover::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  transition:
+    width 0.3s ease,
+    left 0.3s ease;
+}
+
+.ulr-card:hover .ulr-discover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Navigation buttons */
+.ulr-nav {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+  padding-left: 4px;
+}
+
+.ulr-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  background: #fff;
+  color: #1a2a4a;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.ulr-btn:hover {
+  transform: scale(1.08);
+}
+
+.ulr-btn.ulr-next {
+  background: #ff7a5c; /* coral accent matching the screenshot */
+  color: #fff;
+}
+
+.ulr-btn.ulr-next:hover {
+  background: #ff6a48;
+}
+
+.ulr-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .ulr-track {
+    gap: 14px;
+  }
+
+  .ulr-card {
+    flex: 0 0 78vw;
+    height: 62vw;
+    min-height: 340px;
+  }
+
+  .ulr-nav {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .ulr-card {
+    flex: 0 0 85vw;
+  }
+}

@@ -1,0 +1,273 @@
+/* ========== SIT Bento Courses (with images) ========== */
+.sit-bento {
+  padding: clamp(60px, 8vw, 100px) 0;
+  /* background: var(--bg-light, #f8fafc); */
+}
+
+.sit-bento-head {
+  max-width: 720px;
+  margin-bottom: 2rem;
+}
+
+.sit-bento-eyebrow {
+  display: inline-block;
+  font-family: var(--font-body, "Roboto", sans-serif);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary-blue, #1a11a6);
+  margin-bottom: 0.6rem;
+}
+
+.sit-bento-head h2 {
+  margin-bottom: 0.75rem;
+}
+
+.sit-bento-head p {
+  color: var(--steel, #6b7280);
+  max-width: 52ch;
+}
+
+.sit-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
+
+.sit-bento-card {
+  background: var(--white, #fff);
+  border: 1px solid var(--line, rgba(27, 31, 59, 0.09));
+  border-radius: var(--radius-3xl, 16px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.sit-bento-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg, 0 14px 30px #d3cfff57);
+}
+
+.sit-bento-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #eef2ff;
+}
+
+.sit-bento-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.sit-bento-card:hover .sit-bento-image img {
+  transform: scale(1.04);
+}
+
+.sit-bento-body {
+  padding: 1.15rem 1.25rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+}
+
+.sit-bento-card h3 {
+  font-family: var(--font-heading, "Montserrat", sans-serif);
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  line-height: 1.25;
+  font-weight: 600;
+  color: var(--text-dark, #1e293b);
+  margin: 0.45rem 0 0.55rem;
+}
+
+.sit-bento-card p {
+  font-size: 0.92rem;
+  color: var(--steel, #6b7280);
+  margin-bottom: 0.9rem;
+}
+
+.sit-bento-pill {
+  display: inline-flex;
+  width: fit-content;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-pill, 999px);
+  background: rgba(26, 17, 166, 0.08);
+  color: var(--primary-blue, #1a11a6);
+}
+
+.sit-bento-pill-eng {
+  background: rgba(63, 169, 245, 0.15);
+  color: #0b6cb3;
+}
+
+.sit-bento-pill-biz {
+  background: rgba(186, 237, 94, 0.35);
+  color: #3f4d12;
+}
+
+.sit-bento-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.85rem;
+  font-size: 0.8rem;
+  color: var(--steel, #6b7280);
+  margin-bottom: 0.9rem;
+}
+
+.sit-bento-link {
+  margin-top: auto;
+  font-weight: 700;
+  color: var(--primary-blue, #1a11a6);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.sit-bento-link:hover {
+  color: var(--sky-blue, #3fa9f5);
+  text-decoration: none;
+}
+
+/* Feature large */
+.sit-bento-feature {
+  grid-column: span 6;
+  grid-row: span 2;
+}
+
+.sit-bento-feature .sit-bento-image {
+  aspect-ratio: 16 / 11;
+  min-height: 400px;
+}
+
+.sit-bento-feature h3 {
+  font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+}
+
+/* Accent / brand / message / soft (no image) */
+.sit-bento-accent,
+.sit-bento-brand,
+.sit-bento-message,
+.sit-bento-soft {
+  padding: 1.35rem 1.4rem;
+  justify-content: space-between;
+}
+
+.sit-bento-accent {
+  grid-column: span 3;
+  background: var(--primary-blue, #1a11a6);
+  color: #fff;
+  border-color: transparent;
+}
+
+.sit-bento-accent h3,
+.sit-bento-accent p {
+  color: #fff;
+}
+
+.sit-bento-date {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+.sit-bento-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  width: fit-content;
+  padding: 0.7rem 1.1rem;
+  border-radius: var(--radius-pill, 999px);
+  background: var(--lime-green, #baed5e);
+  color: var(--primary-blue, #1a11a6);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.sit-bento-btn:hover {
+  text-decoration: none;
+  color: var(--primary-blue, #1a11a6);
+  filter: brightness(0.98);
+}
+
+.sit-bento-brand {
+  grid-column: span 3;
+  background: #f3f6ff;
+  border-color: rgba(26, 17, 166, 0.1);
+}
+
+.sit-bento-brand h3 {
+  color: var(--primary-blue, #1a11a6);
+  font-size: clamp(1.3rem, 2.3vw, 1.7rem);
+}
+
+.sit-bento-message {
+  grid-column: span 9;
+  background: linear-gradient(135deg, #1a11a6, #3fa9f5);
+  color: #fff;
+  border-color: transparent;
+}
+
+.sit-bento-message h3,
+.sit-bento-message p {
+  color: #fff;
+}
+
+.sit-bento-message .sit-bento-link {
+  color: var(--lime-green, #baed5e);
+}
+
+.sit-bento-soft {
+  grid-column: span 3;
+}
+
+/* Default image cards */
+.sit-bento-card:not(.sit-bento-feature):not(.sit-bento-accent):not(
+    .sit-bento-brand
+  ):not(.sit-bento-message):not(.sit-bento-soft) {
+  grid-column: span 3;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .sit-bento-feature,
+  .sit-bento-message,
+  .sit-bento-accent,
+  .sit-bento-brand,
+  .sit-bento-soft,
+  .sit-bento-card {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 640px) {
+  .sit-bento-feature,
+  .sit-bento-message,
+  .sit-bento-accent,
+  .sit-bento-brand,
+  .sit-bento-soft,
+  .sit-bento-card,
+  .sit-bento-card:not(.sit-bento-feature):not(.sit-bento-accent):not(
+      .sit-bento-brand
+    ):not(.sit-bento-message):not(.sit-bento-soft) {
+    grid-column: span 12;
+  }
+}

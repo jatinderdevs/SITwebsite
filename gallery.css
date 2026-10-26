@@ -1,0 +1,218 @@
+/* ================= GALLERY SECTION ================= */
+.gallery-pin {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.gallery-inner {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.gallery-heading {
+  text-align: center;
+  padding: 0 24px;
+  margin-bottom: clamp(30px, 5vw, 60px);
+  position: relative;
+  z-index: 2;
+}
+.gallery-heading .eyebrow {
+  color: var(--coral);
+  font-size: 0.78rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.gallery-heading .eyebrow::before,
+.gallery-heading .eyebrow::after {
+  content: "";
+  width: 26px;
+  height: 2px;
+  background: var(--coral);
+}
+
+.gallery-heading p {
+  font-size: 1rem;
+  color: var(--steel);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ---- horizontal track ---- */
+.track-viewport {
+  width: 100%;
+  overflow: visible;
+  position: relative;
+}
+.track {
+  display: flex;
+  align-items: center;
+  gap: clamp(48px, 6vw, 110px); /* "plenty of space" between items */
+  padding: 0 40vw 40px 8vw; /* extra right padding gives the last items room to fully reveal before scroll runs out */
+  will-change: transform;
+}
+.g-item {
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -25px rgba(27, 22, 80, 0.35);
+  background: var(--white);
+}
+.g-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  object-fit: cover;
+}
+.g-item .cap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 18px 20px 16px;
+  background: linear-gradient(
+    180deg,
+    rgba(27, 22, 80, 0) 0%,
+    rgba(15, 13, 45, 0.72) 100%
+  );
+  color: #fff;
+}
+.g-item .cap .tag-mono {
+  font-size: 0.6rem;
+  color: var(--lime);
+  display: block;
+  margin-bottom: 3px;
+}
+.g-item .cap .t {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* mixed sizes — deliberately irregular rhythm */
+.g-item.size-a {
+  width: min(30vw, 320px);
+  height: min(46vh, 420px);
+  margin-top: 0;
+}
+.g-item.size-b {
+  width: min(20vw, 230px);
+  height: min(30vh, 300px);
+  margin-top: 8vh;
+}
+.g-item.size-c {
+  width: min(34vw, 420px);
+  height: min(56vh, 520px);
+  margin-top: -4vh;
+}
+.g-item.size-d {
+  width: min(22vw, 260px);
+  height: min(34vh, 340px);
+  margin-top: 6vh;
+}
+.g-item.size-e {
+  width: min(28vw, 300px);
+  height: min(42vh, 400px);
+  margin-top: 2vh;
+}
+.g-item.size-f {
+  width: min(18vw, 210px);
+  height: min(26vh, 260px);
+  margin-top: 12vh;
+}
+.g-item.spacer {
+  width: 6vw;
+  height: 1px;
+  box-shadow: none;
+  background: transparent;
+}
+/* progress rail */
+.rail {
+  position: absolute;
+  left: 50%;
+  bottom: 34px;
+  transform: translateX(-50%);
+  width: min(320px, 60vw);
+  height: 3px;
+  background: rgba(27, 31, 59, 0.1);
+  border-radius: 3px;
+  z-index: 2;
+}
+.rail .fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background: var(--primary-blue);
+  border-radius: 3px;
+}
+.rail-label {
+  position: absolute;
+  left: 50%;
+  bottom: 52px;
+  transform: translateX(-50%);
+
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--steel);
+  z-index: 2;
+}
+/* ================= MOBILE FALLBACK ================= */
+@media (max-width: 767px) {
+  .gallery-inner {
+    height: auto;
+    padding: 70px 0 30px;
+  }
+  .track-viewport {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  .track {
+    gap: 28px;
+    padding: 0 24px 30px;
+    transform: none !important;
+    scroll-snap-align: start;
+  }
+  /* no GSAP reveal on mobile — images/captions must be visible by default */
+  .g-item img {
+    opacity: 1;
+    transform: none !important;
+    filter: none !important;
+  }
+  .g-item .cap {
+    opacity: 1;
+    transform: none !important;
+  }
+  .g-item {
+    scroll-snap-align: start;
+  }
+  .g-item.size-a,
+  .g-item.size-b,
+  .g-item.size-c,
+  .g-item.size-d,
+  .g-item.size-e,
+  .g-item.size-f {
+    width: 78vw;
+    height: 56vw;
+    margin-top: 0;
+  }
+  .g-item.spacer {
+    display: none;
+  }
+  .rail,
+  .rail-label {
+    display: none;
+  }
+}
