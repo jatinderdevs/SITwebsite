@@ -24,7 +24,7 @@
 
 /* Center Nav Links */
 .navbar-nav .nav-link {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 600;
   color: var(--text-dark) !important;
@@ -79,6 +79,7 @@
   border-radius: 6px;
   color: var(--text-dark);
   text-decoration: none;
+  font-family: var(--font-heading);
   transition:
     background 0.2s ease,
     color 0.2s ease;

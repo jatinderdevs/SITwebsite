@@ -14,9 +14,16 @@
     <!-- Hero -->
     <?php include_once('./includes/header.php') ?>
     <section class="sit-c-hero page-header">
-        <div class="sit-c-hero-inner">
-            <span class="sit-c-eyebrow">RTO 45205 · CRICOS 03948A</span>
-            <h1>Our Courses</h1>
+        <div class="page-hero-bg"><img src="https://arrlogistics.com.au/img/sliderimage.webp" alt=""></div>
+        <div class="container page-header-inner">
+            <div class="crumb">
+                <a href="#">Home</a><span class="sep">/</span><a href="#">Courses</a><span class="sep">/</span><a href="#">Building &amp; Construction</a><span class="sep">/</span><a href="#" class="crumbactive">Solid Plastering</a>
+            </div>
+            <!-- <span class="sit-c-eyebrow">RTO 45205 · CRICOS 03948A</span> -->
+            <div class="my-4">
+                <h1>Our Courses</h1>
+
+            </div>
             <p>
                 Industry-focused qualifications designed for real careers in Building,
                 Engineering and Business.
@@ -83,7 +90,43 @@
                         </div>
                     </div>
                 </article>
+                <article class="sit-c-card" data-category="engineering">
+                    <!-- Image -->
+                    <div class="sit-c-card-img">
+                        <img src="https://www.sit.vic.edu.au/assets/img/building/plaster.webp"
+                            alt="Certificate III in Solid Plastering" loading="lazy" />
+                    </div>
 
+                    <div class="sit-c-card-content">
+                        <div class="sit-c-card-top">
+                            <span class="sit-c-tag">Building & Construction</span>
+                        </div>
+
+                        <div class="sit-c-card-body">
+                            <div class="sit-c-code">CPC31020 · CRICOS 119339G</div>
+                            <h3 class="sit-c-title">Certificate III in Solid Plastering</h3>
+
+                            <div class="sit-c-meta">
+                                <div class="sit-c-meta-item">
+                                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M12 6v6l4 2" />
+                                    </svg>
+                                    52 weeks
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sit-c-card-footer">
+                            <a href="certificate-iii-in-solid-plastering.php" class="sit-c-link">
+                                View course
+                                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
                 <!-- (repeat the same structure for the other 9 cards) -->
                 <!-- Just change: data-category, tag class (is-eng / is-biz), code, title, duration, href -->
             </section>
@@ -97,28 +140,28 @@
     </main>
     <?php include_once('./includes/scriptfiles.php') ?>
     <script>
-    const filterBtns = document.querySelectorAll(".filter-btn");
-    const cards = document.querySelectorAll(".course-card");
-    const emptyState = document.getElementById("emptyState");
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        const cards = document.querySelectorAll(".course-card");
+        const emptyState = document.getElementById("emptyState");
 
-    filterBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-            // Active state
-            filterBtns.forEach((b) => b.classList.remove("active"));
-            btn.classList.add("active");
+        filterBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                // Active state
+                filterBtns.forEach((b) => b.classList.remove("active"));
+                btn.classList.add("active");
 
-            const filter = btn.dataset.filter;
-            let visible = 0;
+                const filter = btn.dataset.filter;
+                let visible = 0;
 
-            cards.forEach((card) => {
-                const match = filter === "all" || card.dataset.category === filter;
-                card.hidden = !match;
-                if (match) visible++;
+                cards.forEach((card) => {
+                    const match = filter === "all" || card.dataset.category === filter;
+                    card.hidden = !match;
+                    if (match) visible++;
+                });
+
+                emptyState.classList.toggle("show", visible === 0);
             });
-
-            emptyState.classList.toggle("show", visible === 0);
         });
-    });
     </script>
     <script src="public/js/courses.js"></script>
 </body>

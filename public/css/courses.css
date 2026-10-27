@@ -4,71 +4,9 @@
    ========================================================= */
 
 /* ---------- Hero ---------- */
-.sit-c-hero {
-  background: linear-gradient(
-    135deg,
-    #0f0c4a 0%,
-    var(--primary-blue) 55%,
-    #2a1fc7 100%
-  );
-  color: var(--white);
-  padding: clamp(70px, 11vw, 110px) 0 90px;
-  position: relative;
-  overflow: hidden;
-}
 
-.sit-c-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at 80% 20%,
-    rgba(186, 237, 94, 0.15),
-    transparent 50%
-  );
-  pointer-events: none;
-}
 
-.sit-c-hero-inner {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 var(--space-3xl);
-  position: relative;
-  z-index: 1;
-}
 
-.sit-c-eyebrow {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  font-weight: var(--fw-semibold);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--lime-green);
-  margin-bottom: var(--space-md);
-  display: block;
-}
-
-.sit-c-hero h1 {
-  font-family: var(--font-heading-bold);
-  font-size: clamp(2.3rem, 5.2vw, 3.6rem);
-  font-weight: var(--fw-extrabold);
-  line-height: var(--lh-tight);
-  margin: 0 0 var(--space-lg);
-  letter-spacing: -0.02em;
-  color: var(--white);
-  text-transform: none;
-}
-
-.sit-c-hero p {
-  font-family: var(--font-body);
-  font-size: var(--text-xl);
-  font-weight: var(--fw-regular);
-  max-width: 520px;
-  opacity: 0.88;
-  line-height: var(--lh-loose);
-  margin: 0;
-  color: var(--white);
-}
 
 /* ---------- Main ---------- */
 .sit-c-main {

@@ -111,6 +111,7 @@ h1 {
   text-transform: capitalize;
   color: var(--primary-blue);
   font-size: 4rem;
+  line-height: 1.0;
 }
 
 h2 {
@@ -453,8 +454,112 @@ section {
   margin: 0 0 14px;
   line-height: var(--lh-normal);
 }
+ /* pages hero section */
+ .page-header img{
+  width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+.page-header h1 {
+  color: var(--bg-light);
+  font-size: clamp(2.3rem, 5.2vw, 3.6rem);
+ 
+}
+
+.page-header p {
+  
+  max-width: 720px;
+ 
+  line-height: var(--lh-loose);
+text-wrap: auto;
+  color: var(--white);
+}
 .page-header {
-  background: var(--shade);
+  background: linear-gradient(
+    135deg,
+    #0f0c4a 0%,
+    var(--primary-blue) 55%,
+    #2a1fc7 100%
+      );
+      min-height: 58vh;
+    display: flex;
+    align-items: center;
+  color: var(--white);
+  padding: clamp(70px, 11vw, 110px) 0 90px;
+  position: relative;
+  overflow: hidden;
+}
+.page-header::after{
+  content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(39deg, rgb(26 17 166 / 96%) 15%, rgb(71 98 157 / 78%) 55%, rgb(179 202 255 / 55%) 100%);
+}
+/* .page-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 80% 20%,
+    rgba(186, 237, 94, 0.15),
+    transparent 50%
+  );
+  pointer-events: none;
+} */
+
+.page-header-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 var(--space-3xl);
+  position: relative;
+  z-index: 1;
+}
+.page-hero-bg{
+  position: absolute;
+  inset: 0;
+}
+.sit-c-eyebrow {
+font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: var(--fw-semibold);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #1a11a6;
+    background-color: var(--white);
+    
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+}
+
+/* ---------- Breadcrumb ---------- */
+.crumb {
+  padding: var(--space-3xl) 0 0;
+  font-size: var(--text-sm);
+  color: var(--steel);
+  margin: 15px 0;
+  font-family: var(--font-body);
+}
+
+.crumb a {
+  color: var(--lime);
+  font-size: var(--text-md);
+  text-decoration: none;
+  font-weight: var(--fw-medium);
+}
+
+.crumb a:hover {
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+.crumbactive{
+  color: var(--bg-light) !important;
+}
+.crumb .sep {
+  color: var(--lime);
+
+  margin: 0 8px;
+  opacity: 0.5;
 }
 .excel_bar {
   position: relative;
@@ -467,7 +572,59 @@ section {
   overflow: hidden;
   margin-bottom: 16px;
 }
+/* ---------- Buttons ---------- */
+.btn-sit{
+ display: inline-flex;
+  align-items: center;
+  gap: 8px;
+   padding: 13px 24px;
+  border-radius: var(--radius-pill);
+  font-weight: var(--fw-semibold);
+  font-family: var(--font-body);
+  transition: all 0.2s ease;
+  font-size: var(--text-base);
+  text-decoration: none;
+}
+.btn-sit:hover{
+  text-decoration: none;
 
+}
+.btn-primary-sit {
+   background: var(--primary-blue);
+  color: var(--white);
+    border: 1.5px solid var(--primary-blue);
+}
+
+.btn-primary-sit:hover {
+  background: var(--white);
+  color: var(--primary-blue);
+}
+/* ---------- Buttons ---------- */
+.btn-secondary-sit {
+  
+  background: var(--white);
+  color: var(--primary-blue);
+ 
+  border: 1.5px solid var(--white);
+ 
+}
+
+.btn-secondary-sit:hover {
+    color: var(--white);
+background: var(--primary-blue);
+
+}
+.btn-secondary-outline-sit {
+   background: transparent;
+  color: var(--white);
+ 
+  border: 1.5px solid var(--white);
+}
+
+.btn-secondary-outline-sit:hover {
+     color: var(--primary-blue);
+background: var(--white);
+}
 .excel_bar_fill {
   display: block;
   height: 100%;
