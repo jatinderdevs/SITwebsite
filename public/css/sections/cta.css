@@ -1,0 +1,119 @@
+/* ---------- Bottom CTA ---------- */
+.about-cta {
+  padding: 0 0 clamp(64px, 9vw, 100px);
+  background: var(--bg-light);
+}
+
+.cta-box {
+  position: relative;
+  background: var(--primary-blue);
+  border-radius: var(--radius-2xl);
+  padding: clamp(40px, 6vw, 64px) clamp(28px, 5vw, 56px);
+  overflow: hidden;
+  text-align: center;
+}
+
+.cta-box .shape {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cta-box .sh1 {
+  width: 280px;
+  height: 280px;
+  background: rgba(255, 255, 255, 0.06);
+  top: -80px;
+  right: -60px;
+}
+
+.cta-box .sh3 {
+  width: 180px;
+  height: 180px;
+  background: rgba(186, 237, 94, 0.12);
+  bottom: -50px;
+  left: -40px;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.cta-box .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 18px;
+}
+
+.cta-box .badge .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--lime-green);
+  display: inline-block;
+}
+
+.cta-box h3 {
+  color: var(--white);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.cta-box .lead {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: var(--text-lg);
+  line-height: 1.55;
+  margin-bottom: 28px;
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.cta-box .btn-secondary-sit {
+  background: var(--lime-green);
+  color: var(--primary-blue);
+  border-color: var(--lime-green);
+}
+
+.cta-box .btn-secondary-sit:hover {
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--primary-blue);
+}
+
+.cta-box .btn-secondary-outline-sit {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.cta-box .btn-secondary-outline-sit:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--white);
+  color: var(--white);
+}
+@media (max-width: 640px) {
+  .cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta-actions .btn-sit {
+    justify-content: center;
+  }
+}

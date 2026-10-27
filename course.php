@@ -10,6 +10,8 @@
     <?php include_once('./includes/stylefiles.php') ?>
 
     <link rel="stylesheet" href="course.css" />
+    <link rel="stylesheet" href="public/css/sections/cta.css" />
+
 
 </head>
 
@@ -20,7 +22,9 @@
             <div class="page-hero-bg"><img src="https://www.sit.vic.edu.au/assets/img/header3.jpg" alt=""></div>
             <div class="container page-header-inner">
                 <div class="crumb">
-                    <a href="#">Home</a><span class="sep">/</span><a href="#">Courses</a><span class="sep">/</span><a href="#">Building &amp; Construction</a><span class="sep">/</span><a href="#" class="crumbactive">Solid Plastering</a>
+                    <a href="#">Home</a><span class="sep">/</span><a href="#">Courses</a><span class="sep">/</span><a
+                        href="#">Building &amp; Construction</a><span class="sep">/</span><a href="#"
+                        class="crumbactive">Solid Plastering</a>
                 </div>
                 <div class="my-4">
                     <span class="sit-c-eyebrow  ">CRICOS Course Code: 119339G</span>
@@ -79,7 +83,8 @@
                                 <a href="#">Talk to an advisor →</a>
                             </div>
                             <div class="text-center p-3">
-                                <img src="https://www.sit.vic.edu.au/assets/img/ntr.png" width="80px" class="img-fluid" alt="">
+                                <img src="https://www.sit.vic.edu.au/assets/img/ntr.png" width="80px" class="img-fluid"
+                                    alt="">
                             </div>
                         </div>
 
@@ -275,33 +280,24 @@
                 </div>
             </section>
 
-            <!-- ===================== APPLY NOW ===================== -->
-            <section>
-                <div class="apply-box cta">
-                    <div class="shape sh1"></div>
-                    <div class="shape sh3"></div>
-                    <div class="testi_content">
-                        <span class="badge"><span class="dot"></span>Next intake closing soon</span>
-                        <h3>
-                            Lorem ipsum dolor sit amet consectetur <em> adipisicing</em> elit.
-                        </h3>
-                        <p class="lead">
-                            Applications for Melbourne and Brisbane campuses are open now — no
-                            long wait lists, real workshop time from week one.
-                        </p>
-
-                        <ul class="perks">
-                            <li><span class="tick">✓</span>Rolling intakes, most terms</li>
-                            <li>
-                                <span class="tick">✓</span>Domestic &amp; international pathways
-                            </li>
-                            <li>
-                                <span class="tick">✓</span>Advisor support through enrolment
-                            </li>
-                        </ul>
-                        <div class="text-center">
-                            <a href="#" class="btn-sit btn-secondary-sit">Apply Now <span class="arrow">→</span></a>
-                            <p class="fine">Takes about 10 minutes</p>
+            <!-- ===================== CTA ===================== -->
+            <section class="about-cta">
+                <div class="container">
+                    <div class="cta-box">
+                        <div class="shape sh1"></div>
+                        <div class="shape sh3"></div>
+                        <div class="cta-content">
+                            <span class="badge"><span class="dot"></span>Ready when you are</span>
+                            <h3>Take the next step with SIT</h3>
+                            <p class="lead">
+                                Whether you’re exploring options or ready to apply — we’re here to help
+                                you find the right course and campus.
+                            </p>
+                            <div class="cta-actions">
+                                <a href="contact.php" class="btn-sit btn-secondary-sit">Talk to us <span
+                                        class="arrow">→</span></a>
+                                <a href="courses.php" class="btn-sit btn-secondary-outline-sit">Browse courses</a>
+                            </div>
                         </div>
                     </div>
                 </div>

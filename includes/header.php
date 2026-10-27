@@ -102,7 +102,7 @@
                                          </a>
                                          <a href="#" class="mega-menu-item">
                                              <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                                             <div><span class="title">Our Agents</span></div>
+                                             <div><span class="title">Agents Zone</span></div>
                                          </a>
                                          <a href="#" class="mega-menu-item">
                                              <i class="fa fa-arrow-right" aria-hidden="true"></i>
@@ -147,19 +147,21 @@
                                  </div>
                              </div>
                          </li>
-
                          <li class="nav-item">
-                             <a class="nav-link" href="#">International Students</a>
+                             <a class="nav-link" href="about.php">About</a>
                          </li>
                          <li class="nav-item">
-                             <a class="nav-link" href="#">Our Agents</a>
+                             <a class="nav-link" href="student-support.php">Student Support</a>
+                         </li>
+                         <li class="nav-item">
+                             <a class="nav-link" href="#">Agents Zone</a>
                          </li>
                      </ul>
 
                      <!-- RIGHT: BUTTONS -->
                      <div class="navbar-buttons d-flex align-items-center">
                          <a href="#" class="btn btn_custom btn_custom_blue">Apply Online</a>
-                         <a href="#" class="ml-2 btn btn_custom btn_custom_highlight">Contact us</a>
+                         <a href="contact.php" class="ml-2 btn btn_custom btn_custom_highlight">Contact us</a>
                      </div>
                  </div>
              </div>

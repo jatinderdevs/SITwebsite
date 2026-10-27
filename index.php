@@ -10,7 +10,7 @@
     <?php include_once('./includes/stylefiles.php') ?>
     <link rel="stylesheet" href="gallery.css" />
     <link rel="stylesheet" href="public/css/courseSection.css" />
-    <link rel="stylesheet" href="public/css/about.css" />
+    <link rel="stylesheet" href="public/css/aboutsection.css" />
 
 </head>
 
