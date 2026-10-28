@@ -19,6 +19,12 @@ RewriteCond %{THE_REQUEST} \s/+index(\.php)?[\s?] [NC]
 RewriteRule ^ / [R=301,L]
 
 # --------------------------------------------------
+# Course detail pages
+# Example: /Building-and-Construction/certificate-iii-in-solid-plastering
+# --------------------------------------------------
+RewriteRule ^(Building-and-Construction|Engineering|Business-and-Management)/([a-z0-9-]+)/?$ course.php?category=$1&slug=$2 [L,QSA]
+
+# --------------------------------------------------
 # Serve pages without .php extension
 # Example: /contact  →  contact.php
 # --------------------------------------------------

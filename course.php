@@ -1,59 +1,165 @@
+<?php
+// ============================================
+// LOAD COURSE DATA
+// ============================================
+$courses = require __DIR__ . '/data/dbcourses.php';
+
+$slug     = $_GET['slug'] ?? '';
+$category = $_GET['category'] ?? '';
+
+// Find the course by slug
+$course = null;
+foreach ($courses as $c) {
+    if ($c['slug'] === $slug) {
+        $course = $c;
+        break;
+    }
+}
+
+// Extra safety: check category matches
+if ($course && $category) {
+    $expectedCategory = str_replace([' & ', ' '], ['-and-', '-'], $course['category']);
+    if ($category !== $expectedCategory) {
+        $course = null;
+    }
+}
+
+// 404 if not found
+if (!$course) {
+    header("HTTP/1.0 404 Not Found");
+    include __DIR__ . '/404.php';
+    exit;
+}
+
+// Helper values
+$fullTitle     = $course['code'] . ' ' . $course['title'];
+$pageTitle     = $fullTitle . ' | State Institute of Training';
+$metaDesc      = $course['short_desc'] . ' Study at SIT Melbourne & Pakenham campuses. CRICOS ' . $course['cricos'] . '.';
+$canonicalUrl  = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http')
+    . '://' . $_SERVER['HTTP_HOST']
+    . strtok($_SERVER['REQUEST_URI'], '?');
+
+// Category slug for breadcrumb link
+$categorySlug  = str_replace([' & ', ' '], ['-and-', '-'], $course['category']);
+$locationsText = implode(' & ', $course['locations']);
+?>
 <!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-        CPC31020 Certificate III in Solid Plastering — Redesign Concept
-    </title>
+
+    <!-- Primary SEO -->
+    <title><?= htmlspecialchars($pageTitle) ?></title>
+    <meta name="description" content="<?= htmlspecialchars($metaDesc) ?>" />
+    <meta name="keywords" content="<?= htmlspecialchars($course['code'] . ', ' . $course['title'] . ', ' . $course['category'] . ', SIT, State Institute of Training, Melbourne, CRICOS ' . $course['cricos']) ?>" />
+    <link rel="canonical" href="<?= htmlspecialchars($canonicalUrl) ?>" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<?= htmlspecialchars($canonicalUrl) ?>" />
+    <meta property="og:title" content="<?= htmlspecialchars($pageTitle) ?>" />
+    <meta property="og:description" content="<?= htmlspecialchars($metaDesc) ?>" />
+    <meta property="og:image" content="<?= htmlspecialchars($course['thumbnail'] ?? '') ?>" />
+    <meta property="og:site_name" content="State Institute of Training" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="<?= htmlspecialchars($pageTitle) ?>" />
+    <meta name="twitter:description" content="<?= htmlspecialchars($metaDesc) ?>" />
+    <meta name="twitter:image" content="<?= htmlspecialchars($course['thumbnail'] ?? '') ?>" />
+
+    <!-- Schema.org JSON-LD (Course) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": "<?= htmlspecialchars($fullTitle) ?>",
+            "description": "<?= htmlspecialchars($course['short_desc']) ?>",
+            "provider": {
+                "@type": "Organization",
+                "name": "State Institute of Training",
+                "url": "https://www.sit.vic.edu.au",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Level 5, 255 William Street",
+                    "addressLocality": "Melbourne",
+                    "addressRegion": "VIC",
+                    "postalCode": "3000",
+                    "addressCountry": "AU"
+                }
+            },
+            "hasCourseInstance": {
+                "@type": "CourseInstance",
+                "courseMode": "onsite",
+                "duration": "P<?= (int)$course['duration_weeks'] ?>W",
+                "location": {
+                    "@type": "Place",
+                    "name": "<?= htmlspecialchars($locationsText) ?>"
+                }
+            },
+            "educationalCredentialAwarded": "<?= htmlspecialchars($course['title']) ?>",
+            "occupationalCategory": "<?= htmlspecialchars($course['category']) ?>"
+        }
+    </script>
+
     <?php include_once('./includes/stylefiles.php') ?>
-
-    <link rel="stylesheet" href="course.css" />
-    <link rel="stylesheet" href="public/css/sections/cta.css" />
-
-
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/course.css" />
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/sections/cta.css" />
 </head>
 
 <body>
     <main>
         <?php include_once('./includes/header.php') ?>
+
+        <!-- ===================== HERO ===================== -->
         <section class="sit-c-hero page-header">
-            <div class="page-hero-bg"><img src="https://www.sit.vic.edu.au/assets/img/header3.jpg" alt=""></div>
+            <div class="page-hero-bg">
+                <img src="https://www.sit.vic.edu.au/assets/img/header3.jpg"
+                    alt="<?= htmlspecialchars($fullTitle) ?> at State Institute of Training Melbourne">
+            </div>
             <div class="container page-header-inner">
                 <div class="crumb">
-                    <a href="#">Home</a><span class="sep">/</span><a href="#">Courses</a><span class="sep">/</span><a
-                        href="#">Building &amp; Construction</a><span class="sep">/</span><a href="#"
-                        class="crumbactive">Solid Plastering</a>
-                </div>
-                <div class="my-4">
-                    <span class="sit-c-eyebrow  ">CRICOS Course Code: 119339G</span>
-                    <h1>CPC31020 Certificate III in Solid Plastering</h1>
+                    <a href="<?= BASE_URL ?>/">Home</a>
+                    <span class="sep">/</span>
+                    <a href="<?= BASE_URL ?>/courses">Courses</a>
+                    <span class="sep">/</span>
+                    <a href="<?= BASE_URL ?>/courses?category=<?= urlencode(strtolower(str_replace(' & ', '-', $course['category']))) ?>">
+                        <?= htmlspecialchars($course['category']) ?>
+                    </a>
+                    <span class="sep">/</span>
+                    <a href="#" class="crumbactive"><?= htmlspecialchars($course['title']) ?></a>
                 </div>
 
-                <p class="">
-                    A trade-recognised qualification for residential and commercial solid
-                    plastering — rendering, cement finishes and decorative wall work,
-                    taught in purpose-built workshops at our Melbourne and Pakenham
-                    campuses.
-                </p>
+                <div class="my-4">
+                    <span class="sit-c-eyebrow">CRICOS Course Code: <?= htmlspecialchars($course['cricos']) ?></span>
+                    <h1><?= htmlspecialchars($fullTitle) ?></h1>
+                </div>
+
+                <p><?= htmlspecialchars($course['short_desc']) ?></p>
+
                 <div class="header-actions">
-                    <a href="#" class=" btn-sit btn-secondary-sit">Apply Now →</a>
+                    <a href="<?= BASE_URL ?>/contact" class="btn-sit btn-secondary-sit">Apply Now →</a>
                     <a href="#" class="btn-sit btn-secondary-outline-sit">Download Course Guide</a>
                 </div>
 
                 <div class="quick-facts">
                     <div class="fact">
-                        <span class="tag-mono">Duration</span><span class="val">52 weeks</span>
+                        <span class="tag-mono">Duration</span>
+                        <span class="val"><?= (int)$course['duration_weeks'] ?> weeks</span>
                     </div>
                     <div class="fact">
-                        <span class="tag-mono">Study Mode</span><span class="val">Face-to-face + workshop</span>
+                        <span class="tag-mono">Study Mode</span>
+                        <span class="val"><?= htmlspecialchars($course['mode']) ?></span>
                     </div>
                     <div class="fact">
-                        <span class="tag-mono">Location</span><span class="val">Melbourne &amp; Pakenham</span>
+                        <span class="tag-mono">Location</span>
+                        <span class="val"><?= htmlspecialchars($locationsText) ?></span>
                     </div>
                     <div class="fact">
-                        <span class="tag-mono">Units</span><span class="val">20 (15 core, 5 elective)</span>
+                        <span class="tag-mono">Units</span>
+                        <span class="val"><?= htmlspecialchars($course['packaging_rules']) ?></span>
                     </div>
                 </div>
             </div>
@@ -62,6 +168,7 @@
         <div class="container">
             <section>
                 <div class="row">
+                    <!-- Sidebar TOC -->
                     <div class="col-lg-3 mb-4 mb-lg-0">
                         <div class="toc">
                             <span class="toc-label">On this page</span>
@@ -80,38 +187,32 @@
                                     Book a free 15-minute call with an advisor — we'll walk through
                                     entry requirements and pathway options for your situation.
                                 </p>
-                                <a href="#">Talk to an advisor →</a>
+                                <a href="<?= BASE_URL ?>/contact">Talk to an advisor →</a>
                             </div>
                             <div class="text-center p-3">
-                                <img src="https://www.sit.vic.edu.au/assets/img/ntr.png" width="80px" class="img-fluid"
-                                    alt="">
+                                <img src="https://www.sit.vic.edu.au/assets/img/ntr.png"
+                                    width="80"
+                                    class="img-fluid"
+                                    alt="Nationally Recognised Training logo">
                             </div>
                         </div>
-
                     </div>
 
+                    <!-- Main Content -->
                     <div class="col-lg-9">
+
+                        <!-- Course Description -->
                         <details class="qa-section" id="s-desc" open>
                             <summary>
                                 <h3>Course Description</h3>
                                 <span class="plus"></span>
                             </summary>
                             <div class="qa-body">
-                                <p>
-                                    This qualification gives you a trade outcome in solid plastering
-                                    for residential and commercial work — applying plaster, cement
-                                    and other mixtures to create smooth or decorative interior
-                                    finishes, and rendering exterior walls. Graduates typically work
-                                    as Solid Plasterers or Renderers.
-                                </p>
-                                <p>
-                                    Before doing any construction work, you'll complete general
-                                    construction induction training (the "White Card"), covered by
-                                    unit CPCWHS1001 as part of this course.
-                                </p>
+                                <?= nl2br(htmlspecialchars($course['full_description'])) ?>
                             </div>
                         </details>
 
+                        <!-- Entry Requirements (static for now) -->
                         <details class="qa-section" id="s-entry">
                             <summary>
                                 <h3>Entry Requirements</h3>
@@ -126,10 +227,7 @@
                                     <li>Be 18 years or older at the time of enrolment</li>
                                     <li>Have completed high school or equivalent</li>
                                     <li>Hold a registered Unique Student Identifier (USI)</li>
-                                    <li>
-                                        Have basic computer skills (Word, Excel, PowerPoint, web
-                                        research)
-                                    </li>
+                                    <li>Have basic computer skills (Word, Excel, PowerPoint, web research)</li>
                                 </ul>
                                 <div class="mini-note">
                                     This is a physically demanding trade — expect power tools,
@@ -139,6 +237,7 @@
                             </div>
                         </details>
 
+                        <!-- English Language Proficiency (static for now) -->
                         <details class="qa-section" id="s-english">
                             <summary>
                                 <h3>English Language Proficiency</h3>
@@ -166,53 +265,43 @@
                             </div>
                         </details>
 
+                        <!-- Duration & Delivery -->
                         <details class="qa-section" id="s-delivery">
                             <summary>
                                 <h3>Duration &amp; Delivery</h3>
                                 <span class="plus"></span>
                             </summary>
                             <div class="qa-body">
-                                <p>
-                                    The course runs for 52 weeks in total — 44 weeks of face-to-face
-                                    training and assessment, plus 8 weeks of study breaks spread
-                                    across the year. You'll complete 20 units of competency (15
-                                    core, 5 elective) across two delivery components:
-                                </p>
-                                <ul>
-                                    <li>Classroom-based theory sessions</li>
-                                    <li>
-                                        Practical training and assessment in SIT's purpose-built
-                                        workshops
-                                    </li>
-                                </ul>
-                                <p>
-                                    Structured training runs 20 hours a week, mixing trainer
-                                    demonstrations, hands-on practice, group work and self-study
-                                    tasks you'll complete outside class time.
-                                </p>
+                                <p><?= htmlspecialchars($course['duration_text']) ?></p>
+                                <p><strong>Mode of Study:</strong> <?= htmlspecialchars($course['mode']) ?></p>
+                                <p><strong>Locations:</strong> <?= htmlspecialchars($locationsText) ?> campuses</p>
+                                <?php if (!empty($course['has_work_placement'])): ?>
+                                    <p><strong>Work Placement:</strong> This course includes mandatory work-based training.</p>
+                                <?php endif; ?>
                             </div>
                         </details>
 
+                        <!-- Pathways -->
                         <details class="qa-section" id="s-pathways">
                             <summary>
                                 <h3>Pathways</h3>
                                 <span class="plus"></span>
                             </summary>
                             <div class="qa-body">
-                                <p>
-                                    Once you've completed this qualification, you can continue on
-                                    to:
-                                </p>
-                                <ul>
-                                    <li>CPC40120 — Certificate IV in Building and Construction</li>
-                                    <li>
-                                        CPC50220 — Diploma of Building and Construction (Building)
-                                    </li>
-                                    <li>Other related trade qualifications and licences</li>
-                                </ul>
+                                <?php if (!empty($course['pathways'])): ?>
+                                    <p>Once you've completed this qualification, you can continue on to:</p>
+                                    <ul>
+                                        <?php foreach ($course['pathways'] as $path): ?>
+                                            <li><?= htmlspecialchars($path) ?></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php else: ?>
+                                    <p>This is a higher-level qualification. Graduates may progress into industry roles or further specialised study.</p>
+                                <?php endif; ?>
                             </div>
                         </details>
 
+                        <!-- Course Fees (static for now) -->
                         <details class="qa-section" id="s-fees">
                             <summary>
                                 <h3>Course Fees</h3>
@@ -225,10 +314,7 @@
                                 </p>
                                 <ul>
                                     <li>Fees don't cover living costs in Australia</li>
-                                    <li>
-                                        SIT doesn't offer VET FEE-HELP or other government-funded
-                                        subsidies
-                                    </li>
+                                    <li>SIT doesn't offer VET FEE-HELP or other government-funded subsidies</li>
                                     <li>Fees may change over the duration of the course</li>
                                 </ul>
                                 <div class="mini-note">
@@ -239,6 +325,7 @@
                             </div>
                         </details>
 
+                        <!-- Student Support (static for now) -->
                         <details class="qa-section" id="s-support">
                             <summary>
                                 <h3>Student Support Services</h3>
@@ -256,6 +343,7 @@
                             </div>
                         </details>
 
+                        <!-- How to Apply (static for now) -->
                         <details class="qa-section" id="s-apply">
                             <summary>
                                 <h3>How to Apply</h3>
@@ -267,15 +355,14 @@
                                     form and send it in, or reach out and we'll walk you through it.
                                 </p>
                                 <ul>
-                                    <li>Email: info@sit.vic.edu.au</li>
-                                    <li>Phone: 03 8383 4447</li>
-                                    <li>
-                                        Melbourne — Level 5, 255 William Street, Melbourne VIC 3000
-                                    </li>
+                                    <li>Email: <a href="mailto:info@sit.vic.edu.au">info@sit.vic.edu.au</a></li>
+                                    <li>Phone: <a href="tel:+61383834447">03 8383 4447</a></li>
+                                    <li>Melbourne — Level 5, 255 William Street, Melbourne VIC 3000</li>
                                     <li>Pakenham — Level 1, 29 James Street, Pakenham VIC 3810</li>
                                 </ul>
                             </div>
                         </details>
+
                     </div>
                 </div>
             </section>
@@ -294,22 +381,23 @@
                                 you find the right course and campus.
                             </p>
                             <div class="cta-actions">
-                                <a href="contact.php" class="btn-sit btn-secondary-sit">Talk to us <span
-                                        class="arrow">→</span></a>
-                                <a href="courses.php" class="btn-sit btn-secondary-outline-sit">Browse courses</a>
+                                <a href="<?= BASE_URL ?>/contact" class="btn-sit btn-secondary-sit">
+                                    Talk to us <span class="arrow">→</span>
+                                </a>
+                                <a href="<?= BASE_URL ?>/courses" class="btn-sit btn-secondary-outline-sit">
+                                    Browse courses
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
-        </div>
 
         <?php include_once('./includes/footer.php') ?>
     </main>
+
     <?php include_once('./includes/scriptfiles.php') ?>
-
-
 </body>
 
 </html>

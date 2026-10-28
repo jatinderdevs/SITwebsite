@@ -1,6 +1,12 @@
 <?php
 
 /**
+ * Courses Db file important to load courses
+ */
+
+
+$courses = require __DIR__ . '/data/dbcourses.php';
+/**
  * SIT Site Configuration
  * Edit only the values below when moving between local / live
  */

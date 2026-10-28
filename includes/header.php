@@ -4,7 +4,7 @@
              <div class="container-fluid p-0">
                  <!-- LEFT: LOGO -->
                  <a class="navbar-brand" href="#">
-                     <img src="img/logo.png" class="img-fluid" width="130px" alt="State Institute of Training" />
+                     <img src="<?= BASE_URL ?>/img/logo.png" class="img-fluid" width="130px" alt="State Institute of Training" />
                  </a>
 
                  <!-- Mobile toggle -->
@@ -18,10 +18,10 @@
                      <!-- CENTER: NAV LINKS -->
                      <ul class="navbar-nav mx-auto">
                          <li class="nav-item active">
-                             <a class="nav-link" href="index">Home</a>
+                             <a class="nav-link" href="<?= BASE_URL ?>/index">Home</a>
                          </li>
                          <li class="nav-item">
-                             <a class="nav-link" href="courses">Courses</a>
+                             <a class="nav-link" href="<?= BASE_URL ?>/courses">Courses</a>
                          </li>
 
                          <!-- Student Support MEGA MENU -->
@@ -148,20 +148,20 @@
                              </div>
                          </li>
                          <li class="nav-item">
-                             <a class="nav-link" href="about.php">About</a>
+                             <a class="nav-link" href="<?= BASE_URL ?>/about.php">About</a>
                          </li>
                          <li class="nav-item">
-                             <a class="nav-link" href="student-support.php">Student Support</a>
+                             <a class="nav-link" href="<?= BASE_URL ?>/student-support.php">Student Support</a>
                          </li>
                          <li class="nav-item">
-                             <a class="nav-link" href="agent-zone">Agents Zone</a>
+                             <a class="nav-link" href="<?= BASE_URL ?>/agent-zone">Agents Zone</a>
                          </li>
                      </ul>
 
                      <!-- RIGHT: BUTTONS -->
                      <div class="navbar-buttons d-flex align-items-center">
                          <a href="#" class="btn btn_custom btn_custom_blue">Apply Online</a>
-                         <a href="contact.php" class="ml-2 btn btn_custom btn_custom_highlight">Contact us</a>
+                         <a href="<?= BASE_URL ?>/contact.php" class="ml-2 btn btn_custom btn_custom_highlight">Contact us</a>
                      </div>
                  </div>
              </div>
