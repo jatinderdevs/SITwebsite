@@ -18,6 +18,8 @@
 
         <!-- ===================== PAGE HEADER ===================== -->
         <section class="page-header">
+            <div class="page-hero-bg"><img src="https://images.pexels.com/photos/783681/pexels-photo-783681.jpeg?_gl=1*vkxn7p*_ga*NTcwNjI5OTg5LjE3OTMxNDQyOTI.*_ga_8JE65Q40S6*czE3OTMxNDg4ODMkbzIkZzEkdDE3OTMxNDkwMjQkajU5JGwwJGgw" alt=""></div>
+
             <div class="page-header-inner">
                 <nav class="crumb" aria-label="Breadcrumb">
                     <a href="index.php">Home</a>
@@ -299,13 +301,13 @@
                         <img src="public/imgs/icons/google.png" alt="">
                         <h4>Get in touch</h4>
                         <p>Get the latest updates and insights</p>
-                        <a href="" class="btn-sit btn-primary-sit socialbtn">Follow</a>
+                        <a href="" class="btn-sit btn-primary-sit socialbtn">Email</a>
                     </div>
                     <div class="social">
                         <img src="public/imgs/icons/facebook.png" alt="">
                         <h4>Get Updates</h4>
                         <p>Get the latest updates and insights</p>
-                        <a href="" class="btn-sit btn-primary-sit socialbtn">Follow</a>
+                        <a href="" class="btn-sit btn-primary-sit socialbtn">Like</a>
                     </div>
                     <div class="social">
                         <img src="public/imgs/icons/instagram.png" alt="">
@@ -317,7 +319,7 @@
                         <img src="public/imgs/icons/linkedin.png" alt="">
                         <h4>Grow with us</h4>
                         <p>Connect with the ideas</p>
-                        <a href="" class="btn-sit btn-primary-sit socialbtn">Follow</a>
+                        <a href="" class="btn-sit btn-primary-sit socialbtn">Connect</a>
                     </div>
                 </div>
 
@@ -419,111 +421,111 @@
     <?php include_once('./includes/scriptfiles.php') ?>
 
     <script>
-    // ----- Contact form feedback -----
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const form = this;
-        if (!form.checkValidity()) {
-            form.reportValidity();
-            return;
-        }
-        const btn = form.querySelector('.btn-submit');
-        const original = btn.innerHTML;
-        btn.innerHTML = 'Sending…';
-        btn.disabled = true;
-        setTimeout(function() {
-            btn.innerHTML = 'Message sent ✓';
-            btn.style.background = 'var(--lime-green)';
-            btn.style.color = 'var(--primary-blue)';
-            btn.style.borderColor = 'var(--lime-green)';
-            form.reset();
-            setTimeout(function() {
-                btn.innerHTML = original;
-                btn.disabled = false;
-                btn.style.background = '';
-                btn.style.color = '';
-                btn.style.borderColor = '';
-            }, 2500);
-        }, 900);
-    });
-
-    // ----- Campus map switcher -----
-    const campusData = {
-        melbourne: {
-            title: 'Melbourne Campus',
-            badge: 'Melbourne',
-            address: 'Level 5, 255 William Street<br />Melbourne VIC 3000',
-            mapSrc: 'https://www.google.com/maps?q=Level+5,+255+William+Street,+Melbourne+VIC+3000&output=embed&z=16',
-            directions: 'https://www.google.com/maps/dir/?api=1&destination=Level+5,+255+William+Street,+Melbourne+VIC+3000',
-            mapTitle: 'State Institute of Training – Melbourne Campus'
-        },
-        brisbane: {
-            title: 'Brisbane Campus',
-            badge: 'Brisbane',
-            address: 'Level 3, 300 Adelaide Street<br />Brisbane QLD 4000',
-            mapSrc: 'https://www.google.com/maps?q=Level+3,+300+Adelaide+Street,+Brisbane+QLD+4000&output=embed&z=16',
-            directions: 'https://www.google.com/maps/dir/?api=1&destination=Level+3,+300+Adelaide+Street,+Brisbane+QLD+4000',
-            mapTitle: 'State Institute of Training – Brisbane Campus'
-        }
-    };
-
-    const mapIframe = document.getElementById('campusMap');
-    const floatBadge = document.getElementById('floatBadge');
-    const floatTitle = document.getElementById('floatTitle');
-    const floatAddress = document.getElementById('floatAddress');
-    const floatCard = document.getElementById('mapFloatCard');
-    const floatDirBtn = floatCard.querySelector('.float-btn');
-
-    document.querySelectorAll('.map-tab').forEach(function(tab) {
-        tab.addEventListener('click', function() {
-            const campus = this.getAttribute('data-campus');
-            const data = campusData[campus];
-            if (!data) return;
-
-            // Update tabs
-            document.querySelectorAll('.map-tab').forEach(function(t) {
-                t.classList.remove('active');
-                t.setAttribute('aria-selected', 'false');
-            });
-            this.classList.add('active');
-            this.setAttribute('aria-selected', 'true');
-
-            // Fade map slightly while swapping
-            mapIframe.style.opacity = '0.4';
-            setTimeout(function() {
-                mapIframe.src = data.mapSrc;
-                mapIframe.title = data.mapTitle;
-                mapIframe.style.opacity = '1';
-            }, 180);
-
-            // Update floating card
-            floatBadge.textContent = data.badge;
-            floatBadge.classList.toggle('brisbane', campus === 'brisbane');
-            floatTitle.textContent = data.title;
-            floatAddress.innerHTML = data.address;
-            floatDirBtn.href = data.directions;
-        });
-    });
-
-    // ----- FAQ accordion -----
-    document.querySelectorAll('.faq-question').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            const item = this.closest('.faq-item');
-            const isOpen = item.classList.contains('active');
-
-            // Close all
-            document.querySelectorAll('.faq-item').forEach(function(el) {
-                el.classList.remove('active');
-                el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-            });
-
-            // Open clicked if it was closed
-            if (!isOpen) {
-                item.classList.add('active');
-                this.setAttribute('aria-expanded', 'true');
+        // ----- Contact form feedback -----
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = this;
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
             }
+            const btn = form.querySelector('.btn-submit');
+            const original = btn.innerHTML;
+            btn.innerHTML = 'Sending…';
+            btn.disabled = true;
+            setTimeout(function() {
+                btn.innerHTML = 'Message sent ✓';
+                btn.style.background = 'var(--lime-green)';
+                btn.style.color = 'var(--primary-blue)';
+                btn.style.borderColor = 'var(--lime-green)';
+                form.reset();
+                setTimeout(function() {
+                    btn.innerHTML = original;
+                    btn.disabled = false;
+                    btn.style.background = '';
+                    btn.style.color = '';
+                    btn.style.borderColor = '';
+                }, 2500);
+            }, 900);
         });
-    });
+
+        // ----- Campus map switcher -----
+        const campusData = {
+            melbourne: {
+                title: 'Melbourne Campus',
+                badge: 'Melbourne',
+                address: 'Level 5, 255 William Street<br />Melbourne VIC 3000',
+                mapSrc: 'https://www.google.com/maps?q=Level+5,+255+William+Street,+Melbourne+VIC+3000&output=embed&z=16',
+                directions: 'https://www.google.com/maps/dir/?api=1&destination=Level+5,+255+William+Street,+Melbourne+VIC+3000',
+                mapTitle: 'State Institute of Training – Melbourne Campus'
+            },
+            brisbane: {
+                title: 'Brisbane Campus',
+                badge: 'Brisbane',
+                address: 'Level 3, 300 Adelaide Street<br />Brisbane QLD 4000',
+                mapSrc: 'https://www.google.com/maps?q=Level+3,+300+Adelaide+Street,+Brisbane+QLD+4000&output=embed&z=16',
+                directions: 'https://www.google.com/maps/dir/?api=1&destination=Level+3,+300+Adelaide+Street,+Brisbane+QLD+4000',
+                mapTitle: 'State Institute of Training – Brisbane Campus'
+            }
+        };
+
+        const mapIframe = document.getElementById('campusMap');
+        const floatBadge = document.getElementById('floatBadge');
+        const floatTitle = document.getElementById('floatTitle');
+        const floatAddress = document.getElementById('floatAddress');
+        const floatCard = document.getElementById('mapFloatCard');
+        const floatDirBtn = floatCard.querySelector('.float-btn');
+
+        document.querySelectorAll('.map-tab').forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                const campus = this.getAttribute('data-campus');
+                const data = campusData[campus];
+                if (!data) return;
+
+                // Update tabs
+                document.querySelectorAll('.map-tab').forEach(function(t) {
+                    t.classList.remove('active');
+                    t.setAttribute('aria-selected', 'false');
+                });
+                this.classList.add('active');
+                this.setAttribute('aria-selected', 'true');
+
+                // Fade map slightly while swapping
+                mapIframe.style.opacity = '0.4';
+                setTimeout(function() {
+                    mapIframe.src = data.mapSrc;
+                    mapIframe.title = data.mapTitle;
+                    mapIframe.style.opacity = '1';
+                }, 180);
+
+                // Update floating card
+                floatBadge.textContent = data.badge;
+                floatBadge.classList.toggle('brisbane', campus === 'brisbane');
+                floatTitle.textContent = data.title;
+                floatAddress.innerHTML = data.address;
+                floatDirBtn.href = data.directions;
+            });
+        });
+
+        // ----- FAQ accordion -----
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                const item = this.closest('.faq-item');
+                const isOpen = item.classList.contains('active');
+
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(function(el) {
+                    el.classList.remove('active');
+                    el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+
+                // Open clicked if it was closed
+                if (!isOpen) {
+                    item.classList.add('active');
+                    this.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
     </script>
 </body>
 

@@ -386,7 +386,7 @@
                             </li>
                         </ul>
 
-                        <a href="#" class="btn-apply-big">Apply Now <span class="arrow">→</span></a>
+                        <a href="#" class="btn-sit btn-lime-sit">Apply Now <span class="arrow">→</span></a>
                         <p class="fine">Takes about 10 minutes</p>
                     </div>
                 </div>

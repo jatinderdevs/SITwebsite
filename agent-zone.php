@@ -18,6 +18,8 @@
 
         <!-- ===================== HERO ===================== -->
         <section class="page-header az-hero">
+            <div class="page-hero-bg"><img src="https://images.pexels.com/photos/783681/pexels-photo-783681.jpeg?_gl=1*vkxn7p*_ga*NTcwNjI5OTg5LjE3OTMxNDQyOTI.*_ga_8JE65Q40S6*czE3OTMxNDg4ODMkbzIkZzEkdDE3OTMxNDkwMjQkajU5JGwwJGgw" alt=""></div>
+
             <div class="page-header-inner">
                 <nav class="crumb" aria-label="Breadcrumb">
                     <a href="index.php">Home</a>
@@ -25,7 +27,7 @@
                     <span class="crumbactive">Agent Zone</span>
                 </nav>
                 <span class="sit-c-eyebrow">For Education Agents</span>
-                <h1>Partner with SIT</h1>
+                <h1>Partner with State Institute of Training</h1>
                 <p>
                     Everything you need to represent State Institute of Training —
                     campuses, courses, enrolment documents and a direct line to our team.
@@ -89,13 +91,10 @@
                             pathways and genuine student support — across Melbourne, Pakenham and Brisbane.
                         </p>
                         <div class="fact-row">
+
                             <div class="fact-pill">
-                                <span class="fact-label">RTO</span>
-                                <span class="fact-val">45205</span>
-                            </div>
-                            <div class="fact-pill">
-                                <span class="fact-label">CRICOS</span>
-                                <span class="fact-val">03948A</span>
+                                <span class="fact-label">Qualifications</span>
+                                <span class="fact-val">9 Courses</span>
                             </div>
                             <div class="fact-pill">
                                 <span class="fact-label">Campuses</span>
@@ -288,10 +287,7 @@
                                 </div>
                             </li>
                         </ul>
-                        <p class="check-note">
-                            Documents in another language should be accompanied by a NAATI-accredited translation.
-                            Authorised education agents may certify copies.
-                        </p>
+
                     </div>
                     <div class="az-split-visual">
                         <div class="visual-card soft">

@@ -56,7 +56,7 @@
                 <article class="sit-c-card" data-category="building">
                     <!-- Image -->
                     <div class="sit-c-card-img">
-                        <img src="https://www.sit.vic.edu.au/assets/img/building/plaster.webp"
+                        <img src="https://www.sit.vic.edu.au/assets/img/building/certiv.webp"
                             alt="Certificate III in Solid Plastering" loading="lazy" />
                     </div>
 

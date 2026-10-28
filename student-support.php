@@ -18,6 +18,8 @@
 
         <!-- ===================== PAGE HEADER ===================== -->
         <section class="page-header">
+            <div class="page-hero-bg"><img src="https://images.pexels.com/photos/8499548/pexels-photo-8499548.jpeg?_gl=1*191jwxw*_ga*NTcwNjI5OTg5LjE3OTMxNDQyOTI.*_ga_8JE65Q40S6*czE3OTMxNDQyOTEkbzEkZzEkdDE3OTMxNDQzMjckajI0JGwwJGgw" alt=""></div>
+
             <div class="page-header-inner">
                 <nav class="crumb" aria-label="Breadcrumb">
                     <a href="index.php">Home</a>

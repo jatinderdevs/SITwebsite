@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SIT Site Configuration
  * Edit only the values below when moving between local / live
@@ -14,14 +15,16 @@ $isLocal = in_array($_SERVER['HTTP_HOST'] ?? '', [
 // ===================== PATHS =====================
 // Local folder name (change if your local folder is different)
 if (!defined('BASE_PATH')) {
-    define('BASE_PATH', $isLocal ? '/state-institute-of-college' : '');   // ← change '/sit' to your actual local folder name
+    define('BASE_PATH', $isLocal ? '/rto/SITwebsite' : '');   // ← change '/sit' to your actual local folder name
 }
 
 // Full base URL
 if (!defined('BASE_URL')) {
-    define('BASE_URL', $isLocal 
-        ? 'http://localhost' . BASE_PATH 
-        : 'https://sit.vic.edu.au'           // ← change if live domain is different
+    define(
+        'BASE_URL',
+        $isLocal
+            ? 'http://localhost' . BASE_PATH
+            : 'https://sit.vic.edu.au'           // ← change if live domain is different
     );
 }
 

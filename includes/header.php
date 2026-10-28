@@ -18,10 +18,10 @@
                      <!-- CENTER: NAV LINKS -->
                      <ul class="navbar-nav mx-auto">
                          <li class="nav-item active">
-                             <a class="nav-link" href="index.php">Home</a>
+                             <a class="nav-link" href="index">Home</a>
                          </li>
                          <li class="nav-item">
-                             <a class="nav-link" href="courses.php">Courses</a>
+                             <a class="nav-link" href="courses">Courses</a>
                          </li>
 
                          <!-- Student Support MEGA MENU -->
@@ -154,7 +154,7 @@
                              <a class="nav-link" href="student-support.php">Student Support</a>
                          </li>
                          <li class="nav-item">
-                             <a class="nav-link" href="#">Agents Zone</a>
+                             <a class="nav-link" href="agent-zone">Agents Zone</a>
                          </li>
                      </ul>
 

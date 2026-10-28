@@ -7,8 +7,8 @@
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
- <link rel="stylesheet" href="<?= BASE_URL ?>/stylesheet.css" />
- <link rel="stylesheet" href="<?= BASE_URL ?>/navbar.css" />
+ <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/stylesheet.css" />
+ <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/navbar.css" />
 
- <link rel="stylesheet" href="public/css/applynow.css" />
- <link rel="stylesheet" href="public/css/footer.css" />
+ <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/applynow.css" />
+ <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/footer.css" />

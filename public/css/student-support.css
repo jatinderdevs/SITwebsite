@@ -93,6 +93,7 @@
   border-color: rgba(26, 17, 166, 0.18);
   box-shadow: 0 8px 22px rgba(26, 17, 166, 0.06);
   text-decoration: none;
+  background: white;
   color: inherit;
 }
 
@@ -201,7 +202,7 @@
   font-weight: var(--fw-semibold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--steel);
+  color: var(--primary-blue);
   margin-bottom: 12px;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--line);
@@ -228,11 +229,16 @@
 
 .policy-item:hover {
   border-color: rgba(26, 17, 166, 0.22);
-  background: #fafbff;
+  /* background: #fafbff; */
+  background: var(--primary-blue);
   text-decoration: none;
-  color: inherit;
+
+  
 }
 
+.policy-item:hover .policy-name {
+ color: var(--white);
+}
 .policy-name {
   font-size: var(--text-base);
   font-weight: var(--fw-medium);
@@ -246,7 +252,7 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--primary-blue);
-  background: rgba(26, 17, 166, 0.08);
+  background: #baed5e8c;
   padding: 4px 10px;
   border-radius: var(--radius-pill);
   flex-shrink: 0;

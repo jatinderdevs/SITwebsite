@@ -861,6 +861,9 @@
   text-align: center;
   border: 1px solid #dfdfdf;
 }
+.social:hover{
+  background-color: var(--shade);
+}
 .social img {
   margin: 20px 0;
   width: 60px;
@@ -899,6 +902,17 @@
     width: min(280px, calc(100% - 32px));
     padding: 16px 18px;
   }
+  .social-handles{
+  grid-template-columns: 1fr  1fr;
+
+  }
+  .social {
+  padding: 0.5rem;
+ place-content: end;
+}
+.social img{
+    width: 40px;
+}
 }
 
 @media (max-width: 600px) {

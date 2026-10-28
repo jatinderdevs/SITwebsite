@@ -582,13 +582,14 @@ font-family: var(--font-body);
   font-weight: var(--fw-semibold);
   font-family: var(--font-body);
   transition: all 0.2s ease;
-  font-size: var(--text-base);
+  font-size: var(--text-lg);
   text-decoration: none;
 }
 .btn-sit:hover{
   text-decoration: none;
 
 }
+
 .btn-primary-sit {
    background: var(--primary-blue);
   color: var(--white);
@@ -609,10 +610,22 @@ font-family: var(--font-body);
  
 }
 
+
 .btn-secondary-sit:hover {
     color: var(--white);
 background: var(--primary-blue);
 
+}
+.btn-lime-sit {
+  
+  background: var(--lime-green);
+  color: var(--primary-blue);
+ 
+  border: 1.5px solid var(--white);
+ 
+}
+.btn-lime-sit:hover {
+    color: black;
 }
 .btn-secondary-outline-sit {
    background: transparent;

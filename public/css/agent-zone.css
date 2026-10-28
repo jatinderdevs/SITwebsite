@@ -488,6 +488,8 @@
   display: block;
   font-size: var(--text-sm);
   color: #475569;
+  place-content: center;
+    text-align: center;
   line-height: 1.4;
 }
 
