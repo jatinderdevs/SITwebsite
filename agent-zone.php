@@ -9,7 +9,7 @@
         content="Agent Zone for education agents — partner with State Institute of Training. Campus info, application form, enrolment document checklist and agent support contacts." />
 
     <?php include_once('./includes/stylefiles.php') ?>
-    <link rel="stylesheet" href="public/css/agent-zone.css" />
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/agent-zone.css" />
 </head>
 
 <body>
@@ -18,7 +18,9 @@
 
         <!-- ===================== HERO ===================== -->
         <section class="page-header az-hero">
-            <div class="page-hero-bg"><img src="https://images.pexels.com/photos/783681/pexels-photo-783681.jpeg?_gl=1*vkxn7p*_ga*NTcwNjI5OTg5LjE3OTMxNDQyOTI.*_ga_8JE65Q40S6*czE3OTMxNDg4ODMkbzIkZzEkdDE3OTMxNDkwMjQkajU5JGwwJGgw" alt=""></div>
+            <div class="page-hero-bg"><img
+                    src="https://images.pexels.com/photos/783681/pexels-photo-783681.jpeg?_gl=1*vkxn7p*_ga*NTcwNjI5OTg5LjE3OTMxNDQyOTI.*_ga_8JE65Q40S6*czE3OTMxNDg4ODMkbzIkZzEkdDE3OTMxNDkwMjQkajU5JGwwJGgw"
+                    alt=""></div>
 
             <div class="page-header-inner">
                 <nav class="crumb" aria-label="Breadcrumb">
@@ -107,14 +109,8 @@
                         </div>
                     </div>
                     <div class="az-split-visual">
-                        <div class="visual-card">
-                            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80"
-                                alt="Students in a practical training environment" loading="lazy" />
-                            <div class="visual-caption">
-                                <strong>Hands-on training</strong>
-                                <span>Workshop-based courses with industry-experienced trainers</span>
-                            </div>
-                        </div>
+                        <img src="<?= BASE_URL ?>/public/imgs/deal3.gif" class="img-fluid" alt="">
+
                     </div>
                 </div>
             </div>
@@ -140,7 +136,8 @@
                         <a href="#" class="btn-sit btn-secondary-sit" id="agent-form-btn">
                             Complete agent application →
                         </a>
-                        <p class="apply-note">Already working with us? Use the same form or contact admissions below.</p>
+                        <p class="apply-note">Already working with us? Use the same form or contact admissions below.
+                        </p>
                     </div>
                     <div class="apply-visual">
                         <div class="apply-stat">
@@ -290,14 +287,8 @@
 
                     </div>
                     <div class="az-split-visual">
-                        <div class="visual-card soft">
-                            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80"
-                                alt="Application documents and checklist" loading="lazy" />
-                            <div class="visual-caption">
-                                <strong>Complete applications move faster</strong>
-                                <span>Use this checklist before you submit</span>
-                            </div>
-                        </div>
+                        <img src="<?= BASE_URL ?>/public/imgs/Checklist.gif" class="img-fluid" alt="">
+
                     </div>
                 </div>
             </div>
@@ -415,7 +406,8 @@
                             in their vocational training.
                         </p>
                         <div class="cta-actions">
-                            <a href="#apply" class="btn-sit btn-secondary-sit">Apply now <span class="arrow">→</span></a>
+                            <a href="#apply" class="btn-sit btn-secondary-sit">Apply now <span
+                                    class="arrow">→</span></a>
                             <a href="contact.php" class="btn-sit btn-secondary-outline-sit">Contact us</a>
                         </div>
                     </div>

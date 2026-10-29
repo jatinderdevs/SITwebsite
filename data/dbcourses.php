@@ -28,9 +28,9 @@ Occupational titles may include:
 • Renderer
 
 Completion of the general construction induction training program, specified in the Safe Work Australia model Code of Practice: Construction Work, is required by anyone carrying out construction work. Achievement of CPCWHS1001 Prepare to work safely in the construction industry meets this requirement.',
-        'packaging_rules'    => '20 units of competency: 15 core units + 5 elective units.',
-        'mode'               => 'Face-to-face classroom sessions + Practical training and assessment in purpose-built workshops.',
-        'locations'          => ['Pakenham', 'Melbourne'],
+        'packaging_rules'    => '20 (15 core, 5 elective)',
+        'mode'               => 'Face-to-face + workshop',
+        'locations'          => ['Melbourne','Brisbane'],
         'has_work_placement' => false,
         'pathways'           => [
             'CPC40120 Certificate IV in Building and Construction',

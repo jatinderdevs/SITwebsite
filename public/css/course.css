@@ -90,7 +90,6 @@
   text-decoration: none;
 }
 
-
 .hero-course {
   background-color: var(--shade);
   padding: 100px 0 var(--space-5xl);
@@ -99,8 +98,6 @@
 .course-header {
   border-bottom: 1px solid var(--line);
 }
-
-
 
 .course-header .dek {
   font-size: var(--text-xl);
@@ -117,8 +114,6 @@
   flex-wrap: wrap;
   margin-top: var(--space-3xl);
 }
-
-
 
 /* ---------- Quick facts ---------- */
 .quick-facts {
@@ -255,7 +250,6 @@ summary h3 {
 .qa-section summary:hover {
   border-left: 3px solid var(--primary-blue);
   color: var(--primary-blue);
-  
 }
 .qa-section summary .plus::after {
   width: 1.5px;
@@ -282,7 +276,7 @@ summary h3 {
 
 .qa-body {
   padding: 0 0 var(--space-4xl);
-  max-width: 720px;
+
   font-size: var(--text-lg);
   line-height: var(--lh-body);
   color: #3e4a5a;
@@ -357,7 +351,7 @@ summary h3 {
 }
 
 @media (max-width: 991px) {
-  .side-callout{
+  .side-callout {
     display: none;
   }
   .quick-facts {

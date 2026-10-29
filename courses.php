@@ -15,7 +15,8 @@
     <!-- Hero -->
     <section class="sit-c-hero page-header">
         <div class="page-hero-bg">
-            <img src="https://arrlogistics.com.au/img/sliderimage.webp" alt="Our Courses at State Institute of Training">
+            <img src="https://arrlogistics.com.au/img/sliderimage.webp"
+                alt="Our Courses at State Institute of Training">
         </div>
         <div class="container page-header-inner">
             <div class="crumb">
@@ -55,7 +56,7 @@
                 uasort($courses, function ($a, $b) {
                     return ($a['order'] ?? 99) <=> ($b['order'] ?? 99);
                 });
-
+               
                 // Category mapping for data-filter + URL
                 $categoryMap = [
                     'Building & Construction' => 'building',
@@ -77,47 +78,55 @@
                     $catKey     = $categoryMap[$course['category']] ?? 'other';
                     $catUrl     = $categoryUrlMap[$course['category']] ?? 'Courses';
                     $courseUrl  = BASE_URL . '/' . $catUrl . '/' . $course['slug'];
+                     $pillClassMap = [
+                    'Engineering'           => 'sit-bento-pill-eng',
+                    'Business & Management' => 'sit-bento-pill-biz',
+                ];
+                $pillMod   = $pillClassMap[$course['category']] ?? '';
+                $pillClass = trim('sit-bento-pill ' . $pillMod);
                 ?>
-                    <article class="sit-c-card" data-category="<?= htmlspecialchars($catKey) ?>">
-                        <!-- Image -->
-                        <div class="sit-c-card-img">
-                            <img src="<?= htmlspecialchars($course['thumbnail'] ?? 'https://www.sit.vic.edu.au/assets/img/building/certiv.webp') ?>"
-                                alt="<?= htmlspecialchars($course['code'] . ' ' . $course['title']) ?>"
-                                loading="lazy" />
+                <article class="sit-c-card" data-category="<?= htmlspecialchars($catKey) ?>">
+                    <!-- Image -->
+                    <div class="sit-c-card-img">
+                        <img src="https://www.sit.vic.edu.au/assets/img/building/certiv.webp" alt="">
+                        <!-- <img src="<?= htmlspecialchars($course['thumbnail'] ?? 'https://www.sit.vic.edu.au/assets/img/building/certiv.webp') ?>"
+                            alt="<?= htmlspecialchars($course['code'] . ' ' . $course['title']) ?>" loading="lazy" /> -->
+                    </div>
+
+                    <div class="sit-c-card-content">
+                        <div class="sit-c-card-top">
+                            <span
+                                class="<?= htmlspecialchars($pillClass) ?>"><?= htmlspecialchars($course['category']) ?></span>
                         </div>
 
-                        <div class="sit-c-card-content">
-                            <div class="sit-c-card-top">
-                                <span class="sit-c-tag"><?= htmlspecialchars($course['category']) ?></span>
+                        <div class="sit-c-card-body">
+                            <div class="sit-c-code">
+                                <?= htmlspecialchars($course['code']) ?> · CRICOS
+                                <?= htmlspecialchars($course['cricos']) ?>
                             </div>
+                            <h3 class="sit-c-title"><?= htmlspecialchars($course['title']) ?></h3>
 
-                            <div class="sit-c-card-body">
-                                <div class="sit-c-code">
-                                    <?= htmlspecialchars($course['code']) ?> · CRICOS <?= htmlspecialchars($course['cricos']) ?>
-                                </div>
-                                <h3 class="sit-c-title"><?= htmlspecialchars($course['title']) ?></h3>
-
-                                <div class="sit-c-meta">
-                                    <div class="sit-c-meta-item">
-                                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <path d="M12 6v6l4 2" />
-                                        </svg>
-                                        <?= (int)$course['duration_weeks'] ?> weeks
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="sit-c-card-footer">
-                                <a href="<?= htmlspecialchars($courseUrl) ?>" class="sit-c-link">
-                                    View course
-                                    <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                            <div class="sit-c-meta">
+                                <div class="sit-c-meta-item">
+                                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M12 6v6l4 2" />
                                     </svg>
-                                </a>
+                                    <?= (int)$course['duration_weeks'] ?> weeks
+                                </div>
                             </div>
                         </div>
-                    </article>
+
+                        <div class="sit-c-card-footer">
+                            <a href="<?= htmlspecialchars($courseUrl) ?>" class="sit-c-link">
+                                View course
+                                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
                 <?php endforeach; ?>
             </section>
 
@@ -132,29 +141,29 @@
     <?php include_once('./includes/scriptfiles.php') ?>
 
     <script>
-        // Filter functionality
-        const filterBtns = document.querySelectorAll(".sit-c-filter-btn");
-        const cards = document.querySelectorAll(".sit-c-card");
-        const emptyState = document.getElementById("emptyState");
+    // Filter functionality
+    const filterBtns = document.querySelectorAll(".sit-c-filter-btn");
+    const cards = document.querySelectorAll(".sit-c-card");
+    const emptyState = document.getElementById("emptyState");
 
-        filterBtns.forEach((btn) => {
-            btn.addEventListener("click", () => {
-                // Active state
-                filterBtns.forEach((b) => b.classList.remove("is-active"));
-                btn.classList.add("is-active");
+    filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            // Active state
+            filterBtns.forEach((b) => b.classList.remove("is-active"));
+            btn.classList.add("is-active");
 
-                const filter = btn.dataset.filter;
-                let visible = 0;
+            const filter = btn.dataset.filter;
+            let visible = 0;
 
-                cards.forEach((card) => {
-                    const match = filter === "all" || card.dataset.category === filter;
-                    card.style.display = match ? "" : "none";
-                    if (match) visible++;
-                });
-
-                emptyState.style.display = visible === 0 ? "block" : "none";
+            cards.forEach((card) => {
+                const match = filter === "all" || card.dataset.category === filter;
+                card.style.display = match ? "" : "none";
+                if (match) visible++;
             });
+
+            emptyState.style.display = visible === 0 ? "block" : "none";
         });
+    });
     </script>
 </body>
 

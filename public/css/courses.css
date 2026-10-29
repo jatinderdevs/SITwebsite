@@ -5,9 +5,6 @@
 
 /* ---------- Hero ---------- */
 
-
-
-
 /* ---------- Main ---------- */
 .sit-c-main {
   margin: -52px auto 0;
@@ -80,6 +77,7 @@
 .sit-c-card:hover {
   transform: translateY(-7px);
   box-shadow: var(--shadow-lg);
+  background: #baed5e40;
 }
 
 .sit-c-card[hidden] {
@@ -92,28 +90,6 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: var(--space-md);
-}
-
-.sit-c-tag {
-  font-family: var(--font-body);
-  font-size: var(--text-xs);
-  font-weight: var(--fw-semibold);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  padding: 5px 11px;
-  border-radius: var(--radius-pill);
-  background: var(--shade);
-  color: var(--primary-blue);
-}
-
-.sit-c-tag.is-eng {
-  background: rgba(63, 169, 245, 0.13);
-  color: #1a7ab8;
-}
-
-.sit-c-tag.is-biz {
-  background: rgba(255, 122, 92, 0.13);
-  color: #d45a3a;
 }
 
 .sit-c-intake {

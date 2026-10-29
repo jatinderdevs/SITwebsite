@@ -95,29 +95,6 @@
   margin-bottom: 0.9rem;
 }
 
-.sit-bento-pill {
-  display: inline-flex;
-  width: fit-content;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 0.35rem 0.65rem;
-  border-radius: var(--radius-pill, 999px);
-  background: rgba(26, 17, 166, 0.08);
-  color: var(--primary-blue, #1a11a6);
-}
-
-.sit-bento-pill-eng {
-  background: rgba(63, 169, 245, 0.15);
-  color: #0b6cb3;
-}
-
-.sit-bento-pill-biz {
-  background: rgba(186, 237, 94, 0.35);
-  color: #3f4d12;
-}
-
 .sit-bento-meta {
   display: flex;
   flex-wrap: wrap;

@@ -1,0 +1,9 @@
+{
+    "name": "sit/website",
+    "description": "State Institute of Training website",
+    "require": {
+        "dompdf/dompdf": "^3.1",
+        "resend/resend-php": "^1.17"
+    }
+
+}

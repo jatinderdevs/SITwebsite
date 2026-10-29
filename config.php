@@ -21,7 +21,7 @@ $isLocal = in_array($_SERVER['HTTP_HOST'] ?? '', [
 // ===================== PATHS =====================
 // Local folder name (change if your local folder is different)
 if (!defined('BASE_PATH')) {
-    define('BASE_PATH', $isLocal ? '/rto/SITwebsite' : '');   // ← change '/sit' to your actual local folder name
+    define('BASE_PATH', $isLocal ? '/state-institute-of-college' : '');   // ← change '/sit' to your actual local folder name
 }
 
 // Full base URL
