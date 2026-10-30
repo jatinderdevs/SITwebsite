@@ -294,8 +294,7 @@
                 <div class="track-viewport">
                     <div class="track" id="track">
                         <div class="g-item size-a">
-                            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=700&auto=format&fit=crop"
-                                alt="Student working with fabrication tools" />
+                            <img src="https://shorturl.at/EAPY0" alt="Student working with fabrication tools" />
                             <div class="cap">
                                 <span class="tag-mono">Workshop</span><span class="t">Fabrication Bay</span>
                             </div>
@@ -312,8 +311,7 @@
                         <div class="g-item spacer"></div>
 
                         <div class="g-item size-c">
-                            <img src="https://images.unsplash.com/photo-1590650046871-92c887180603?q=80&w=900&auto=format&fit=crop"
-                                alt="Solid plastering trade work" />
+                            <img src="https://shorturl.at/sQneP" alt="Solid plastering trade work" />
                             <div class="cap">
                                 <span class="tag-mono">Trade Work</span><span class="t">Solid Plastering</span>
                             </div>
@@ -346,8 +344,7 @@
                         </div>
 
                         <div class="g-item size-a">
-                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=700&auto=format&fit=crop"
-                                alt="Graduation moment" />
+                            <img src="https://shorturl.at/GGKNK" alt="Graduation moment" />
                             <div class="cap">
                                 <span class="tag-mono">Milestones</span><span class="t">Graduation Day</span>
                             </div>

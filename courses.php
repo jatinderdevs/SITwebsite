@@ -13,20 +13,20 @@
     <?php include_once('./includes/header.php') ?>
 
     <!-- Hero -->
-    <section class="sit-c-hero page-header">
-        <div class="page-hero-bg">
-            <img src="https://arrlogistics.com.au/img/sliderimage.webp"
-                alt="Our Courses at State Institute of Training">
-        </div>
-        <div class="container page-header-inner">
-            <div class="crumb">
-                <a href="<?= BASE_URL ?>/">Home</a>
+    <section class=" page-header">
+        <div class="page-hero-bg"><img
+                src="https://images.pexels.com/photos/8499548/pexels-photo-8499548.jpeg?_gl=1*191jwxw*_ga*NTcwNjI5OTg5LjE3OTMxNDQyOTI.*_ga_8JE65Q40S6*czE3OTMxNDQyOTEkbzEkZzEkdDE3OTMxNDQzMjckajI0JGwwJGgw"
+                alt=""></div>
+
+        <div class=" page-header-inner">
+            <nav class="crumb" aria-label="Breadcrumb">
+                <a href="index.php">Home</a>
                 <span class="sep">/</span>
-                <a href="#" class="crumbactive">Courses</a>
-            </div>
-            <div class="my-4">
-                <h1>Our Courses</h1>
-            </div>
+                <span class="crumbactive">About Us</span>
+            </nav>
+
+            <h1>our<br>courses.</h1>
+
             <p>
                 Industry-focused qualifications designed for real careers in Building,
                 Engineering and Business.

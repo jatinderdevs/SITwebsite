@@ -4,7 +4,8 @@
             <div class="container-fluid p-0">
                 <!-- LEFT: LOGO -->
                 <a class="navbar-brand" href="<?= BASE_URL ?>/">
-                    <img src="<?= BASE_URL ?>/img/logo.png" class="img-fluid" width="130" alt="State Institute of Training" />
+                    <img src="<?= BASE_URL ?>/img/logo.png" class="img-fluid" width="130"
+                        alt="State Institute of Training" />
                 </a>
 
                 <!-- Mobile toggle -->
@@ -26,8 +27,9 @@
 
                         <!-- Student Support MEGA MENU -->
                         <li class="nav-item dropdown mega-dropdown">
-                            <a class="nav-link dropdown-toggle" href="<?= BASE_URL ?>/student-support.php" id="studentSupportDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="<?= BASE_URL ?>/student-support.php"
+                                id="studentSupportDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
                                 Student Support
                             </a>
 
@@ -50,14 +52,16 @@
                                                 <span class="desc">Attendance, fees, transfers, RPL</span>
                                             </div>
                                         </a>
-                                        <a href="<?= BASE_URL ?>/student-support.php#orientation" class="mega-menu-item">
+                                        <a href="<?= BASE_URL ?>/student-support.php#orientation"
+                                            class="mega-menu-item">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             <div>
                                                 <span class="title">Orientation</span>
                                                 <span class="desc">What to expect when you start</span>
                                             </div>
                                         </a>
-                                        <a href="<?= BASE_URL ?>/student-support.php#support-services" class="mega-menu-item">
+                                        <a href="<?= BASE_URL ?>/student-support.php#support-services"
+                                            class="mega-menu-item">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             <div>
                                                 <span class="title">Support & helplines</span>
@@ -76,7 +80,8 @@
                                                 <span class="desc">Melbourne & Brisbane</span>
                                             </div>
                                         </a>
-                                        <a href="https://www.usi.gov.au/" class="mega-menu-item" target="_blank" rel="noopener">
+                                        <a href="https://www.usi.gov.au/" class="mega-menu-item" target="_blank"
+                                            rel="noopener">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             <div>
                                                 <span class="title">USI number</span>
@@ -129,21 +134,14 @@
                                                 <span class="title">View all courses →</span>
                                             </div>
                                         </a>
-                                        <h6 class="mt-3">Quick links</h6>
-                                        <a href="<?= BASE_URL ?>/agent-zone.php" class="mega-menu-item">
-                                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                                            <div><span class="title">Agents Zone</span></div>
-                                        </a>
-                                        <a href="<?= BASE_URL ?>/about.php" class="mega-menu-item">
-                                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                                            <div><span class="title">About SIT</span></div>
-                                        </a>
+
                                     </div>
 
                                     <!-- Col 4: Promo + contact -->
                                     <div class="col-lg-3 col-md-6">
                                         <div class="p-3 promobanner text-white">
-                                            <span class="badge badge-warning mb-2" style="background: var(--lime-green); color: var(--primary-blue);">
+                                            <span class="badge badge-warning mb-2"
+                                                style="background: var(--lime-green); color: var(--primary-blue);">
                                                 2026 Intake Open
                                             </span>
                                             <h5 style="font-family: var(--font-heading)" class="mb-1">
@@ -152,7 +150,8 @@
                                             <p>
                                                 Talk to our career advisors today to choose the right qualification.
                                             </p>
-                                            <a href="<?= BASE_URL ?>/contact.php" class="btn btn-sm btn-light font-weight-bold btn-block"
+                                            <a href="<?= BASE_URL ?>/contact.php"
+                                                class="btn btn-sm btn-light font-weight-bold btn-block"
                                                 style="color: var(--primary-blue)">
                                                 <i class="fa fa-phone mr-1"></i> Book Free Consultation
                                             </a>
@@ -183,7 +182,8 @@
                     <!-- RIGHT: BUTTONS -->
                     <div class="navbar-buttons d-flex align-items-center">
                         <a href="<?= BASE_URL ?>/contact.php" class="btn btn_custom btn_custom_blue">Apply Online</a>
-                        <a href="<?= BASE_URL ?>/contact.php" class="ml-2 btn btn_custom btn_custom_highlight">Contact us</a>
+                        <a href="<?= BASE_URL ?>/contact.php" class="ml-2 btn btn_custom btn_custom_highlight">Contact
+                            us</a>
                     </div>
                 </div>
             </div>
