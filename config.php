@@ -30,7 +30,7 @@ if (!defined('BASE_URL')) {
         'BASE_URL',
         $isLocal
             ? 'http://localhost' . BASE_PATH
-            : 'https://sit.vic.edu.au'           // ← change if live domain is different
+            : 'https://phpstack-1679659-6758869.cloudwaysapps.com'           // ← change to https://sit.vic.edu.au once on actual domainif live domain is different
     );
 }
 
