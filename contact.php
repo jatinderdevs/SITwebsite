@@ -145,14 +145,14 @@
 
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="firstName">First Name <span class="req">*</span></label>
-                                    <input type="text" id="firstName" name="firstName" placeholder="Enter first name"
+                                    <label for="firstName">Full Name <span class="req">*</span></label>
+                                    <input type="text" id="fullName" name="fullName" placeholder="Enter full name"
                                         required />
                                 </div>
                                 <div class="form-group">
-                                    <label for="lastName">Last Name <span class="req">*</span></label>
-                                    <input type="text" id="lastName" name="lastName" placeholder="Enter last name"
-                                        required />
+                                    <label for="lastName">Student ID Number (optional) </label>
+                                    <input type="text" id="studentid" name="studentid"
+                                        placeholder="Enter student id number" />
                                 </div>
                             </div>
 
@@ -385,19 +385,19 @@
                         <div class="qh-icon"><i class="fa fa-book" aria-hidden="true"></i></div>
                         <h4>Browse Courses</h4>
                         <p>Explore nationally recognised qualifications in construction, engineering and business.</p>
-                        <a href="courses.php" class="qh-link">View all courses <span>→</span></a>
+                        <a href="<?= BASE_URL ?>/courses.php" class="qh-link">View all courses <span>→</span></a>
                     </div>
                     <div class="qh-item">
                         <div class="qh-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
                         <h4>Student Support</h4>
                         <p>Need help with enrolment, USI, fees or campus life? Our team is ready to assist.</p>
-                        <a href="#" class="qh-link">Student support <span>→</span></a>
+                        <a href="<?= BASE_URL ?>/student-support" class="qh-link">Student support <span>→</span></a>
                     </div>
                     <div class="qh-item">
                         <div class="qh-icon"><i class="fa fa-globe" aria-hidden="true"></i></div>
                         <h4>Agents Zone</h4>
                         <p>Education agents — access resources, application forms and partnership information.</p>
-                        <a href="#" class="qh-link">Agents zone <span>→</span></a>
+                        <a href="<?= BASE_URL ?>/agent-zone" class="qh-link">Agents zone <span>→</span></a>
                     </div>
                 </div>
             </div>

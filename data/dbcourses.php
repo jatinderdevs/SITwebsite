@@ -40,7 +40,7 @@ Completion of the general construction induction training program, specified in 
         'resources_note'     => 'SIT provides PPE for workshop use. Students require their own laptop.',
         'intake_available'   => true,
         'status'             => 'active',
-        'thumbnail'          => 'https://www.sit.vic.edu.au/images/courses/solid-plastering.jpg',
+        'thumbnail'          => 'https://www.sit.vic.edu.au/assets/img/building/diplomacon.webp',
         'order'              => 1,
     ],
 
@@ -160,7 +160,7 @@ Completion of the general construction induction training program is required.',
         'category'           => 'Engineering',
         'duration_weeks'     => 62,
         'duration_text'      => '62 weeks (39 weeks face-to-face + 19 weeks work placement + 4 weeks break)',
-        'slug'               => 'certificate-III-in-engineering-fabrication-trade',
+        'slug'               => 'certificate-iii-in-engineering-fabrication-trade',
         'short_desc'         => 'Trade qualification for engineering tradesperson – fabrication (welding, metal fabrication, sheetmetal).',
         'full_description'   => 'This qualification defines the skills and knowledge required of an engineering tradesperson fabrication within metal, engineering, manufacturing and associated industries. The qualification has been specifically developed to meet the needs of apprentices in the above trade.
 
@@ -179,7 +179,7 @@ Licensing/Regulatory Information: No licensing, legislative or certification req
         'resources_note'     => 'SIT provides PPE (Steel Capped Boots, Welding gloves, Masks and Overalls). Students require their own laptop.',
         'intake_available'   => true,
         'status'             => 'active',
-        'thumbnail'          => 'https://www.sit.vic.edu.au/images/courses/engineering-fabrication.jpg',
+        'thumbnail'          => 'https://www.sit.vic.edu.au/assets/img/diplomaEngineering.webp',
         'order'              => 5,
     ],
 
@@ -291,7 +291,7 @@ Individuals in these roles have project leadership and management roles and are 
         'resources_note'     => 'Students require their own laptop.',
         'intake_available'   => true,
         'status'             => 'active',
-        'thumbnail'          => 'https://www.sit.vic.edu.au/images/courses/project-management.jpg',
+        'thumbnail'          => 'https://www.sit.vic.edu.au/assets/img/Banner-04.jpg',
         'order'              => 9,
     ],
 

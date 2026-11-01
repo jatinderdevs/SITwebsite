@@ -1,0 +1,16 @@
+# State Institute of Training — https://sit.vic.edu.au
+User-agent: *
+Allow: /
+
+# Block internal / sensitive paths
+Disallow: /includes/
+Disallow: /data/
+Disallow: /vendor/
+Disallow: /webhook/
+Disallow: /env.php
+Disallow: /config.php
+Disallow: /composer.json
+Disallow: /composer.lock
+Disallow: /bak.course.php
+
+Sitemap: https://sit.vic.edu.au/sitemap.xml

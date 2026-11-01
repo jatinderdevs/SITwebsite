@@ -29,9 +29,9 @@ if (($course['status'] ?? 'active') !== 'active') {
 
 // Category → URL slug + pill modifier
 $categoryUrlMap = [
-    'Building & Construction' => 'Building-and-Construction',
-    'Engineering'             => 'Engineering',
-    'Business & Management'   => 'Business-and-Management',
+    'Building & Construction' => 'building-and-construction',
+    'Engineering'             => 'engineering',
+    'Business & Management'   => 'business-and-management',
 ];
 
 $pillClassMap = [
@@ -54,22 +54,21 @@ $locText   = !empty($locations) ? implode(' + ', $locations) : '';
 <article class="<?= htmlspecialchars($cardClasses) ?>">
     <div class="sit-bento-image">
         <img src="<?= htmlspecialchars($course['thumbnail'] ?? '') ?>"
-             alt="<?= htmlspecialchars($course['code'] . ' ' . $course['title']) ?>"
-             loading="lazy" />
+            alt="<?= htmlspecialchars($course['code'] . ' ' . $course['title']) ?>" loading="lazy" />
     </div>
     <div class="sit-bento-body">
         <span class="<?= htmlspecialchars($pillClass) ?>"><?= htmlspecialchars($course['category']) ?></span>
         <h3><?= htmlspecialchars($course['title']) ?></h3>
 
         <?php if ($isFeature && !empty($course['short_desc'])): ?>
-            <p><?= htmlspecialchars($course['short_desc']) ?></p>
+        <p><?= htmlspecialchars($course['short_desc']) ?></p>
         <?php endif; ?>
 
         <div class="sit-bento-meta">
             <span><?= htmlspecialchars($course['code']) ?></span>
             <span><?= (int)$course['duration_weeks'] ?> weeks</span>
             <?php if ($locText): ?>
-                <span><?= htmlspecialchars($locText) ?></span>
+            <span><?= htmlspecialchars($locText) ?></span>
             <?php endif; ?>
         </div>
 

@@ -1,0 +1,60 @@
+# State Institute of Training (SIT)
+
+> Registered Training Organisation (RTO No. 45205, CRICOS 03948A) delivering hands-on vocational training in Building & Construction, Engineering, and Business & Management. Campuses in Melbourne, Pakenham (Victoria) and Brisbane (Queensland), Australia.
+
+Website: https://sit.vic.edu.au
+Contact: info@sit.vic.edu.au | Phone: +61 3 8383 4447
+Hours: Monday–Friday, 9:00 am – 5:00 pm (AEST)
+
+## About
+
+State Institute of Training provides nationally recognised VET qualifications for domestic and international students. Training is practical and industry-focused, with workshops and face-to-face delivery.
+
+## Campuses
+
+- Melbourne: Level 5, 255 William Street, Melbourne VIC 3000
+- Pakenham: Level 1, 29 James Street, Pakenham VIC 3810
+- Brisbane: Level 3, 300 Adelaide Street, Brisbane QLD 4000
+
+## Main pages
+
+- [Home](https://sit.vic.edu.au/): Overview of SIT and pathways
+- [Courses](https://sit.vic.edu.au/courses): Full course listing with filters
+- [About](https://sit.vic.edu.au/about): About SIT
+- [Contact](https://sit.vic.edu.au/contact): Enquiry form and campus maps
+- [Student Support](https://sit.vic.edu.au/student-support): Forms, policies, orientation, helplines
+- [Agent Zone](https://sit.vic.edu.au/agent-zone): Information for education agents / partners
+- [Our Agents](https://sit.vic.edu.au/our-agents): Directory of authorised education agents
+
+## Courses
+
+### Building & Construction
+
+- [CPC31020 Certificate III in Solid Plastering](https://sit.vic.edu.au/building-and-construction/certificate-iii-in-solid-plastering) — CRICOS 119339G · 52 weeks
+- [CPC31320 Certificate III in Wall and Floor Tiling](https://sit.vic.edu.au/building-and-construction/certificate-iii-in-wall-and-floor-tiling) — CRICOS 119340C · 52 weeks
+- [CPC40120 Certificate IV in Building and Construction](https://sit.vic.edu.au/building-and-construction/certificate-iv-in-building-and-construction) — CRICOS 119342A · 40 weeks
+- [CPC50220 Diploma of Building and Construction (Building)](https://sit.vic.edu.au/building-and-construction/diploma-of-building-and-construction-building) — CRICOS 119341B · 52 weeks
+
+### Engineering
+
+- [MEM31925 Certificate III in Engineering – Fabrication Trade](https://sit.vic.edu.au/engineering/certificate-iii-in-engineering-fabrication-trade) — CRICOS 119160G · 62 weeks (includes work placement)
+- [MEM40119 Certificate IV in Engineering (Pathway Course)](https://sit.vic.edu.au/engineering/certificate-iv-in-engineering-pathway-entry) — CRICOS 108266K · 30 weeks
+- [MEM50222 Diploma of Engineering – Technical](https://sit.vic.edu.au/engineering/diploma-of-engineering-technical) — CRICOS 117580C · 52 weeks
+- [MEM80125 Graduate Diploma of Engineering](https://sit.vic.edu.au/engineering/graduate-diploma-of-engineering) — CRICOS 119070J · 104 weeks
+
+### Business & Management
+
+- [BSB50820 Diploma of Project Management](https://sit.vic.edu.au/business-and-management/diploma-of-project-management) — CRICOS 107504J · 60 weeks
+
+## For education agents
+
+Authorised agents are listed at [Our Agents](https://sit.vic.edu.au/our-agents). New agents can apply via [Agent Zone](https://sit.vic.edu.au/agent-zone).
+
+## Student support
+
+Forms (enrolment, refund, complaints), policies, orientation information and wellbeing resources: [Student Support](https://sit.vic.edu.au/student-support).
+
+## Optional
+
+- Sitemap: https://sit.vic.edu.au/sitemap.xml
+- Robots: https://sit.vic.edu.au/robots.txt

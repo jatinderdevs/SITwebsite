@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>State Institute of Technology | SIT MELBOURNE | BRISBANE</title>
+    <title>State Institute of training | SIT MELBOURNE | BRISBANE</title>
 
 
     <?php include_once('./includes/stylefiles.php') ?>
@@ -190,7 +190,8 @@
                         </div>
                     </div>
 
-                    <a href="#" class="about-cta">Learn more about us <span class="arrow">→</span></a>
+                    <a href="<?= BASE_URL ?>/about" class="about-cta">Learn more about us <span
+                            class="arrow">→</span></a>
                 </div>
             </section>
         </div>
@@ -350,7 +351,8 @@
                             </li>
                         </ul>
 
-                        <a href="#" class="btn-sit btn-lime-sit">Apply Now <span class="arrow">→</span></a>
+                        <a href="<?= BASE_URL ?>/contact" class="btn-sit btn-lime-sit">Apply Now <span
+                                class="arrow">→</span></a>
                         <p class="fine">Takes about 10 minutes</p>
                     </div>
                 </div>
