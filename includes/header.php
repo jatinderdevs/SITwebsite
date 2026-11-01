@@ -80,12 +80,12 @@
                                                 <span class="desc">Melbourne & Brisbane</span>
                                             </div>
                                         </a>
-                                        <a href="https://www.usi.gov.au/" class="mega-menu-item" target="_blank"
+                                        <a href="<?= BASE_URL ?>/our-agents" class="mega-menu-item" target="_blank"
                                             rel="noopener">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             <div>
-                                                <span class="title">USI number</span>
-                                                <span class="desc">Create or find your USI</span>
+                                                <span class="title">Our Authorised agents</span>
+                                                <span class="desc">List of registered agents</span>
                                             </div>
                                         </a>
                                         <a href="<?= BASE_URL ?>/student-support.php#policies" class="mega-menu-item">

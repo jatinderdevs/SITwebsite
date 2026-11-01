@@ -18,7 +18,7 @@ foreach ($courses as $c) {
 
 // Extra safety: check category matches
 if ($course && $category) {
-    $expectedCategory = str_replace([' & ', ' '], ['-and-', '-'], $course['category']);
+  $expectedCategory = strtolower(str_replace([' & ', ' '], ['-and-', '-'], $course['category']));
     if ($category !== $expectedCategory) {
         $course = null;
     }
@@ -53,7 +53,8 @@ $locationsText = implode(' & ', $course['locations']);
     <!-- Primary SEO -->
     <title><?= htmlspecialchars($pageTitle) ?></title>
     <meta name="description" content="<?= htmlspecialchars($metaDesc) ?>" />
-    <meta name="keywords" content="<?= htmlspecialchars($course['code'] . ', ' . $course['title'] . ', ' . $course['category'] . ', SIT, State Institute of Training, Melbourne, CRICOS ' . $course['cricos']) ?>" />
+    <meta name="keywords"
+        content="<?= htmlspecialchars($course['code'] . ', ' . $course['title'] . ', ' . $course['category'] . ', SIT, State Institute of Training, Melbourne, CRICOS ' . $course['cricos']) ?>" />
     <link rel="canonical" href="<?= htmlspecialchars($canonicalUrl) ?>" />
 
     <!-- Open Graph / Facebook -->
@@ -72,36 +73,36 @@ $locationsText = implode(' & ', $course['locations']);
 
     <!-- Schema.org JSON-LD (Course) -->
     <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Course",
-            "name": "<?= htmlspecialchars($fullTitle) ?>",
-            "description": "<?= htmlspecialchars($course['short_desc']) ?>",
-            "provider": {
-                "@type": "Organization",
-                "name": "State Institute of Training",
-                "url": "https://www.sit.vic.edu.au",
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "Level 5, 255 William Street",
-                    "addressLocality": "Melbourne",
-                    "addressRegion": "VIC",
-                    "postalCode": "3000",
-                    "addressCountry": "AU"
-                }
-            },
-            "hasCourseInstance": {
-                "@type": "CourseInstance",
-                "courseMode": "onsite",
-                "duration": "P<?= (int)$course['duration_weeks'] ?>W",
-                "location": {
-                    "@type": "Place",
-                    "name": "<?= htmlspecialchars($locationsText) ?>"
-                }
-            },
-            "educationalCredentialAwarded": "<?= htmlspecialchars($course['title']) ?>",
-            "occupationalCategory": "<?= htmlspecialchars($course['category']) ?>"
-        }
+    {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "<?= htmlspecialchars($fullTitle) ?>",
+        "description": "<?= htmlspecialchars($course['short_desc']) ?>",
+        "provider": {
+            "@type": "Organization",
+            "name": "State Institute of Training",
+            "url": "https://www.sit.vic.edu.au",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Level 5, 255 William Street",
+                "addressLocality": "Melbourne",
+                "addressRegion": "VIC",
+                "postalCode": "3000",
+                "addressCountry": "AU"
+            }
+        },
+        "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": "onsite",
+            "duration": "P<?= (int)$course['duration_weeks'] ?>W",
+            "location": {
+                "@type": "Place",
+                "name": "<?= htmlspecialchars($locationsText) ?>"
+            }
+        },
+        "educationalCredentialAwarded": "<?= htmlspecialchars($course['title']) ?>",
+        "occupationalCategory": "<?= htmlspecialchars($course['category']) ?>"
+    }
     </script>
 
     <?php include_once('./includes/stylefiles.php') ?>
@@ -125,7 +126,8 @@ $locationsText = implode(' & ', $course['locations']);
                     <span class="sep">/</span>
                     <a href="<?= BASE_URL ?>/courses">Courses</a>
                     <span class="sep">/</span>
-                    <a href="<?= BASE_URL ?>/courses?category=<?= urlencode(strtolower(str_replace(' & ', '-', $course['category']))) ?>">
+                    <a
+                        href="<?= BASE_URL ?>/courses?category=<?= urlencode(strtolower(str_replace(' & ', '-', $course['category']))) ?>">
                         <?= htmlspecialchars($course['category']) ?>
                     </a>
                     <span class="sep">/</span>
@@ -190,9 +192,7 @@ $locationsText = implode(' & ', $course['locations']);
                                 <a href="<?= BASE_URL ?>/contact">Talk to an advisor →</a>
                             </div>
                             <div class="text-center p-3">
-                                <img src="https://www.sit.vic.edu.au/assets/img/ntr.png"
-                                    width="80"
-                                    class="img-fluid"
+                                <img src="https://www.sit.vic.edu.au/assets/img/ntr.png" width="80" class="img-fluid"
                                     alt="Nationally Recognised Training logo">
                             </div>
                         </div>
@@ -276,7 +276,8 @@ $locationsText = implode(' & ', $course['locations']);
                                 <p><strong>Mode of Study:</strong> <?= htmlspecialchars($course['mode']) ?></p>
                                 <p><strong>Locations:</strong> <?= htmlspecialchars($locationsText) ?> campuses</p>
                                 <?php if (!empty($course['has_work_placement'])): ?>
-                                    <p><strong>Work Placement:</strong> This course includes mandatory work-based training.</p>
+                                <p><strong>Work Placement:</strong> This course includes mandatory work-based training.
+                                </p>
                                 <?php endif; ?>
                             </div>
                         </details>
@@ -289,14 +290,15 @@ $locationsText = implode(' & ', $course['locations']);
                             </summary>
                             <div class="qa-body">
                                 <?php if (!empty($course['pathways'])): ?>
-                                    <p>Once you've completed this qualification, you can continue on to:</p>
-                                    <ul>
-                                        <?php foreach ($course['pathways'] as $path): ?>
-                                            <li><?= htmlspecialchars($path) ?></li>
-                                        <?php endforeach; ?>
-                                    </ul>
+                                <p>Once you've completed this qualification, you can continue on to:</p>
+                                <ul>
+                                    <?php foreach ($course['pathways'] as $path): ?>
+                                    <li><?= htmlspecialchars($path) ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
                                 <?php else: ?>
-                                    <p>This is a higher-level qualification. Graduates may progress into industry roles or further specialised study.</p>
+                                <p>This is a higher-level qualification. Graduates may progress into industry roles or
+                                    further specialised study.</p>
                                 <?php endif; ?>
                             </div>
                         </details>

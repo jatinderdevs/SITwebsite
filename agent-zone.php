@@ -36,7 +36,8 @@
                 </p>
                 <div class="hero-actions">
                     <a href="#apply" class="btn-sit btn-secondary-sit">Become an agent →</a>
-                    <a href="#contact" class="btn-sit btn-secondary-outline-sit">Contact admissions</a>
+                    <a href="<?= BASE_URL ?>/our-agents" class="btn-sit btn-secondary-outline-sit">Our Authorised Agents
+                    </a>
                 </div>
             </div>
         </section>

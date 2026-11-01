@@ -18,7 +18,9 @@
 
         <!-- ===================== PAGE HEADER ===================== -->
         <section class="page-header">
-            <div class="page-hero-bg"><img src="https://images.pexels.com/photos/783681/pexels-photo-783681.jpeg?_gl=1*vkxn7p*_ga*NTcwNjI5OTg5LjE3OTMxNDQyOTI.*_ga_8JE65Q40S6*czE3OTMxNDg4ODMkbzIkZzEkdDE3OTMxNDkwMjQkajU5JGwwJGgw" alt=""></div>
+            <div class="page-hero-bg"><img
+                    src="https://images.pexels.com/photos/8499548/pexels-photo-8499548.jpeg?_gl=1*191jwxw*_ga*NTcwNjI5OTg5LjE3OTMxNDQyOTI.*_ga_8JE65Q40S6*czE3OTMxNDQyOTEkbzEkZzEkdDE3OTMxNDQzMjckajI0JGwwJGgw"
+                    alt=""></div>
 
             <div class="page-header-inner">
                 <nav class="crumb" aria-label="Breadcrumb">
@@ -115,6 +117,21 @@
                                     <i class="fa fa-envelope-o" aria-hidden="true"></i> info@sit.vic.edu.au
                                 </a>
                             </div>
+
+                            <div class="campus-card">
+                                <div class="campus-badge">Pakenham</div>
+                                <h3>Pakenham Campus</h3>
+                                <address>
+                                    Level 1, 29 James Street<br />
+                                    Pakenham VIC 3810
+                                </address>
+                                <a href="tel:0383834447" class="campus-link">
+                                    <i class="fa fa-phone" aria-hidden="true"></i> 03 8383 4447
+                                </a>
+                                <a href="mailto:info@sit.vic.edu.au" class="campus-link">
+                                    <i class="fa fa-envelope-o" aria-hidden="true"></i> info@sit.vic.edu.au
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -182,6 +199,7 @@
                                 <select id="campus" name="campus">
                                     <option value="" selected>No preference</option>
                                     <option value="melbourne">Melbourne</option>
+                                    <option value="pakenham">Pakenham</option>
                                     <option value="brisbane">Brisbane</option>
                                 </select>
                             </div>
@@ -212,31 +230,6 @@
                 </div>
             </div>
         </section>
-        <!-- ===================== QUICK HELP ===================== -->
-        <section class="quick-help">
-            <div class="container">
-                <div class="quick-help-inner">
-                    <div class="qh-item">
-                        <div class="qh-icon"><i class="fa fa-book" aria-hidden="true"></i></div>
-                        <h4>Browse Courses</h4>
-                        <p>Explore nationally recognised qualifications in construction, engineering and business.</p>
-                        <a href="courses.php" class="qh-link">View all courses <span>→</span></a>
-                    </div>
-                    <div class="qh-item">
-                        <div class="qh-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
-                        <h4>Student Support</h4>
-                        <p>Need help with enrolment, USI, fees or campus life? Our team is ready to assist.</p>
-                        <a href="#" class="qh-link">Student support <span>→</span></a>
-                    </div>
-                    <div class="qh-item">
-                        <div class="qh-icon"><i class="fa fa-globe" aria-hidden="true"></i></div>
-                        <h4>Agents Zone</h4>
-                        <p>Education agents — access resources, application forms and partnership information.</p>
-                        <a href="#" class="qh-link">Agents zone <span>→</span></a>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- ===================== CAMPUS MAPS ===================== -->
         <section class="maps-section">
@@ -244,8 +237,8 @@
                 <div class="maps-header">
                     <span class="contact-eyebrow">OUR LOCATIONS</span>
                     <h2>Find our campuses</h2>
-                    <p>Visit us in Melbourne or Brisbane — both campuses are centrally located and easy to reach by
-                        public transport.</p>
+                    <p>Visit us in Melbourne, Pakenham or Brisbane — all campuses are easy to reach by public transport.
+                    </p>
                 </div>
 
                 <!-- Campus switcher -->
@@ -254,6 +247,10 @@
                         aria-selected="true">
                         <span class="map-tab-dot"></span>
                         Melbourne
+                    </button>
+                    <button type="button" class="map-tab" data-campus="pakenham" role="tab" aria-selected="false">
+                        <span class="map-tab-dot"></span>
+                        Pakenham
                     </button>
                     <button type="button" class="map-tab" data-campus="brisbane" role="tab" aria-selected="false">
                         <span class="map-tab-dot brisbane"></span>
@@ -294,39 +291,6 @@
             </div>
         </section>
 
-        <section class="">
-            <div class="contaisner">
-                <div class="social-handles">
-                    <div class="social">
-                        <img src="public/imgs/icons/google.png" alt="">
-                        <h4>Get in touch</h4>
-                        <p>Get the latest updates and insights</p>
-                        <a href="" class="btn-sit btn-primary-sit socialbtn">Email</a>
-                    </div>
-                    <div class="social">
-                        <img src="public/imgs/icons/facebook.png" alt="">
-                        <h4>Get Updates</h4>
-                        <p>Get the latest updates and insights</p>
-                        <a href="" class="btn-sit btn-primary-sit socialbtn">Like</a>
-                    </div>
-                    <div class="social">
-                        <img src="public/imgs/icons/instagram.png" alt="">
-                        <h4>Stay in the loop</h4>
-                        <p>Get the latest updates and insights</p>
-                        <a href="" class="btn-sit btn-primary-sit socialbtn">Follow</a>
-                    </div>
-                    <div class="social">
-                        <img src="public/imgs/icons/linkedin.png" alt="">
-                        <h4>Grow with us</h4>
-                        <p>Connect with the ideas</p>
-                        <a href="" class="btn-sit btn-primary-sit socialbtn">Connect</a>
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
-
         <!-- ===================== FAQ ACCORDION ===================== -->
         <section class="faq-section">
             <div class="container">
@@ -355,9 +319,9 @@
                             <span class="faq-icon" aria-hidden="true"></span>
                         </button>
                         <div class="faq-answer">
-                            <p>Yes. You’re welcome to visit our Melbourne or Brisbane campus. We recommend booking a
-                                time so a course advisor can show you around the workshops and answer your questions.
-                                Use the form above or call us to arrange a visit.</p>
+                            <p>Yes. You’re welcome to visit our Melbourne, Pakenham or Brisbane campus. We recommend
+                                booking a time so a course advisor can show you around the workshops and answer your
+                                questions. Use the form above or call us to arrange a visit.</p>
                         </div>
                     </div>
 
@@ -413,7 +377,31 @@
             </div>
         </section>
 
-
+        <!-- ===================== QUICK HELP ===================== -->
+        <section class="quick-help">
+            <div class="container">
+                <div class="quick-help-inner">
+                    <div class="qh-item">
+                        <div class="qh-icon"><i class="fa fa-book" aria-hidden="true"></i></div>
+                        <h4>Browse Courses</h4>
+                        <p>Explore nationally recognised qualifications in construction, engineering and business.</p>
+                        <a href="courses.php" class="qh-link">View all courses <span>→</span></a>
+                    </div>
+                    <div class="qh-item">
+                        <div class="qh-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+                        <h4>Student Support</h4>
+                        <p>Need help with enrolment, USI, fees or campus life? Our team is ready to assist.</p>
+                        <a href="#" class="qh-link">Student support <span>→</span></a>
+                    </div>
+                    <div class="qh-item">
+                        <div class="qh-icon"><i class="fa fa-globe" aria-hidden="true"></i></div>
+                        <h4>Agents Zone</h4>
+                        <p>Education agents — access resources, application forms and partnership information.</p>
+                        <a href="#" class="qh-link">Agents zone <span>→</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <?php include_once('./includes/footer.php') ?>
     </main>
@@ -421,111 +409,119 @@
     <?php include_once('./includes/scriptfiles.php') ?>
 
     <script>
-        // ----- Contact form feedback -----
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const form = this;
-            if (!form.checkValidity()) {
-                form.reportValidity();
-                return;
-            }
-            const btn = form.querySelector('.btn-submit');
-            const original = btn.innerHTML;
-            btn.innerHTML = 'Sending…';
-            btn.disabled = true;
+    // ----- Contact form feedback -----
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const form = this;
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+        const btn = form.querySelector('.btn-submit');
+        const original = btn.innerHTML;
+        btn.innerHTML = 'Sending…';
+        btn.disabled = true;
+        setTimeout(function() {
+            btn.innerHTML = 'Message sent ✓';
+            btn.style.background = 'var(--lime-green)';
+            btn.style.color = 'var(--primary-blue)';
+            btn.style.borderColor = 'var(--lime-green)';
+            form.reset();
             setTimeout(function() {
-                btn.innerHTML = 'Message sent ✓';
-                btn.style.background = 'var(--lime-green)';
-                btn.style.color = 'var(--primary-blue)';
-                btn.style.borderColor = 'var(--lime-green)';
-                form.reset();
-                setTimeout(function() {
-                    btn.innerHTML = original;
-                    btn.disabled = false;
-                    btn.style.background = '';
-                    btn.style.color = '';
-                    btn.style.borderColor = '';
-                }, 2500);
-            }, 900);
-        });
+                btn.innerHTML = original;
+                btn.disabled = false;
+                btn.style.background = '';
+                btn.style.color = '';
+                btn.style.borderColor = '';
+            }, 2500);
+        }, 900);
+    });
 
-        // ----- Campus map switcher -----
-        const campusData = {
-            melbourne: {
-                title: 'Melbourne Campus',
-                badge: 'Melbourne',
-                address: 'Level 5, 255 William Street<br />Melbourne VIC 3000',
-                mapSrc: 'https://www.google.com/maps?q=Level+5,+255+William+Street,+Melbourne+VIC+3000&output=embed&z=16',
-                directions: 'https://www.google.com/maps/dir/?api=1&destination=Level+5,+255+William+Street,+Melbourne+VIC+3000',
-                mapTitle: 'State Institute of Training – Melbourne Campus'
-            },
-            brisbane: {
-                title: 'Brisbane Campus',
-                badge: 'Brisbane',
-                address: 'Level 3, 300 Adelaide Street<br />Brisbane QLD 4000',
-                mapSrc: 'https://www.google.com/maps?q=Level+3,+300+Adelaide+Street,+Brisbane+QLD+4000&output=embed&z=16',
-                directions: 'https://www.google.com/maps/dir/?api=1&destination=Level+3,+300+Adelaide+Street,+Brisbane+QLD+4000',
-                mapTitle: 'State Institute of Training – Brisbane Campus'
+    // ----- Campus map switcher -----
+    const campusData = {
+        melbourne: {
+            title: 'Melbourne Campus',
+            badge: 'Melbourne',
+            address: 'Level 5, 255 William Street<br />Melbourne VIC 3000',
+            mapSrc: 'https://www.google.com/maps?q=Level+5,+255+William+Street,+Melbourne+VIC+3000&output=embed&z=16',
+            directions: 'https://www.google.com/maps/dir/?api=1&destination=Level+5,+255+William+Street,+Melbourne+VIC+3000',
+            mapTitle: 'State Institute of Training – Melbourne Campus'
+        },
+        pakenham: {
+            title: 'Pakenham Campus',
+            badge: 'Pakenham',
+            address: 'Level 1, 29 James Street<br />Pakenham VIC 3810',
+            mapSrc: 'https://www.google.com/maps?q=29+James+Street,+Pakenham+VIC+3810&output=embed&z=16',
+            directions: 'https://www.google.com/maps/dir/?api=1&destination=29+James+Street,+Pakenham+VIC+3810',
+            mapTitle: 'State Institute of Training – Pakenham Campus'
+        },
+        brisbane: {
+            title: 'Brisbane Campus',
+            badge: 'Brisbane',
+            address: 'Level 3, 300 Adelaide Street<br />Brisbane QLD 4000',
+            mapSrc: 'https://www.google.com/maps?q=Level+3,+300+Adelaide+Street,+Brisbane+QLD+4000&output=embed&z=16',
+            directions: 'https://www.google.com/maps/dir/?api=1&destination=Level+3,+300+Adelaide+Street,+Brisbane+QLD+4000',
+            mapTitle: 'State Institute of Training – Brisbane Campus'
+        }
+    };
+
+    const mapIframe = document.getElementById('campusMap');
+    const floatBadge = document.getElementById('floatBadge');
+    const floatTitle = document.getElementById('floatTitle');
+    const floatAddress = document.getElementById('floatAddress');
+    const floatCard = document.getElementById('mapFloatCard');
+    const floatDirBtn = floatCard.querySelector('.float-btn');
+
+    document.querySelectorAll('.map-tab').forEach(function(tab) {
+        tab.addEventListener('click', function() {
+            const campus = this.getAttribute('data-campus');
+            const data = campusData[campus];
+            if (!data) return;
+
+            // Update tabs
+            document.querySelectorAll('.map-tab').forEach(function(t) {
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+            });
+            this.classList.add('active');
+            this.setAttribute('aria-selected', 'true');
+
+            // Fade map slightly while swapping
+            mapIframe.style.opacity = '0.4';
+            setTimeout(function() {
+                mapIframe.src = data.mapSrc;
+                mapIframe.title = data.mapTitle;
+                mapIframe.style.opacity = '1';
+            }, 180);
+
+            // Update floating card
+            floatBadge.textContent = data.badge;
+            floatBadge.classList.toggle('brisbane', campus === 'brisbane');
+            floatTitle.textContent = data.title;
+            floatAddress.innerHTML = data.address;
+            floatDirBtn.href = data.directions;
+        });
+    });
+
+    // ----- FAQ accordion -----
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            const item = this.closest('.faq-item');
+            const isOpen = item.classList.contains('active');
+
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(function(el) {
+                el.classList.remove('active');
+                el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            });
+
+            // Open clicked if it was closed
+            if (!isOpen) {
+                item.classList.add('active');
+                this.setAttribute('aria-expanded', 'true');
             }
-        };
-
-        const mapIframe = document.getElementById('campusMap');
-        const floatBadge = document.getElementById('floatBadge');
-        const floatTitle = document.getElementById('floatTitle');
-        const floatAddress = document.getElementById('floatAddress');
-        const floatCard = document.getElementById('mapFloatCard');
-        const floatDirBtn = floatCard.querySelector('.float-btn');
-
-        document.querySelectorAll('.map-tab').forEach(function(tab) {
-            tab.addEventListener('click', function() {
-                const campus = this.getAttribute('data-campus');
-                const data = campusData[campus];
-                if (!data) return;
-
-                // Update tabs
-                document.querySelectorAll('.map-tab').forEach(function(t) {
-                    t.classList.remove('active');
-                    t.setAttribute('aria-selected', 'false');
-                });
-                this.classList.add('active');
-                this.setAttribute('aria-selected', 'true');
-
-                // Fade map slightly while swapping
-                mapIframe.style.opacity = '0.4';
-                setTimeout(function() {
-                    mapIframe.src = data.mapSrc;
-                    mapIframe.title = data.mapTitle;
-                    mapIframe.style.opacity = '1';
-                }, 180);
-
-                // Update floating card
-                floatBadge.textContent = data.badge;
-                floatBadge.classList.toggle('brisbane', campus === 'brisbane');
-                floatTitle.textContent = data.title;
-                floatAddress.innerHTML = data.address;
-                floatDirBtn.href = data.directions;
-            });
         });
-
-        // ----- FAQ accordion -----
-        document.querySelectorAll('.faq-question').forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                const item = this.closest('.faq-item');
-                const isOpen = item.classList.contains('active');
-
-                // Close all
-                document.querySelectorAll('.faq-item').forEach(function(el) {
-                    el.classList.remove('active');
-                    el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                });
-
-                // Open clicked if it was closed
-                if (!isOpen) {
-                    item.classList.add('active');
-                    this.setAttribute('aria-expanded', 'true');
-                }
-            });
-        });
+    });
     </script>
 </body>
 

@@ -28,7 +28,7 @@
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1.05fr;
+  grid-template-columns: 1fr;
   gap: clamp(40px, 6vw, 80px);
   align-items: start;
 }
@@ -62,6 +62,7 @@
   display: grid;
   gap: 14px;
   margin-bottom: 36px;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .info-card {
@@ -126,7 +127,7 @@
 /* Campus cards */
 .campus-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 16px;
 }
 
@@ -861,7 +862,7 @@
   text-align: center;
   border: 1px solid #dfdfdf;
 }
-.social:hover{
+.social:hover {
   background-color: var(--shade);
 }
 .social img {
@@ -902,17 +903,16 @@
     width: min(280px, calc(100% - 32px));
     padding: 16px 18px;
   }
-  .social-handles{
-  grid-template-columns: 1fr  1fr;
-
+  .social-handles {
+    grid-template-columns: 1fr 1fr;
   }
   .social {
-  padding: 0.5rem;
- place-content: end;
-}
-.social img{
+    padding: 0.5rem;
+    place-content: end;
+  }
+  .social img {
     width: 40px;
-}
+  }
 }
 
 @media (max-width: 600px) {
@@ -921,6 +921,9 @@
   }
 
   .campus-cards {
+    grid-template-columns: 1fr;
+  }
+  .info-cards {
     grid-template-columns: 1fr;
   }
 

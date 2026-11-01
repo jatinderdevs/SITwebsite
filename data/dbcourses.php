@@ -64,8 +64,8 @@ Occupational titles may include:
 This qualification is suitable for an Australian apprenticeship pathway.
 
 Completion of the general construction induction training program is required. Achievement of CPCCWHS1001 Prepare to work safely in the construction industry meets this requirement.',
-        'packaging_rules'    => '20 units of competency: 17 core units + 3 elective units.',
-        'mode'               => 'Face-to-face classroom sessions + Practical training and assessment in purpose-built workshops.',
+        'packaging_rules'    => '20 (17 core, 3 elective)',
+        'mode'               => 'Face-to-face + workshop',
         'locations'          => ['Pakenham', 'Melbourne'],
         'has_work_placement' => false,
         'pathways'           => [
@@ -101,8 +101,8 @@ Occupational titles may include:
 Completion of the general construction induction training program is required. Achievement of unit CPCWHS1001 Prepare to work safely in the construction industry meets this requirement.
 
 Builder and Site Supervisor licensing varies across States and Territories.',
-        'packaging_rules'    => '19 units of competency: 11 core units + 8 elective units.',
-        'mode'               => 'Face-to-face classroom sessions + Practical training and assessment in purpose-built workshops.',
+        'packaging_rules'    => '19 (11 core, 8 elective)',
+        'mode'               => 'Face-to-face + workshop',
         'locations'          => ['Pakenham', 'Melbourne'],
         'has_work_placement' => false,
         'pathways'           => [
@@ -137,8 +137,8 @@ Occupational titles may include:
 The construction industry strongly affirms that training and assessment must be undertaken in a real or closely simulated workplace environment.
 
 Completion of the general construction induction training program is required.',
-        'packaging_rules'    => '27 units of competency: 24 core units + 3 elective units.',
-        'mode'               => 'Face-to-face classroom sessions + Practical training and assessment in purpose-built workshops.',
+        'packaging_rules'    => '27 (24 core, 3 elective)',
+        'mode'               => 'Face-to-face + workshop',
         'locations'          => ['Pakenham', 'Melbourne'],
         'has_work_placement' => false,
         'pathways'           => [],
@@ -196,7 +196,7 @@ Licensing/Regulatory Information: No licensing, legislative or certification req
 
 This course is designed for international students who have completed Certificate III in Engineering – Fabrication Trade. Students who have completed Certificate III will be given Credit Transfer for the Cert III units (96 points) and the Cert IV course duration will be reduced to 30 weeks.',
         'packaging_rules'    => 'Units of competency to the value of 132 points must be achieved (core 33 points + electives).',
-        'mode'               => 'Face-to-face at SIT premises.',
+        'mode'               => 'Face-to-face',
         'locations'          => ['Pakenham', 'Melbourne'],
         'has_work_placement' => false,
         'pathways'           => [

@@ -57,7 +57,7 @@
                     <a href="<?= BASE_URL ?>/contact.php" class="oa-q-card">
                         <div class="oa-q-icon"><i class="fa fa-comments-o" aria-hidden="true"></i></div>
                         <div>
-                            <strong>Contact SIT</strong>
+                            <strong>Contact us</strong>
                             <span>Apply without an agent</span>
                         </div>
                     </a>
@@ -178,7 +178,7 @@
 
                 <div class="oa-empty" id="agentEmpty" hidden>
                     <p>No agents match your search. Try a different name or <a
-                            href="<?= BASE_URL ?>/contact.php">contact SIT directly</a>.</p>
+                            href="<?= BASE_URL ?>/contact.php">contact us directly</a>.</p>
                 </div>
             </div>
         </section>
@@ -196,7 +196,7 @@
                         </p>
                     </div>
                     <div class="oa-cta-actions">
-                        <a href="<?= BASE_URL ?>/contact.php" class="btn btn_custom btn_custom_blue">Contact SIT</a>
+                        <a href="<?= BASE_URL ?>/contact.php" class="btn btn_custom btn_custom_blue">Contact us</a>
                         <a href="<?= BASE_URL ?>/agent-zone.php" class="btn btn_custom btn_custom_highlight">Agent
                             Zone</a>
                     </div>

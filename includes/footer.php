@@ -35,7 +35,7 @@
                     <li><a href="<?= BASE_URL ?>/courses.php">All Courses</a></li>
                     <li><a href="<?= BASE_URL ?>/about.php">About SIT</a></li>
                     <li><a href="<?= BASE_URL ?>/agent-zone.php">Agents Zone</a></li>
-                    <li><a href="<?= BASE_URL ?>/contact.php">Apply / Contact</a></li>
+                    <li><a href="<?= BASE_URL ?>/our-agents.php">Our Authorised Agents</a></li>
                 </ul>
             </div>
 
@@ -106,8 +106,8 @@
             </div>
         </div>
 
-        <p class="text-center text-white">
-            Designed and Developed by <a href="https://slashkode.com.au/" target="_blank" rel="noopener"
+        <p class="text-center text-white small">
+            Designed and Developed by <a href="https://slashkode.com.au" target="_blank" rel="noopener"
                 class="text-white">Slashkode</a>
         </p>
     </div>

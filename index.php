@@ -67,27 +67,15 @@
                     </div>
 
                     <div class="sit-bento-grid">
-                        <!-- Large featured course -->
-                        <article class="sit-bento-card sit-bento-feature">
-                            <div class="sit-bento-image">
-                                <img src="https://plus.unsplash.com/premium_photo-1681989486976-9ec9d2eac57a?q=80&w=1170&auto=format&fit=crop"
-                                    alt="Solid plastering trade work" />
-                            </div>
-                            <div class="sit-bento-body">
-                                <span class="sit-bento-pill">Building &amp; Construction</span>
-                                <h3>Certificate III in Solid Plastering</h3>
-                                <p>
-                                    Hands-on trade training with workshop practice from week
-                                    one.
-                                </p>
-                                <div class="sit-bento-meta">
-                                    <span>CPC31020</span>
-                                    <span>52 weeks</span>
-                                    <span>Melbourne + Brisbane</span>
-                                </div>
-                                <a href="#" class="sit-bento-link">View course <span>→</span></a>
-                            </div>
-                        </article>
+                        <?php
+            // Load courses once for the whole section
+            $courses = require ROOT_PATH . '/data/dbcourses.php';
+
+            // Large featured course
+            $courseKey = 'cpc31020';
+            $cardStyle = 'feature';
+            include ROOT_PATH . '/includes/bento-course-card.php';
+            ?>
 
                         <!-- Accent CTA -->
                         <article class="sit-bento-card sit-bento-accent">
@@ -105,45 +93,24 @@
                             </p>
                         </article>
 
-                        <!-- Engineering course -->
-                        <article class="sit-bento-card">
-                            <div class="sit-bento-image">
-                                <img src="https://plus.unsplash.com/premium_photo-1681691911660-a40d4163ed9f?q=80&w=1170&auto=format&fit=crop"
-                                    alt="Engineering fabrication workshop" />
-                            </div>
-                            <div class="sit-bento-body">
-                                <span class="sit-bento-pill sit-bento-pill-eng">Engineering</span>
-                                <h3>Certificate III in Engineering — Fabrication Trade</h3>
-                                <div class="sit-bento-meta">
-                                    <span>MEM31922</span>
-                                    <span>78 weeks</span>
-                                </div>
-                                <a href="#" class="sit-bento-link">View course <span>→</span></a>
-                            </div>
-                        </article>
+                        <?php
+            // Engineering course (default style)
+            $courseKey = 'mem31925';
+            $cardStyle = '';
+            include ROOT_PATH . '/includes/bento-course-card.php';
 
-                        <!-- Business course -->
-                        <article class="sit-bento-card">
-                            <div class="sit-bento-image">
-                                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=700&auto=format&fit=crop"
-                                    alt="Business students collaborating" />
-                            </div>
-                            <div class="sit-bento-body">
-                                <span class="sit-bento-pill sit-bento-pill-biz">Business</span>
-                                <h3>Diploma of Business</h3>
-                                <div class="sit-bento-meta">
-                                    <span>BSB50120</span>
-                                    <span>52 weeks</span>
-                                </div>
-                                <a href="#" class="sit-bento-link">View course <span>→</span></a>
-                            </div>
-                        </article>
+            // Business course (default style)
+            $courseKey = 'bsb50820';
+            $cardStyle = '';
+            include ROOT_PATH . '/includes/bento-course-card.php';
+            ?>
 
                         <!-- Message tile -->
                         <article class="sit-bento-card sit-bento-message">
                             <h3>Build your future with nationally recognised training</h3>
                             <p>RTO No. 45205 · CRICOS 03948A</p>
-                            <a href="#" class="sit-bento-link">Browse all courses <span>→</span></a>
+                            <a href="<?= BASE_URL ?>/courses.php" class="sit-bento-link">Browse all courses
+                                <span>→</span></a>
                         </article>
 
                         <!-- Support tile -->

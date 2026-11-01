@@ -66,9 +66,9 @@
 
                 // Category slug for clean URL
                 $categoryUrlMap = [
-                    'Building & Construction' => 'Building-and-Construction',
-                    'Engineering'             => 'Engineering',
-                    'Business & Management'   => 'Business-and-Management',
+                    'Building & Construction' => 'building-and-construction',
+                    'Engineering'             => 'engineering',
+                    'Business & Management'   => 'business-and-management',
                 ];
 
                 foreach ($courses as $key => $course) :
