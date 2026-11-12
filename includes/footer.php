@@ -11,8 +11,8 @@
                 </a>
                 <p>
                     Hands-on trade training across Building &amp; Construction,
-                    Engineering, and Business &amp; Management — Melbourne and
-                    Brisbane campuses.
+                    Engineering, and Business &amp; Management — Melbourne, Pakenham
+                    and Brisbane campuses.
                 </p>
             </div>
 
@@ -32,10 +32,10 @@
             <div class="f-col">
                 <h4>Explore</h4>
                 <ul>
-                    <li><a href="<?= BASE_URL ?>/courses.php">All Courses</a></li>
-                    <li><a href="<?= BASE_URL ?>/about.php">About SIT</a></li>
-                    <li><a href="<?= BASE_URL ?>/agent-zone.php">Agents Zone</a></li>
-                    <li><a href="<?= BASE_URL ?>/our-agents.php">Our Authorised Agents</a></li>
+                    <li><a href="<?= BASE_URL ?>/courses">All Courses</a></li>
+                    <li><a href="<?= BASE_URL ?>/about">About SIT</a></li>
+                    <li><a href="<?= BASE_URL ?>/agent-zone">Agents Zone</a></li>
+                    <li><a href="<?= BASE_URL ?>/our-agents">Our Authorised Agents</a></li>
                 </ul>
                 <div class="socials">
                     <a href="#" aria-label="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
@@ -48,20 +48,20 @@
             <div class="f-col">
                 <h4>Support</h4>
                 <ul>
-                    <li><a href="<?= BASE_URL ?>/student-support.php">Student Support</a></li>
-                    <li><a href="<?= BASE_URL ?>/student-support.php#forms">Forms &amp; downloads</a></li>
-                    <li><a href="<?= BASE_URL ?>/student-support.php#policies">Policies</a></li>
-                    <li><a href="<?= BASE_URL ?>/student-support.php#policies">Fees &amp; Refunds</a></li>
-                    <li><a href="<?= BASE_URL ?>/student-support.php#support-services">Support &amp; helplines</a></li>
+                    <li><a href="<?= BASE_URL ?>/student-support">Student Support</a></li>
+                    <li><a href="<?= BASE_URL ?>/student-support#forms">Forms &amp; downloads</a></li>
+                    <li><a href="<?= BASE_URL ?>/student-support#policies">Policies</a></li>
+                    <li><a href="<?= BASE_URL ?>/student-support#policies">Fees &amp; Refunds</a></li>
+                    <li><a href="<?= BASE_URL ?>/student-support#support-services">Support &amp; helplines</a></li>
                 </ul>
             </div>
 
             <div class="f-col">
                 <h4>Quick links</h4>
                 <ul>
-                    <li><a href="<?= BASE_URL ?>/contact.php">Contact Us</a></li>
-                    <li><a href="<?= BASE_URL ?>/contact.php#maps">Our Campuses</a></li>
-                    <li><a href="<?= BASE_URL ?>/student-support.php#orientation">Orientation</a></li>
+                    <li><a href="<?= BASE_URL ?>/contact">Contact Us</a></li>
+                    <li><a href="<?= BASE_URL ?>/contact#maps">Our Campuses</a></li>
+                    <li><a href="<?= BASE_URL ?>/student-support#orientation">Orientation</a></li>
                     <li><a href="https://www.usi.gov.au/" target="_blank" rel="noopener">USI Number</a></li>
                 </ul>
             </div>
@@ -77,19 +77,18 @@
                 </div>
                 <div class="campus">
                     <address>
+                        <strong>Pakenham</strong>
+                        Level 1, 29 James Street
+                        Pakenham VIC 3810
+                    </address>
+                </div>
+                <div class="campus">
+                    <address>
                         <strong>Brisbane</strong>
                         Level 3, 300 Adelaide Street
                         Brisbane QLD 4000
                     </address>
                 </div>
-                <div class="campus">
-                    <address>
-                        <strong>Pakenham Campus</strong>
-                        Level 1, 29 James Street
-                        Pakenham VIC 3810
-                    </address>
-                </div>
-
             </div>
         </div>
 
@@ -109,8 +108,8 @@
                 <strong>RTO No. 45205</strong> ·
                 <strong>CRICOS 03948A</strong></span>
             <div class="legal">
-                <a href="<?= BASE_URL ?>/student-support.php#policies">Privacy &amp; Policies</a>
-                <a href="<?= BASE_URL ?>/contact.php">Contact</a>
+                <a href="<?= BASE_URL ?>/student-support#policies">Privacy &amp; Policies</a>
+                <a href="<?= BASE_URL ?>/contact">Contact</a>
             </div>
         </div>
 

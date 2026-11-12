@@ -4,12 +4,34 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Support | State Institute of Training | Forms, Policies & Help</title>
+
+    <?php require_once __DIR__ . '/config.php'; ?>
+
+    <title>Student Support | Forms, Policies & Help | State Institute of Training</title>
     <meta name="description"
         content="Student Support at State Institute of Training — download forms and policies, find orientation info, contact the right team, and access wellbeing helplines and external resources." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="<?= BASE_URL ?>/student-support" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="State Institute of Training" />
+    <meta property="og:title" content="Student Support | Forms, Policies & Help | State Institute of Training" />
+    <meta property="og:description"
+        content="Download forms and policies, find orientation info, contact the right team, and access wellbeing helplines at State Institute of Training." />
+    <meta property="og:url" content="<?= BASE_URL ?>/student-support" />
+    <meta property="og:image" content="<?= BASE_URL ?>/img/logo.png" />
+    <meta property="og:locale" content="en_AU" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Student Support | Forms, Policies & Help | State Institute of Training" />
+    <meta name="twitter:description"
+        content="Download forms and policies, find orientation info, and access wellbeing helplines at State Institute of Training." />
+    <meta name="twitter:image" content="<?= BASE_URL ?>/img/logo.png" />
 
     <?php include_once('./includes/stylefiles.php') ?>
-    <link rel="stylesheet" href="public/css/student-support.css" />
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/student-support.css" />
 </head>
 
 <body>
@@ -18,11 +40,14 @@
 
         <!-- ===================== PAGE HEADER ===================== -->
         <section class="page-header">
-            <div class="page-hero-bg"><img src="<?= BASE_URL ?>/public/imgs/page-header/support.webp" alt=""></div>
+            <div class="page-hero-bg">
+                <img src="<?= BASE_URL ?>/public/imgs/page-header/support.webp"
+                    alt="Student support at State Institute of Training" />
+            </div>
 
             <div class="page-header-inner">
                 <nav class="crumb" aria-label="Breadcrumb">
-                    <a href="index.php">Home</a>
+                    <a href="<?= BASE_URL ?>/">Home</a>
                     <span class="sep">/</span>
                     <span class="crumbactive">Student Support</span>
                 </nav>
@@ -53,7 +78,7 @@
                             <span>info@sit.vic.edu.au · Reply in 1–2 days</span>
                         </div>
                     </a>
-                    <a href="contact.php" class="qh-card">
+                    <a href="<?= BASE_URL ?>/contact" class="qh-card">
                         <div class="qh-icon"><i class="fa fa-comments-o" aria-hidden="true"></i></div>
                         <div>
                             <strong>Send a message</strong>
@@ -434,7 +459,7 @@
                             We’re here Mon–Fri, 9am–5pm.
                         </p>
                         <div class="cta-actions">
-                            <a href="contact.php" class="btn-sit btn-secondary-sit">Contact us <span
+                            <a href="<?= BASE_URL ?>/contact" class="btn-sit btn-secondary-sit">Contact us <span
                                     class="arrow">→</span></a>
                             <a href="tel:0383834447" class="btn-sit btn-secondary-outline-sit">03 8383 4447</a>
                         </div>

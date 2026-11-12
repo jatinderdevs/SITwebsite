@@ -4,12 +4,34 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us | State Institute of Training | SIT Melbourne & Brisbane</title>
+
+    <?php require_once __DIR__ . '/config.php'; ?>
+
+    <title>Contact Us | State Institute of Training | Melbourne, Pakenham & Brisbane</title>
     <meta name="description"
-        content="Get in touch with State Institute of Training. Contact our Melbourne or Brisbane campus for course enquiries, applications, student support or agent queries." />
+        content="Get in touch with State Institute of Training. Contact our Melbourne, Pakenham or Brisbane campus for course enquiries, applications, student support or agent queries. RTO 45205 · CRICOS 03948A." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="<?= BASE_URL ?>/contact" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="State Institute of Training" />
+    <meta property="og:title" content="Contact Us | State Institute of Training | Melbourne, Pakenham & Brisbane" />
+    <meta property="og:description"
+        content="Contact our Melbourne, Pakenham or Brisbane campus for course enquiries, applications, student support or agent queries." />
+    <meta property="og:url" content="<?= BASE_URL ?>/contact" />
+    <meta property="og:image" content="<?= BASE_URL ?>/img/logo.png" />
+    <meta property="og:locale" content="en_AU" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact Us | State Institute of Training" />
+    <meta name="twitter:description"
+        content="Contact our Melbourne, Pakenham or Brisbane campus for course enquiries, applications and student support." />
+    <meta name="twitter:image" content="<?= BASE_URL ?>/img/logo.png" />
 
     <?php include_once('./includes/stylefiles.php') ?>
-    <link rel="stylesheet" href="public/css/contact.css" />
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/contact.css" />
 </head>
 
 <body>
@@ -18,11 +40,14 @@
 
         <!-- ===================== PAGE HEADER ===================== -->
         <section class="page-header">
-            <div class="page-hero-bg"><img src="<?= BASE_URL ?>/public/imgs/page-header/contact.webp" alt=""></div>
+            <div class="page-hero-bg">
+                <img src="<?= BASE_URL ?>/public/imgs/page-header/contact.webp"
+                    alt="Contact State Institute of Training" />
+            </div>
 
             <div class="page-header-inner">
                 <nav class="crumb" aria-label="Breadcrumb">
-                    <a href="index.php">Home</a>
+                    <a href="<?= BASE_URL ?>/">Home</a>
                     <span class="sep">/</span>
                     <span class="crumbactive">Contact Us</span>
                 </nav>
@@ -30,7 +55,7 @@
                 <h1>Get in touch with our team</h1>
                 <p>
                     Questions about courses, enrolments, campuses or agent partnerships?
-                    We’re here to help — Melbourne and Brisbane campuses.
+                    We’re here to help — Melbourne, Pakenham and Brisbane campuses.
                 </p>
             </div>
         </section>
@@ -46,7 +71,7 @@
                         <h2>We’re ready when you are</h2>
                         <p class="contact-lead">
                             Fill out the form and our team will get back to you within 1–2 business days.
-                            Prefer to talk? Call or visit us at either campus.
+                            Prefer to talk? Call or visit us at any of our campuses.
                         </p>
 
                         <div class="info-cards">
@@ -102,11 +127,11 @@
                             </div>
 
                             <div class="campus-card">
-                                <div class="campus-badge brisbane">Brisbane</div>
-                                <h3>Brisbane Campus</h3>
+                                <div class="campus-badge">Pakenham</div>
+                                <h3>Pakenham Campus</h3>
                                 <address>
-                                    Level 3, 300 Adelaide Street<br />
-                                    Brisbane QLD 4000
+                                    Level 1, 29 James Street<br />
+                                    Pakenham VIC 3810
                                 </address>
                                 <a href="tel:0383834447" class="campus-link">
                                     <i class="fa fa-phone" aria-hidden="true"></i> 03 8383 4447
@@ -117,11 +142,11 @@
                             </div>
 
                             <div class="campus-card">
-                                <div class="campus-badge">Pakenham</div>
-                                <h3>Pakenham Campus</h3>
+                                <div class="campus-badge brisbane">Brisbane</div>
+                                <h3>Brisbane Campus</h3>
                                 <address>
-                                    Level 1, 29 James Street<br />
-                                    Pakenham VIC 3810
+                                    Level 3, 300 Adelaide Street<br />
+                                    Brisbane QLD 4000
                                 </address>
                                 <a href="tel:0383834447" class="campus-link">
                                     <i class="fa fa-phone" aria-hidden="true"></i> 03 8383 4447
@@ -142,14 +167,13 @@
                                 <p>All fields marked with * are required.</p>
                             </div>
 
-                            <!-- Spam trap: hidden from people, bots fill it in -->
+                            <!-- Spam trap -->
                             <div aria-hidden="true"
                                 style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
                                 <label for="company_website">Leave this field empty</label>
                                 <input type="text" id="company_website" name="company_website" tabindex="-1"
                                     autocomplete="off" />
                             </div>
-                            <!-- Filled by JS on submit: how long the form was open (ms) -->
                             <input type="hidden" name="fill_ms" id="fillMs" value="" />
 
                             <div class="form-row">
@@ -159,7 +183,7 @@
                                         maxlength="100" autocomplete="name" required />
                                 </div>
                                 <div class="form-group">
-                                    <label for="studentid">Student ID Number (optional) </label>
+                                    <label for="studentid">Student ID Number (optional)</label>
                                     <input type="text" id="studentid" name="studentid"
                                         placeholder="Enter student id number" maxlength="30" />
                                 </div>
@@ -190,18 +214,6 @@
                                 </select>
                             </div>
 
-                            <!-- <div class="form-group">
-                                <label for="reason">Reason for contact <span class="req">*</span></label>
-                                <select id="reason" name="reason" required>
-                                    <option value="" disabled selected>Select reason</option>
-                                    <option value="query">General Query / Question</option>
-                                    <option value="feedback">Feedback</option>
-                                    <option value="complaint">Complaint</option>
-                                    <option value="application">Course Application / Enrolment</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div> -->
-
                             <div class="form-group">
                                 <label for="message">Message <span class="req">*</span></label>
                                 <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help..."
@@ -216,7 +228,6 @@
                                 </label>
                             </div>
 
-                            <!-- Success / error message from the server -->
                             <div id="formStatus" class="form-status" role="status" aria-live="polite" hidden></div>
 
                             <button type="submit" class="btn-sit btn-primary-sit btn-submit">
@@ -227,14 +238,13 @@
                                 RTO No. 45205 · CRICOS 03948A · We respect your privacy.
                             </p>
                         </form>
-
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ===================== CAMPUS MAPS ===================== -->
-        <section class="maps-section">
+        <section class="maps-section" id="maps">
             <div class="container">
                 <div class="maps-header">
                     <span class="contact-eyebrow">OUR LOCATIONS</span>
@@ -243,7 +253,6 @@
                     </p>
                 </div>
 
-                <!-- Campus switcher -->
                 <div class="map-switcher" role="tablist" aria-label="Select campus">
                     <button type="button" class="map-tab active" data-campus="melbourne" role="tab"
                         aria-selected="true">
@@ -261,16 +270,13 @@
                 </div>
 
                 <div class="map-stage">
-                    <!-- Map iframe container -->
                     <div class="map-frame-wrap">
                         <div class="map-frame" id="mapFrame">
-                            <!-- Melbourne embed (default) -->
                             <iframe id="campusMap" title="State Institute of Training – Melbourne Campus"
                                 src="https://www.google.com/maps?q=Level+5,+255+William+Street,+Melbourne+VIC+3000&output=embed&z=16"
                                 loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
                         </div>
 
-                        <!-- Floating location card -->
                         <div class="map-float-card" id="mapFloatCard">
                             <div class="float-badge" id="floatBadge">Melbourne</div>
                             <h3 id="floatTitle">Melbourne Campus</h3>
@@ -333,10 +339,11 @@
                             <span class="faq-icon" aria-hidden="true"></span>
                         </button>
                         <div class="faq-answer">
-                            <p>Select “Complaint” or “Feedback” as the reason on the contact form. All complaints are
-                                handled in line with our Complaints &amp; Appeals Policy. You can also email <a
-                                    href="mailto:info@sit.vic.edu.au">info@sit.vic.edu.au</a> or speak with Student
-                                Support at either campus.</p>
+                            <p>You can use the contact form or email <a
+                                    href="mailto:info@sit.vic.edu.au">info@sit.vic.edu.au</a>. All complaints are
+                                handled in line with our Complaints &amp; Appeals Policy. You can also speak with
+                                Student
+                                Support at any campus.</p>
                         </div>
                     </div>
 
@@ -347,7 +354,8 @@
                         </button>
                         <div class="faq-answer">
                             <p>Select “Education Agent” on the form and let us know how we can help with partnership
-                                information, application forms or student support. You can also visit our Agents Zone or
+                                information, application forms or student support. You can also visit our <a
+                                    href="<?= BASE_URL ?>/agent-zone">Agents Zone</a> or
                                 email us directly at <a href="mailto:info@sit.vic.edu.au">info@sit.vic.edu.au</a>.</p>
                         </div>
                     </div>
@@ -358,7 +366,7 @@
                             <span class="faq-icon" aria-hidden="true"></span>
                         </button>
                         <div class="faq-answer">
-                            <p>Both campuses operate Monday to Friday, 9:00 am – 5:00 pm (AEST). Reception and student
+                            <p>All campuses operate Monday to Friday, 9:00 am – 5:00 pm (AEST). Reception and student
                                 support are available during these hours. Class times may vary by course — check your
                                 timetable or ask Student Support for details.</p>
                         </div>
@@ -387,7 +395,7 @@
                         <div class="qh-icon"><i class="fa fa-book" aria-hidden="true"></i></div>
                         <h4>Browse Courses</h4>
                         <p>Explore nationally recognised qualifications in construction, engineering and business.</p>
-                        <a href="<?= BASE_URL ?>/courses.php" class="qh-link">View all courses <span>→</span></a>
+                        <a href="<?= BASE_URL ?>/courses" class="qh-link">View all courses <span>→</span></a>
                     </div>
                     <div class="qh-item">
                         <div class="qh-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
@@ -418,7 +426,7 @@
         const btn = form.querySelector('.btn-submit');
         const status = document.getElementById('formStatus');
         const fillField = document.getElementById('fillMs');
-        const endpoint = form.getAttribute('action'); // <?= BASE_URL ?>/contact-submit
+        const endpoint = form.getAttribute('action');
         const originalBtnHtml = btn.innerHTML;
         const pageOpenedAt = performance.now();
 
@@ -516,7 +524,6 @@
         });
     })();
 
-
     // ----- Campus map switcher -----
     const campusData = {
         melbourne: {
@@ -558,7 +565,6 @@
             const data = campusData[campus];
             if (!data) return;
 
-            // Update tabs
             document.querySelectorAll('.map-tab').forEach(function(t) {
                 t.classList.remove('active');
                 t.setAttribute('aria-selected', 'false');
@@ -566,7 +572,6 @@
             this.classList.add('active');
             this.setAttribute('aria-selected', 'true');
 
-            // Fade map slightly while swapping
             mapIframe.style.opacity = '0.4';
             setTimeout(function() {
                 mapIframe.src = data.mapSrc;
@@ -574,7 +579,6 @@
                 mapIframe.style.opacity = '1';
             }, 180);
 
-            // Update floating card
             floatBadge.textContent = data.badge;
             floatBadge.classList.toggle('brisbane', campus === 'brisbane');
             floatTitle.textContent = data.title;
@@ -589,13 +593,11 @@
             const item = this.closest('.faq-item');
             const isOpen = item.classList.contains('active');
 
-            // Close all
             document.querySelectorAll('.faq-item').forEach(function(el) {
                 el.classList.remove('active');
                 el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
             });
 
-            // Open clicked if it was closed
             if (!isOpen) {
                 item.classList.add('active');
                 this.setAttribute('aria-expanded', 'true');

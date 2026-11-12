@@ -22,12 +22,12 @@
                             <a class="nav-link" href="<?= BASE_URL ?>/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= BASE_URL ?>/courses.php">Courses</a>
+                            <a class="nav-link" href="<?= BASE_URL ?>/courses">Courses</a>
                         </li>
 
                         <!-- Student Support MEGA MENU -->
                         <li class="nav-item dropdown mega-dropdown">
-                            <a class="nav-link dropdown-toggle" href="<?= BASE_URL ?>/student-support.php"
+                            <a class="nav-link dropdown-toggle" href="<?= BASE_URL ?>/student-support"
                                 id="studentSupportDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">
                                 Student Support
@@ -38,29 +38,28 @@
                                     <!-- Col 1: Support sections -->
                                     <div class="col-lg-3 col-md-6 mb-3 mb-lg-0">
                                         <h6>Student support</h6>
-                                        <a href="<?= BASE_URL ?>/student-support.php#forms" class="mega-menu-item">
+                                        <a href="<?= BASE_URL ?>/student-support#forms" class="mega-menu-item">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             <div>
                                                 <span class="title">Forms & downloads</span>
                                                 <span class="desc">Application, refund, complaints</span>
                                             </div>
                                         </a>
-                                        <a href="<?= BASE_URL ?>/student-support.php#policies" class="mega-menu-item">
+                                        <a href="<?= BASE_URL ?>/student-support#policies" class="mega-menu-item">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             <div>
                                                 <span class="title">Policies</span>
                                                 <span class="desc">Attendance, fees, transfers, RPL</span>
                                             </div>
                                         </a>
-                                        <a href="<?= BASE_URL ?>/student-support.php#orientation"
-                                            class="mega-menu-item">
+                                        <a href="<?= BASE_URL ?>/student-support#orientation" class="mega-menu-item">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             <div>
                                                 <span class="title">Orientation</span>
                                                 <span class="desc">What to expect when you start</span>
                                             </div>
                                         </a>
-                                        <a href="<?= BASE_URL ?>/student-support.php#support-services"
+                                        <a href="<?= BASE_URL ?>/student-support#support-services"
                                             class="mega-menu-item">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             <div>
@@ -73,29 +72,28 @@
                                     <!-- Col 2: Applying & studying -->
                                     <div class="col-lg-3 col-md-6 mb-3 mb-lg-0">
                                         <h6>Applying & studying</h6>
-                                        <a href="<?= BASE_URL ?>/contact.php#maps" class="mega-menu-item">
+                                        <a href="<?= BASE_URL ?>/contact#maps" class="mega-menu-item">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             <div>
                                                 <span class="title">Our campuses</span>
-                                                <span class="desc">Melbourne & Brisbane</span>
+                                                <span class="desc">Melbourne, Pakenham & Brisbane</span>
                                             </div>
                                         </a>
-                                        <a href="<?= BASE_URL ?>/our-agents#directory" class="mega-menu-item"
-                                            target="_blank" rel="noopener">
+                                        <a href="<?= BASE_URL ?>/our-agents#directory" class="mega-menu-item">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             <div>
                                                 <span class="title">Our Authorised agents</span>
                                                 <span class="desc">List of registered agents</span>
                                             </div>
                                         </a>
-                                        <a href="<?= BASE_URL ?>/student-support.php#policies" class="mega-menu-item">
+                                        <a href="<?= BASE_URL ?>/student-support#policies" class="mega-menu-item">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             <div>
                                                 <span class="title">Fees & refunds</span>
                                                 <span class="desc">Fees, charges and refund policy</span>
                                             </div>
                                         </a>
-                                        <a href="<?= BASE_URL ?>/student-support.php#policies" class="mega-menu-item">
+                                        <a href="<?= BASE_URL ?>/student-support#policies" class="mega-menu-item">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             <div>
                                                 <span class="title">RPL & credit transfer</span>
@@ -107,34 +105,33 @@
                                     <!-- Col 3: Courses & quick links -->
                                     <div class="col-lg-3 col-md-6 mb-3 mb-lg-0">
                                         <h6>Courses</h6>
-                                        <a href="<?= BASE_URL ?>/courses.php" class="mega-menu-item">
+                                        <a href="<?= BASE_URL ?>/courses" class="mega-menu-item">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             <div>
                                                 <span class="title">Building & Construction</span>
                                                 <span class="desc">Plastering, tiling, building</span>
                                             </div>
                                         </a>
-                                        <a href="<?= BASE_URL ?>/courses.php" class="mega-menu-item">
+                                        <a href="<?= BASE_URL ?>/courses" class="mega-menu-item">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             <div>
                                                 <span class="title">Engineering</span>
                                                 <span class="desc">Fabrication to graduate diploma</span>
                                             </div>
                                         </a>
-                                        <a href="<?= BASE_URL ?>/courses.php" class="mega-menu-item">
+                                        <a href="<?= BASE_URL ?>/courses" class="mega-menu-item">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             <div>
                                                 <span class="title">Business & Management</span>
                                                 <span class="desc">Project management & more</span>
                                             </div>
                                         </a>
-                                        <a href="<?= BASE_URL ?>/courses.php" class="mega-menu-item">
+                                        <a href="<?= BASE_URL ?>/courses" class="mega-menu-item">
                                             <i class="fa fa-link" aria-hidden="true"></i>
                                             <div>
                                                 <span class="title">View all courses →</span>
                                             </div>
                                         </a>
-
                                     </div>
 
                                     <!-- Col 4: Promo + contact -->
@@ -150,7 +147,7 @@
                                             <p>
                                                 Talk to our career advisors today to choose the right qualification.
                                             </p>
-                                            <a href="<?= BASE_URL ?>/contact.php"
+                                            <a href="<?= BASE_URL ?>/contact"
                                                 class="btn btn-sm btn-light font-weight-bold btn-block"
                                                 style="color: var(--primary-blue)">
                                                 <i class="fa fa-phone mr-1"></i> Book Free Consultation
@@ -172,17 +169,17 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= BASE_URL ?>/about.php">About</a>
+                            <a class="nav-link" href="<?= BASE_URL ?>/about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= BASE_URL ?>/agent-zone.php">Agents Zone</a>
+                            <a class="nav-link" href="<?= BASE_URL ?>/agent-zone">Agents Zone</a>
                         </li>
                     </ul>
 
                     <!-- RIGHT: BUTTONS -->
                     <div class="navbar-buttons d-flex align-items-center">
-                        <a href="<?= BASE_URL ?>/contact.php" class="btn btn_custom btn_custom_blue">Apply Online</a>
-                        <a href="<?= BASE_URL ?>/contact.php" class="ml-2 btn btn_custom btn_custom_highlight">Contact
+                        <a href="<?= BASE_URL ?>/contact" class="btn btn_custom btn_custom_blue">Apply Online</a>
+                        <a href="<?= BASE_URL ?>/contact" class="ml-2 btn btn_custom btn_custom_highlight">Contact
                             us</a>
                     </div>
                 </div>

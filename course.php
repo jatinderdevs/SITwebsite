@@ -1,7 +1,9 @@
 <?php
 // ============================================
-// LOAD COURSE DATA
+// LOAD CONFIG + COURSE DATA
 // ============================================
+require_once __DIR__ . '/config.php';
+
 $courses = require __DIR__ . '/data/dbcourses.php';
 
 $slug     = $_GET['slug'] ?? '';
@@ -10,7 +12,7 @@ $category = $_GET['category'] ?? '';
 // Find the course by slug
 $course = null;
 foreach ($courses as $c) {
-    if ($c['slug'] === $slug) {
+    if (($c['slug'] ?? '') === $slug) {
         $course = $c;
         break;
     }
@@ -18,7 +20,7 @@ foreach ($courses as $c) {
 
 // Extra safety: check category matches
 if ($course && $category) {
-  $expectedCategory = strtolower(str_replace([' & ', ' '], ['-and-', '-'], $course['category']));
+    $expectedCategory = strtolower(str_replace([' & ', ' '], ['-and-', '-'], $course['category']));
     if ($category !== $expectedCategory) {
         $course = null;
     }
@@ -26,22 +28,25 @@ if ($course && $category) {
 
 // 404 if not found
 if (!$course) {
-    header("HTTP/1.0 404 Not Found");
+    header('HTTP/1.0 404 Not Found');
     include __DIR__ . '/404.php';
     exit;
 }
 
 // Helper values
-$fullTitle     = $course['code'] . ' ' . $course['title'];
-$pageTitle     = $fullTitle . ' | State Institute of Training';
-$metaDesc      = $course['short_desc'] . ' Study at SIT Melbourne & Pakenham campuses. CRICOS ' . $course['cricos'] . '.';
-$canonicalUrl  = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http')
-    . '://' . $_SERVER['HTTP_HOST']
-    . strtok($_SERVER['REQUEST_URI'], '?');
+$fullTitle    = $course['code'] . ' ' . $course['title'];
+$pageTitle    = $fullTitle . ' | State Institute of Training';
+$locationsText = implode(' & ', $course['locations'] ?? []);
+$metaDesc     = $course['short_desc']
+    . ' Study at State Institute of Training — Melbourne & Brisbane. CRICOS '
+    . $course['cricos'] . '. RTO 45205.';
 
-// Category slug for breadcrumb link
-$categorySlug  = str_replace([' & ', ' '], ['-and-', '-'], $course['category']);
-$locationsText = implode(' & ', $course['locations']);
+// Clean canonical (no query string, no www, matches .htaccess)
+$categoryUrlSlug = strtolower(str_replace([' & ', ' '], ['-and-', '-'], $course['category']));
+$canonicalUrl    = rtrim(BASE_URL, '/') . '/' . $categoryUrlSlug . '/' . $course['slug'];
+
+// Absolute image for OG / Twitter / Schema
+$ogImage = rtrim(BASE_URL, '/') . '/public/imgs/courses/' . ($course['thumbnail'] ?? '');
 ?>
 <!doctype html>
 <html lang="en">
@@ -53,35 +58,35 @@ $locationsText = implode(' & ', $course['locations']);
     <!-- Primary SEO -->
     <title><?= htmlspecialchars($pageTitle) ?></title>
     <meta name="description" content="<?= htmlspecialchars($metaDesc) ?>" />
-    <meta name="keywords"
-        content="<?= htmlspecialchars($course['code'] . ', ' . $course['title'] . ', ' . $course['category'] . ', SIT, State Institute of Training, Melbourne, CRICOS ' . $course['cricos']) ?>" />
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href="<?= htmlspecialchars($canonicalUrl) ?>" />
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="State Institute of Training" />
     <meta property="og:url" content="<?= htmlspecialchars($canonicalUrl) ?>" />
     <meta property="og:title" content="<?= htmlspecialchars($pageTitle) ?>" />
     <meta property="og:description" content="<?= htmlspecialchars($metaDesc) ?>" />
-    <meta property="og:image" content="<?= htmlspecialchars($course['thumbnail'] ?? '') ?>" />
-    <meta property="og:site_name" content="State Institute of Training" />
+    <meta property="og:image" content="<?= htmlspecialchars($ogImage) ?>" />
+    <meta property="og:locale" content="en_AU" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="<?= htmlspecialchars($pageTitle) ?>" />
     <meta name="twitter:description" content="<?= htmlspecialchars($metaDesc) ?>" />
-    <meta name="twitter:image" content="<?= htmlspecialchars($course['thumbnail'] ?? '') ?>" />
+    <meta name="twitter:image" content="<?= htmlspecialchars($ogImage) ?>" />
 
     <!-- Schema.org JSON-LD (Course) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Course",
-        "name": "<?= htmlspecialchars($fullTitle) ?>",
-        "description": "<?= htmlspecialchars($course['short_desc']) ?>",
+        "name": <?= json_encode($fullTitle) ?>,
+        "description": <?= json_encode($course['short_desc'] ?? '') ?>,
         "provider": {
             "@type": "Organization",
             "name": "State Institute of Training",
-            "url": "https://www.sit.vic.edu.au",
+            "url": "https://sit.vic.edu.au",
             "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Level 5, 255 William Street",
@@ -94,14 +99,15 @@ $locationsText = implode(' & ', $course['locations']);
         "hasCourseInstance": {
             "@type": "CourseInstance",
             "courseMode": "onsite",
-            "duration": "P<?= (int)$course['duration_weeks'] ?>W",
+            "duration": "P<?= (int)($course['duration_weeks'] ?? 0) ?>W",
             "location": {
                 "@type": "Place",
-                "name": "<?= htmlspecialchars($locationsText) ?>"
+                "name": <?= json_encode($locationsText) ?>
             }
         },
-        "educationalCredentialAwarded": "<?= htmlspecialchars($course['title']) ?>",
-        "occupationalCategory": "<?= htmlspecialchars($course['category']) ?>"
+        "educationalCredentialAwarded": <?= json_encode($course['title'] ?? '') ?>,
+        "occupationalCategory": <?= json_encode($course['category'] ?? '') ?>,
+        "url": <?= json_encode($canonicalUrl) ?>
     }
     </script>
 
@@ -118,22 +124,19 @@ $locationsText = implode(' & ', $course['locations']);
         <!-- ===================== HERO ===================== -->
         <section class="sit-c-hero page-header">
             <div class="page-hero-bg">
-                <img src="<?= BASE_URL ?>/public/imgs/courses/<?= htmlspecialchars($course['thumbnail'])?>"
-                    alt="<?= htmlspecialchars($fullTitle) ?> at State Institute of Training Melbourne">
+                <img src="<?= BASE_URL ?>/public/imgs/courses/<?= htmlspecialchars($course['thumbnail'] ?? '') ?>"
+                    alt="<?= htmlspecialchars($fullTitle) ?> at State Institute of Training" />
             </div>
             <div class="container page-header-inner">
-                <div class="crumb">
+                <nav class="crumb" aria-label="Breadcrumb">
                     <a href="<?= BASE_URL ?>/">Home</a>
                     <span class="sep">/</span>
                     <a href="<?= BASE_URL ?>/courses">Courses</a>
                     <span class="sep">/</span>
-                    <a
-                        href="<?= BASE_URL ?>/courses?category=<?= urlencode(strtolower(str_replace(' & ', '-', $course['category']))) ?>">
-                        <?= htmlspecialchars($course['category']) ?>
-                    </a>
+                    <a href="<?= BASE_URL ?>/courses"><?= htmlspecialchars($course['category']) ?></a>
                     <span class="sep">/</span>
-                    <a href="#" class="crumbactive"><?= htmlspecialchars($course['title']) ?></a>
-                </div>
+                    <span class="crumbactive"><?= htmlspecialchars($course['title']) ?></span>
+                </nav>
 
                 <div class="my-4">
                     <span class="sit-c-eyebrow">CRICOS Course Code: <?= htmlspecialchars($course['cricos']) ?></span>
@@ -150,11 +153,11 @@ $locationsText = implode(' & ', $course['locations']);
                 <div class="quick-facts">
                     <div class="fact">
                         <span class="tag-mono">Duration</span>
-                        <span class="val"><?= (int)$course['duration_weeks'] ?> weeks</span>
+                        <span class="val"><?= (int)($course['duration_weeks'] ?? 0) ?> weeks</span>
                     </div>
                     <div class="fact">
                         <span class="tag-mono">Study Mode</span>
-                        <span class="val"><?= htmlspecialchars($course['mode']) ?></span>
+                        <span class="val"><?= htmlspecialchars($course['mode'] ?? '') ?></span>
                     </div>
                     <div class="fact">
                         <span class="tag-mono">Location</span>
@@ -162,7 +165,7 @@ $locationsText = implode(' & ', $course['locations']);
                     </div>
                     <div class="fact">
                         <span class="tag-mono">Units</span>
-                        <span class="val"><?= htmlspecialchars($course['units']) ?></span>
+                        <span class="val"><?= htmlspecialchars($course['units'] ?? '') ?></span>
                     </div>
                 </div>
             </div>
@@ -184,6 +187,7 @@ $locationsText = implode(' & ', $course['locations']);
                             <a href="#s-fees">Course Fees</a>
                             <a href="#s-support">Student Support</a>
                             <a href="#s-apply">How to Apply</a>
+                            <a href="#s-further">Further Information</a>
 
                             <div class="side-callout">
                                 <span class="tag-mono">Not sure this is the right course?</span>
@@ -194,8 +198,8 @@ $locationsText = implode(' & ', $course['locations']);
                                 <a href="<?= BASE_URL ?>/contact">Talk to an advisor →</a>
                             </div>
                             <div class="text-center p-3">
-                                <img src="https://www.sit.vic.edu.au/assets/img/ntr.png" width="80" class="img-fluid"
-                                    alt="Nationally Recognised Training logo">
+                                <img src="https://sit.vic.edu.au/assets/img/ntr.png" width="80" class="img-fluid"
+                                    alt="Nationally Recognised Training logo" />
                             </div>
                         </div>
                     </div>
@@ -210,11 +214,11 @@ $locationsText = implode(' & ', $course['locations']);
                                 <span class="plus"></span>
                             </summary>
                             <div class="qa-body">
-                                <?= nl2br(htmlspecialchars($course['full_description'])) ?>
+                                <?= nl2br(htmlspecialchars($course['full_description'] ?? '')) ?>
                             </div>
                         </details>
 
-                        <!-- Entry Requirements (static for now) -->
+                        <!-- Entry Requirements -->
                         <details class="qa-section" id="s-entry">
                             <summary>
                                 <h3>Entry Requirements</h3>
@@ -222,10 +226,7 @@ $locationsText = implode(' & ', $course['locations']);
                             </summary>
                             <div class="qa-body">
                                 <?php if (!empty($course['isrequirments'])): ?>
-                                <p>
-                                    <?= nl2br(htmlspecialchars($course['isrequirments'])); ?>
-
-                                </p>
+                                <p><?= nl2br(htmlspecialchars($course['isrequirments'])) ?></p>
                                 <?php else: ?>
                                 <p>
                                     There's no formal prerequisite qualification for this course. To
@@ -247,7 +248,7 @@ $locationsText = implode(' & ', $course['locations']);
                             </div>
                         </details>
 
-                        <!-- English Language Proficiency (static for now) -->
+                        <!-- English Language Proficiency -->
                         <details class="qa-section" id="s-english">
                             <summary>
                                 <h3>English Language Proficiency</h3>
@@ -282,11 +283,11 @@ $locationsText = implode(' & ', $course['locations']);
                                 <span class="plus"></span>
                             </summary>
                             <div class="qa-body">
-                                <p><?= htmlspecialchars($course['duration_text']) ?></p>
-                                <p><strong>Mode of Study:</strong> <?= nl2br(htmlspecialchars($course['mode_text'])) ?>
-                                </p>
-                                <p><strong>Locations:</strong> <?= nl2br(htmlspecialchars($course['location_text'])) ?>
-                                </p>
+                                <p><?= htmlspecialchars($course['duration_text'] ?? '') ?></p>
+                                <p><strong>Mode of Study:</strong>
+                                    <?= nl2br(htmlspecialchars($course['mode_text'] ?? '')) ?></p>
+                                <p><strong>Locations:</strong>
+                                    <?= nl2br(htmlspecialchars($course['location_text'] ?? '')) ?></p>
                                 <?php if (!empty($course['has_work_placement'])): ?>
                                 <p><strong>Work Placement:</strong> This course includes mandatory work-based training.
                                 </p>
@@ -294,17 +295,17 @@ $locationsText = implode(' & ', $course['locations']);
                             </div>
                         </details>
 
+                        <!-- Packaging Rules -->
                         <details class="qa-section" id="p-rules">
                             <summary>
                                 <h3>Packaging Rules</h3>
                                 <span class="plus"></span>
                             </summary>
                             <div class="qa-body">
-
-                                <p><?= nl2br($course['packaging_rules']) ?>
-
+                                <p><?= nl2br(htmlspecialchars($course['packaging_rules'] ?? '')) ?></p>
                             </div>
                         </details>
+
                         <!-- Pathways -->
                         <details class="qa-section" id="s-pathways">
                             <summary>
@@ -326,7 +327,7 @@ $locationsText = implode(' & ', $course['locations']);
                             </div>
                         </details>
 
-                        <!-- Course Fees (static for now) -->
+                        <!-- Course Fees -->
                         <details class="qa-section" id="s-fees">
                             <summary>
                                 <h3>Course Fees</h3>
@@ -350,7 +351,7 @@ $locationsText = implode(' & ', $course['locations']);
                             </div>
                         </details>
 
-                        <!-- Student Support (static for now) -->
+                        <!-- Student Support -->
                         <details class="qa-section" id="s-support">
                             <summary>
                                 <h3>Student Support Services</h3>
@@ -368,7 +369,7 @@ $locationsText = implode(' & ', $course['locations']);
                             </div>
                         </details>
 
-                        <!-- How to Apply (static for now) -->
+                        <!-- How to Apply -->
                         <details class="qa-section" id="s-apply">
                             <summary>
                                 <h3>How to Apply</h3>
@@ -383,26 +384,25 @@ $locationsText = implode(' & ', $course['locations']);
                                     <li>Email: <a href="mailto:info@sit.vic.edu.au">info@sit.vic.edu.au</a></li>
                                     <li>Phone: <a href="tel:+61383834447">03 8383 4447</a></li>
                                     <li>Melbourne — Level 5, 255 William Street, Melbourne VIC 3000</li>
-                                    <li>Pakenham — Level 1, 29 James Street, Pakenham VIC 3810</li>
+                                    <li>Brisbane — Level 3, 300 Adelaide Street, Brisbane QLD 4000</li>
                                 </ul>
                             </div>
                         </details>
-                        <!-- How to Apply (static for now) -->
-                        <details class="qa-section" id="s-apply">
+
+                        <!-- Further Information -->
+                        <details class="qa-section" id="s-further">
                             <summary>
                                 <h3>Further Information</h3>
                                 <span class="plus"></span>
                             </summary>
                             <div class="qa-body">
-
                                 <ul>
                                     <li>SIT does not use any 3rd party arrangements for delivery and assessment of this
                                         course.</li>
                                     <li>SIT does not guarantee that a student will obtain a particular employment
-                                        outcome after completing this course</li>
+                                        outcome after completing this course.</li>
                                     <li>SIT does not promise any possible migration outcomes from undertaking this
                                         course, or guarantee successful education assessment outcomes.</li>
-
                                 </ul>
                             </div>
                         </details>
@@ -411,10 +411,10 @@ $locationsText = implode(' & ', $course['locations']);
                 </div>
             </section>
         </div>
+
         <?php include_once('./includes/course-common-info.php'); ?>
+
         <div class="container">
-
-
             <!-- ===================== CTA ===================== -->
             <section class="about-cta">
                 <div class="container">

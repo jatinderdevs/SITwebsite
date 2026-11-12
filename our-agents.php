@@ -4,9 +4,31 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Agents | State Institute of Training | Authorised Education Agents</title>
+
+    <?php require_once __DIR__ . '/config.php'; ?>
+
+    <title>Our Agents | Authorised Education Agents | State Institute of Training</title>
     <meta name="description"
-        content="Find authorised education agents for State Institute of Training. Contact a local agent for course advice, applications and enrolment support." />
+        content="Find authorised education agents for State Institute of Training. Contact a local agent for course advice, applications and enrolment support across Melbourne, Pakenham and Brisbane." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="<?= BASE_URL ?>/our-agents" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="State Institute of Training" />
+    <meta property="og:title" content="Our Agents | Authorised Education Agents | State Institute of Training" />
+    <meta property="og:description"
+        content="Find authorised education agents for course advice, applications and enrolment support at State Institute of Training." />
+    <meta property="og:url" content="<?= BASE_URL ?>/our-agents" />
+    <meta property="og:image" content="<?= BASE_URL ?>/img/logo.png" />
+    <meta property="og:locale" content="en_AU" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Our Agents | Authorised Education Agents | State Institute of Training" />
+    <meta name="twitter:description"
+        content="Find authorised education agents for course advice, applications and enrolment support." />
+    <meta name="twitter:image" content="<?= BASE_URL ?>/img/logo.png" />
 
     <?php include_once('./includes/stylefiles.php') ?>
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/our-agents.css" />
@@ -18,9 +40,10 @@
 
         <!-- ===================== PAGE HEADER ===================== -->
         <section class="page-header">
-            <div class="page-hero-bg"><img
-                    src="https://images.pexels.com/photos/783681/pexels-photo-783681.jpeg?_gl=1*vkxn7p*_ga*NTcwNjI5OTg5LjE3OTMxNDQyOTI.*_ga_8JE65Q40S6*czE3OTMxNDg4ODMkbzIkZzEkdDE3OTMxNDkwMjQkajU5JGwwJGgw"
-                    alt=""></div>
+            <div class="page-hero-bg">
+                <img src="https://images.pexels.com/photos/783681/pexels-photo-783681.jpeg?_gl=1*vkxn7p*_ga*NTcwNjI5OTg5LjE3OTMxNDQyOTI.*_ga_8JE65Q40S6*czE3OTMxNDg4ODMkbzIkZzEkdDE3OTMxNDkwMjQkajU5JGwwJGgw"
+                    alt="Authorised education agents for State Institute of Training" />
+            </div>
             <div class="page-header-inner">
                 <nav class="crumb" aria-label="Breadcrumb">
                     <a href="<?= BASE_URL ?>/">Home</a>
@@ -47,21 +70,21 @@
                             <span>Browse authorised agents</span>
                         </div>
                     </a>
-                    <a href="<?= BASE_URL ?>/agent-zone.php" class="oa-q-card">
+                    <a href="<?= BASE_URL ?>/agent-zone" class="oa-q-card">
                         <div class="oa-q-icon"><i class="fa fa-handshake-o" aria-hidden="true"></i></div>
                         <div>
                             <strong>Become an agent</strong>
                             <span>Partner with SIT</span>
                         </div>
                     </a>
-                    <a href="<?= BASE_URL ?>/contact.php" class="oa-q-card">
+                    <a href="<?= BASE_URL ?>/contact" class="oa-q-card">
                         <div class="oa-q-icon"><i class="fa fa-comments-o" aria-hidden="true"></i></div>
                         <div>
                             <strong>Contact us</strong>
                             <span>Apply without an agent</span>
                         </div>
                     </a>
-                    <a href="<?= BASE_URL ?>/courses.php" class="oa-q-card">
+                    <a href="<?= BASE_URL ?>/courses" class="oa-q-card">
                         <div class="oa-q-icon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></div>
                         <div>
                             <strong>Our courses</strong>
@@ -177,8 +200,8 @@
                 </div>
 
                 <div class="oa-empty" id="agentEmpty" hidden>
-                    <p>No agents match your search. Try a different name or <a
-                            href="<?= BASE_URL ?>/contact.php">contact us directly</a>.</p>
+                    <p>No agents match your search. Try a different name or <a href="<?= BASE_URL ?>/contact">contact us
+                            directly</a>.</p>
                 </div>
             </div>
         </section>
@@ -196,9 +219,8 @@
                         </p>
                     </div>
                     <div class="oa-cta-actions">
-                        <a href="<?= BASE_URL ?>/contact.php" class="btn btn_custom btn_custom_blue">Contact us</a>
-                        <a href="<?= BASE_URL ?>/agent-zone.php" class="btn btn_custom btn_custom_highlight">Agent
-                            Zone</a>
+                        <a href="<?= BASE_URL ?>/contact" class="btn btn_custom btn_custom_blue">Contact us</a>
+                        <a href="<?= BASE_URL ?>/agent-zone" class="btn btn_custom btn_custom_highlight">Agent Zone</a>
                     </div>
                 </div>
             </div>

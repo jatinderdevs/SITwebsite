@@ -4,9 +4,31 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agent Zone | State Institute of Training | Partner with SIT</title>
+
+    <?php require_once __DIR__ . '/config.php'; ?>
+
+    <title>Agent Zone | Partner with State Institute of Training</title>
     <meta name="description"
-        content="Agent Zone for education agents — partner with State Institute of Training. Campus info, application form, enrolment document checklist and agent support contacts." />
+        content="Education agent zone for State Institute of Training — partner with SIT. Campus info for Melbourne, Pakenham and Brisbane, application form, enrolment document checklist and agent support." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="<?= BASE_URL ?>/agent-zone" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="State Institute of Training" />
+    <meta property="og:title" content="Agent Zone | Partner with State Institute of Training" />
+    <meta property="og:description"
+        content="Partner with SIT — campuses in Melbourne, Pakenham and Brisbane, agent application, enrolment checklist and support contacts." />
+    <meta property="og:url" content="<?= BASE_URL ?>/agent-zone" />
+    <meta property="og:image" content="<?= BASE_URL ?>/img/logo.png" />
+    <meta property="og:locale" content="en_AU" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Agent Zone | Partner with State Institute of Training" />
+    <meta name="twitter:description"
+        content="Partner with SIT — campuses, agent application, enrolment checklist and support for education agents." />
+    <meta name="twitter:image" content="<?= BASE_URL ?>/img/logo.png" />
 
     <?php include_once('./includes/stylefiles.php') ?>
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/agent-zone.css" />
@@ -18,11 +40,14 @@
 
         <!-- ===================== HERO ===================== -->
         <section class="page-header az-hero">
-            <div class="page-hero-bg"><img src="<?= BASE_URL ?>/public/imgs/page-header/australia.webp" alt=""></div>
+            <div class="page-hero-bg">
+                <img src="<?= BASE_URL ?>/public/imgs/page-header/australia.webp"
+                    alt="Partner with State Institute of Training" />
+            </div>
 
             <div class="page-header-inner">
                 <nav class="crumb" aria-label="Breadcrumb">
-                    <a href="index.php">Home</a>
+                    <a href="<?= BASE_URL ?>/">Home</a>
                     <span class="sep">/</span>
                     <span class="crumbactive">Agent Zone</span>
                 </nav>
@@ -34,8 +59,8 @@
                 </p>
                 <div class="hero-actions">
                     <a href="#apply" class="btn-sit btn-secondary-sit">Become an agent →</a>
-                    <a href="<?= BASE_URL ?>/our-agents" class="btn-sit btn-secondary-outline-sit">Our Authorised Agents
-                    </a>
+                    <a href="<?= BASE_URL ?>/our-agents" class="btn-sit btn-secondary-outline-sit">Our Authorised
+                        Agents</a>
                 </div>
             </div>
         </section>
@@ -92,7 +117,6 @@
                             pathways and genuine student support — across Melbourne, Pakenham and Brisbane.
                         </p>
                         <div class="fact-row">
-
                             <div class="fact-pill">
                                 <span class="fact-label">Qualifications</span>
                                 <span class="fact-val">9 Courses</span>
@@ -108,8 +132,8 @@
                         </div>
                     </div>
                     <div class="az-split-visual">
-                        <img src="<?= BASE_URL ?>/public/imgs/deal3.gif" class="img-fluid" alt="">
-
+                        <img src="<?= BASE_URL ?>/public/imgs/deal3.gif" class="img-fluid"
+                            alt="Partnering with State Institute of Training" />
                     </div>
                 </div>
             </div>
@@ -190,7 +214,7 @@
                     <article class="campus-card">
                         <div class="campus-img">
                             <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=700&q=80"
-                                alt="Suburban campus area" loading="lazy" />
+                                alt="Pakenham campus area" loading="lazy" />
                             <span class="campus-tag">Victoria</span>
                         </div>
                         <div class="campus-body">
@@ -283,11 +307,10 @@
                                 </div>
                             </li>
                         </ul>
-
                     </div>
                     <div class="az-split-visual">
-                        <img src="<?= BASE_URL ?>/public/imgs/Checklist.gif" class="img-fluid" alt="">
-
+                        <img src="<?= BASE_URL ?>/public/imgs/Checklist.gif" class="img-fluid"
+                            alt="Student admission document checklist" />
                     </div>
                 </div>
             </div>
@@ -339,7 +362,7 @@
 
                 <div class="course-snap-foot">
                     <p>Full course details, duration and entry requirements are on each course page.</p>
-                    <a href="courses.php" class="btn-sit btn-primary-sit">View all courses →</a>
+                    <a href="<?= BASE_URL ?>/courses" class="btn-sit btn-primary-sit">View all courses →</a>
                 </div>
             </div>
         </section>
@@ -370,7 +393,7 @@
                                     <span>info@sit.vic.edu.au</span>
                                 </div>
                             </a>
-                            <a href="contact.php" class="method">
+                            <a href="<?= BASE_URL ?>/contact" class="method">
                                 <i class="fa fa-comments-o" aria-hidden="true"></i>
                                 <div>
                                     <strong>Contact form</strong>
@@ -383,7 +406,7 @@
                         <div class="cta-card">
                             <h3>Ready to talk?</h3>
                             <p>We’re happy to discuss partnership, courses and student applications.</p>
-                            <a href="contact.php" class="btn-sit btn-secondary-sit">Go to contact form →</a>
+                            <a href="<?= BASE_URL ?>/contact" class="btn-sit btn-secondary-sit">Go to contact form →</a>
                             <a href="mailto:info@sit.vic.edu.au" class="cta-mail">or email info@sit.vic.edu.au</a>
                         </div>
                     </div>
@@ -407,7 +430,7 @@
                         <div class="cta-actions">
                             <a href="#apply" class="btn-sit btn-secondary-sit">Apply now <span
                                     class="arrow">→</span></a>
-                            <a href="contact.php" class="btn-sit btn-secondary-outline-sit">Contact us</a>
+                            <a href="<?= BASE_URL ?>/contact" class="btn-sit btn-secondary-outline-sit">Contact us</a>
                         </div>
                     </div>
                 </div>

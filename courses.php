@@ -4,7 +4,32 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Courses | State Institute of Training</title>
+
+    <?php require_once __DIR__ . '/config.php'; ?>
+
+    <title>Our Courses | Building, Engineering & Business | State Institute of Training</title>
+    <meta name="description"
+        content="Browse nationally recognised courses in Building & Construction, Engineering and Business at State Institute of Training. Campuses in Melbourne and Brisbane. RTO 45205 · CRICOS 03948A." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="<?= BASE_URL ?>/courses" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="State Institute of Training" />
+    <meta property="og:title" content="Our Courses | Building, Engineering & Business | State Institute of Training" />
+    <meta property="og:description"
+        content="Browse nationally recognised courses in Building & Construction, Engineering and Business at State Institute of Training. Campuses in Melbourne and Brisbane." />
+    <meta property="og:url" content="<?= BASE_URL ?>/courses" />
+    <meta property="og:image" content="<?= BASE_URL ?>/img/logo.png" />
+    <meta property="og:locale" content="en_AU" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Our Courses | Building, Engineering & Business | State Institute of Training" />
+    <meta name="twitter:description"
+        content="Browse nationally recognised courses in Building & Construction, Engineering and Business at State Institute of Training." />
+    <meta name="twitter:image" content="<?= BASE_URL ?>/img/logo.png" />
+
     <?php include_once('./includes/stylefiles.php') ?>
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/courses.css" />
 </head>
@@ -13,14 +38,17 @@
     <?php include_once('./includes/header.php') ?>
 
     <!-- Hero -->
-    <section class=" page-header">
-        <div class="page-hero-bg"><img src="<?= BASE_URL ?>/public/imgs/page-header/courses.webp" alt=""></div>
+    <section class="page-header">
+        <div class="page-hero-bg">
+            <img src="<?= BASE_URL ?>/public/imgs/page-header/courses.webp"
+                alt="Students training at State Institute of Training" />
+        </div>
 
-        <div class=" page-header-inner">
+        <div class="page-header-inner">
             <nav class="crumb" aria-label="Breadcrumb">
-                <a href="<?= BASE_URL ?>/index">Home</a>
+                <a href="<?= BASE_URL ?>/">Home</a>
                 <span class="sep">/</span>
-                <span class="crumbactive">About Us</span>
+                <span class="crumbactive">Courses</span>
             </nav>
 
             <h1>our<br>courses</h1>
@@ -54,7 +82,7 @@
                 uasort($courses, function ($a, $b) {
                     return ($a['order'] ?? 99) <=> ($b['order'] ?? 99);
                 });
-               
+
                 // Category mapping for data-filter + URL
                 $categoryMap = [
                     'Building & Construction' => 'building',
@@ -73,28 +101,29 @@
                     // Skip inactive courses
                     if (($course['status'] ?? 'active') !== 'active') continue;
 
-                    $catKey     = $categoryMap[$course['category']] ?? 'other';
-                    $catUrl     = $categoryUrlMap[$course['category']] ?? 'Courses';
-                    $courseUrl  = BASE_URL . '/' . $catUrl . '/' . $course['slug'];
-                     $pillClassMap = [
-                    'Engineering'           => 'sit-bento-pill-eng',
-                    'Business & Management' => 'sit-bento-pill-biz',
-                ];
-                $pillMod   = $pillClassMap[$course['category']] ?? '';
-                $pillClass = trim('sit-bento-pill ' . $pillMod);
+                    $catKey = $categoryMap[$course['category']] ?? 'other';
+                    $catUrl = $categoryUrlMap[$course['category']] ?? 'courses';
+                    $courseUrl = BASE_URL . '/' . $catUrl . '/' . $course['slug'];
+
+                    $pillClassMap = [
+                        'Engineering'           => 'sit-bento-pill-eng',
+                        'Business & Management' => 'sit-bento-pill-biz',
+                    ];
+                    $pillMod   = $pillClassMap[$course['category']] ?? '';
+                    $pillClass = trim('sit-bento-pill ' . $pillMod);
                 ?>
                 <article class="sit-c-card" data-category="<?= htmlspecialchars($catKey) ?>">
                     <!-- Image -->
                     <div class="sit-c-card-img">
-
                         <img src="<?= BASE_URL ?>/public/imgs/courses/<?= htmlspecialchars($course['thumbnail']) ?>"
                             alt="<?= htmlspecialchars($course['code'] . ' ' . $course['title']) ?>" loading="lazy" />
                     </div>
 
                     <div class="sit-c-card-content">
                         <div class="sit-c-card-top">
-                            <span
-                                class="<?= htmlspecialchars($pillClass) ?>"><?= htmlspecialchars($course['category']) ?></span>
+                            <span class="<?= htmlspecialchars($pillClass) ?>">
+                                <?= htmlspecialchars($course['category']) ?>
+                            </span>
                         </div>
 
                         <div class="sit-c-card-body">

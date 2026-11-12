@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <?php require_once __DIR__ . '/config.php'; ?>
 
     <title>State Institute of Training | Trade Courses in Melbourne & Brisbane</title>
     <meta name="description"
         content="Hands-on trade training in Melbourne and Brisbane. Nationally recognised courses in building, construction, engineering and business. RTO 45205 · CRICOS 03948A." />
     <meta name="robots" content="index, follow" />
-    <?php include_once('./includes/stylefiles.php') ?>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -29,6 +29,8 @@
     <meta name="twitter:image" content="<?= BASE_URL ?>/img/logo.png" />
 
     <link rel="canonical" href="<?= BASE_URL ?>/" />
+
+    <?php include_once('./includes/stylefiles.php') ?>
 
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/gallery.css" />
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/courseSection.css" />

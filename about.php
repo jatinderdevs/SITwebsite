@@ -4,25 +4,49 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us | State Institute of Training | SIT Melbourne, Pakenham & Brisbane</title>
+
+    <?php require_once __DIR__ . '/config.php'; ?>
+
+    <title>About Us | State Institute of Training | Melbourne, Pakenham & Brisbane</title>
     <meta name="description"
-        content="Learn about State Institute of Training (SIT) — a trusted RTO delivering practical, industry-focused vocational training in engineering, construction and business across Melbourne, Pakenham and Brisbane." />
+        content="Learn about State Institute of Training (SIT) — a trusted RTO delivering practical, industry-focused vocational training in engineering, construction and business across Melbourne, Pakenham and Brisbane. RTO 45205 · CRICOS 03948A." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="<?= BASE_URL ?>/about" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="State Institute of Training" />
+    <meta property="og:title" content="About Us | State Institute of Training | Melbourne, Pakenham & Brisbane" />
+    <meta property="og:description"
+        content="Practical, industry-focused vocational training in engineering, construction and business. RTO 45205 · CRICOS 03948A." />
+    <meta property="og:url" content="<?= BASE_URL ?>/about" />
+    <meta property="og:image" content="<?= BASE_URL ?>/img/logo.png" />
+    <meta property="og:locale" content="en_AU" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About Us | State Institute of Training" />
+    <meta name="twitter:description"
+        content="Practical, industry-focused vocational training in engineering, construction and business across Melbourne, Pakenham and Brisbane." />
+    <meta name="twitter:image" content="<?= BASE_URL ?>/img/logo.png" />
 
     <?php include_once('./includes/stylefiles.php') ?>
-    <link rel="stylesheet" href="public/css/about.css" />
-    <link rel="stylesheet" href="public/css/sections/cta.css" />
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/about.css" />
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/sections/cta.css" />
 </head>
 
 <body>
     <main>
-        <?php include_once(ROOT_PATH . "/includes/header.php") ?>
+        <?php include_once(ROOT_PATH . '/includes/header.php') ?>
 
         <!-- ===================== PAGE HEADER ===================== -->
         <section class="page-header">
-            <div class="page-hero-bg"><img src="<?= BASE_URL ?>/public/imgs/page-header/about.webp" alt=""></div>
+            <div class="page-hero-bg">
+                <img src="<?= BASE_URL ?>/public/imgs/page-header/about.webp" alt="About State Institute of Training" />
+            </div>
             <div class="page-header-inner">
                 <nav class="crumb" aria-label="Breadcrumb">
-                    <a href="index.php">Home</a>
+                    <a href="<?= BASE_URL ?>/">Home</a>
                     <span class="sep">/</span>
                     <span class="crumbactive">About Us</span>
                 </nav>
@@ -61,7 +85,8 @@
                     </div>
 
                     <div class="intro-aside">
-                        <img src="<?= BASE_PATH ?>/public/imgs/about-students.gif" alt="">
+                        <img src="<?= BASE_URL ?>/public/imgs/about-students.gif"
+                            alt="Students training at State Institute of Training" />
                         <div class="trust-strip">
                             <div class="trust-item">
                                 <span class="trust-val">RTO</span>
@@ -104,7 +129,7 @@
             </div>
         </section>
 
-        <!-- ===================== WHY SIT (folded in) ===================== -->
+        <!-- ===================== WHY SIT ===================== -->
         <section class="why-section">
             <div class="container">
                 <div class="section-head">
@@ -274,8 +299,8 @@
                                 Explore our range of Certificate and Diploma qualifications in
                                 engineering, construction and related fields.
                             </p>
-                            <a href="courses.php" class="btn-sit btn-primary-sit">View courses <span class="arrow"><svg
-                                        width="25px" height="100%" viewBox="0 0 24 24" fill="none"
+                            <a href="<?= BASE_URL ?>/courses" class="btn-sit btn-primary-sit">View courses <span
+                                    class="arrow"><svg width="25px" height="100%" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path d="M6 18L18 6M18 6H10M18 6V14" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
@@ -286,7 +311,7 @@
                             <p>
                                 Our team can help with entry requirements, pathways and campus options.
                             </p>
-                            <a href="contact.php" class="btn-sit btn-lime-sit">Contact us <img src="" alt=""></a>
+                            <a href="<?= BASE_URL ?>/contact" class="btn-sit btn-lime-sit">Contact us</a>
                         </div>
                     </div>
                 </div>
@@ -307,13 +332,14 @@
                             you find the right course and campus.
                         </p>
                         <div class="cta-actions">
-                            <a href="contact.php" class="btn-sit btn-secondary-sit">Talk to us
+                            <a href="<?= BASE_URL ?>/contact" class="btn-sit btn-secondary-sit">Talk to us
                                 <span class="arrow"><svg width="25px" height="100%" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path d="M6 18L18 6M18 6H10M18 6V14" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg></span></a>
-                            <a href="courses.php" class="btn-sit btn-secondary-outline-sit">Browse courses</a>
+                            <a href="<?= BASE_URL ?>/courses" class="btn-sit btn-secondary-outline-sit">Browse
+                                courses</a>
                         </div>
                     </div>
                 </div>
