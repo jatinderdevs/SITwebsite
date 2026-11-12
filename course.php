@@ -108,6 +108,7 @@ $locationsText = implode(' & ', $course['locations']);
     <?php include_once('./includes/stylefiles.php') ?>
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/course.css" />
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/sections/cta.css" />
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/sections/course-common-info.css" />
 </head>
 
 <body>
@@ -161,7 +162,7 @@ $locationsText = implode(' & ', $course['locations']);
                     </div>
                     <div class="fact">
                         <span class="tag-mono">Units</span>
-                        <span class="val"><?= htmlspecialchars($course['packaging_rules']) ?></span>
+                        <span class="val"><?= htmlspecialchars($course['units']) ?></span>
                     </div>
                 </div>
             </div>
@@ -178,6 +179,7 @@ $locationsText = implode(' & ', $course['locations']);
                             <a href="#s-entry">Entry Requirements</a>
                             <a href="#s-english">English Proficiency</a>
                             <a href="#s-delivery">Duration &amp; Delivery</a>
+                            <a href="#p-rules">Packaging Rules</a>
                             <a href="#s-pathways">Pathways</a>
                             <a href="#s-fees">Course Fees</a>
                             <a href="#s-support">Student Support</a>
@@ -219,10 +221,18 @@ $locationsText = implode(' & ', $course['locations']);
                                 <span class="plus"></span>
                             </summary>
                             <div class="qa-body">
+                                <?php if (!empty($course['isrequirments'])): ?>
+                                <p>
+                                    <?= nl2br(htmlspecialchars($course['isrequirments'])); ?>
+
+                                </p>
+                                <?php else: ?>
                                 <p>
                                     There's no formal prerequisite qualification for this course. To
                                     enrol at SIT, you'll need to meet the following:
                                 </p>
+                                <?php endif; ?>
+
                                 <ul>
                                     <li>Be 18 years or older at the time of enrolment</li>
                                     <li>Have completed high school or equivalent</li>
@@ -273,8 +283,10 @@ $locationsText = implode(' & ', $course['locations']);
                             </summary>
                             <div class="qa-body">
                                 <p><?= htmlspecialchars($course['duration_text']) ?></p>
-                                <p><strong>Mode of Study:</strong> <?= htmlspecialchars($course['mode']) ?></p>
-                                <p><strong>Locations:</strong> <?= htmlspecialchars($locationsText) ?> campuses</p>
+                                <p><strong>Mode of Study:</strong> <?= nl2br(htmlspecialchars($course['mode_text'])) ?>
+                                </p>
+                                <p><strong>Locations:</strong> <?= nl2br(htmlspecialchars($course['location_text'])) ?>
+                                </p>
                                 <?php if (!empty($course['has_work_placement'])): ?>
                                 <p><strong>Work Placement:</strong> This course includes mandatory work-based training.
                                 </p>
@@ -282,6 +294,17 @@ $locationsText = implode(' & ', $course['locations']);
                             </div>
                         </details>
 
+                        <details class="qa-section" id="p-rules">
+                            <summary>
+                                <h3>Packaging Rules</h3>
+                                <span class="plus"></span>
+                            </summary>
+                            <div class="qa-body">
+
+                                <p><?= nl2br($course['packaging_rules']) ?>
+
+                            </div>
+                        </details>
                         <!-- Pathways -->
                         <details class="qa-section" id="s-pathways">
                             <summary>
@@ -364,10 +387,33 @@ $locationsText = implode(' & ', $course['locations']);
                                 </ul>
                             </div>
                         </details>
+                        <!-- How to Apply (static for now) -->
+                        <details class="qa-section" id="s-apply">
+                            <summary>
+                                <h3>Further Information</h3>
+                                <span class="plus"></span>
+                            </summary>
+                            <div class="qa-body">
+
+                                <ul>
+                                    <li>SIT does not use any 3rd party arrangements for delivery and assessment of this
+                                        course.</li>
+                                    <li>SIT does not guarantee that a student will obtain a particular employment
+                                        outcome after completing this course</li>
+                                    <li>SIT does not promise any possible migration outcomes from undertaking this
+                                        course, or guarantee successful education assessment outcomes.</li>
+
+                                </ul>
+                            </div>
+                        </details>
 
                     </div>
                 </div>
             </section>
+        </div>
+        <?php include_once('./includes/course-common-info.php'); ?>
+        <div class="container">
+
 
             <!-- ===================== CTA ===================== -->
             <section class="about-cta">

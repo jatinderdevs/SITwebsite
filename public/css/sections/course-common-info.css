@@ -1,0 +1,151 @@
+/* =========================================================
+   Course page – Important Information for Students section
+   Card grid, always-open, concise text + policy links
+   Matches SIT design tokens
+   ========================================================= */
+
+.course-info-section {
+  padding: clamp(56px, 8vw, 88px) 0;
+  background: var(--bg-light, #f8fafc);
+  border-top: 1px solid var(--line, #e2e8f0);
+}
+
+.course-info-section .section-head {
+  max-width: 640px;
+  margin-bottom: clamp(36px, 5vw, 52px);
+}
+
+.course-info-section .section-eyebrow {
+  display: inline-block;
+  font-family: var(--font-body, "Roboto", system-ui, sans-serif);
+  font-size: var(--text-sm, 0.8125rem);
+  font-weight: var(--fw-semibold, 600);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary-blue, #1a11a6);
+  margin-bottom: 10px;
+}
+
+.course-info-section .section-head h2 {
+  font-family: var(--font-heading, "Montserrat", system-ui, sans-serif);
+  font-size: clamp(1.7rem, 3.2vw, 2.25rem);
+  line-height: 1.18;
+  color: var(--text-dark, #1e293b);
+  margin: 0 0 12px;
+}
+
+.course-info-section .section-lead {
+  color: #475569;
+  font-size: var(--text-lg, 1.0625rem);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ---------- Card grid ---------- */
+.info-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@media (min-width: 1100px) {
+  .info-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+}
+
+@media (max-width: 767px) {
+  .info-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ---------- Individual card ---------- */
+.info-card {
+  background: #fff;
+  border: 1px solid var(--line, #e2e8f0);
+  border-radius: var(--radius-2xl, 16px);
+  padding: 24px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-card:hover {
+  border-color: rgba(26, 17, 166, 0.2);
+  box-shadow: 0 10px 28px rgba(26, 17, 166, 0.06);
+}
+
+.info-card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(26, 17, 166, 0.08);
+  color: var(--primary-blue, #1a11a6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+.info-card h3 {
+  font-family: var(--font-heading, "Montserrat", system-ui, sans-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-dark, #1e293b);
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.info-card p {
+  color: #475569;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin: 0 0 16px;
+  flex-grow: 1;
+}
+
+/* Links under each card */
+.info-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary-blue, #1a11a6);
+  text-decoration: none;
+  margin-top: auto;
+  transition: color 0.15s ease, gap 0.15s ease;
+}
+
+.info-card-link:hover {
+  color: #140d7a;
+  gap: 7px;
+  text-decoration: none;
+}
+
+.info-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  margin-top: auto;
+}
+
+.info-card-links .info-card-link {
+  margin-top: 0;
+}
+
+/* Slightly tighter on very small screens */
+@media (max-width: 480px) {
+  .info-card {
+    padding: 20px 18px 18px;
+  }
+
+  .info-card h3 {
+    font-size: 1rem;
+  }
+}

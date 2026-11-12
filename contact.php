@@ -170,39 +170,27 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="enquiryType">I am a <span class="req">*</span></label>
-                                    <select id="enquiryType" name="enquiryType" required>
-                                        <option value="" disabled selected>Select one</option>
-                                        <option value="student">Student / Prospective Student</option>
-                                        <option value="agent">Education Agent</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="reason">Reason for contact <span class="req">*</span></label>
-                                    <select id="reason" name="reason" required>
-                                        <option value="" disabled selected>Select reason</option>
-                                        <option value="query">General Query / Question</option>
-                                        <option value="feedback">Feedback</option>
-                                        <option value="complaint">Complaint</option>
-                                        <option value="application">Course Application / Enrolment</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                </div>
-                            </div>
-
                             <div class="form-group">
-                                <label for="campus">Preferred Campus</label>
-                                <select id="campus" name="campus">
-                                    <option value="" selected>No preference</option>
-                                    <option value="melbourne">Melbourne</option>
-                                    <option value="pakenham">Pakenham</option>
-                                    <option value="brisbane">Brisbane</option>
+                                <label for="enquiryType">I am a <span class="req">*</span></label>
+                                <select id="enquiryType" name="enquiryType" required>
+                                    <option value="" disabled selected>Select one</option>
+                                    <option value="student">Student / Prospective Student</option>
+                                    <option value="agent">Education Agent</option>
+                                    <option value="other">Other</option>
                                 </select>
                             </div>
+
+                            <!-- <div class="form-group">
+                                <label for="reason">Reason for contact <span class="req">*</span></label>
+                                <select id="reason" name="reason" required>
+                                    <option value="" disabled selected>Select reason</option>
+                                    <option value="query">General Query / Question</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="complaint">Complaint</option>
+                                    <option value="application">Course Application / Enrolment</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div> -->
 
                             <div class="form-group">
                                 <label for="message">Message <span class="req">*</span></label>

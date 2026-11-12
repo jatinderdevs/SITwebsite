@@ -215,7 +215,10 @@
 .qa-section summary::-webkit-details-marker {
   display: none;
 }
-
+.qa-section summary:active,
+.qa-section summary:focus {
+  background-color: var(--shade);
+}
 summary h3 {
   font-size: var(--text-2xl);
   font-weight: 700;
@@ -275,7 +278,7 @@ summary h3 {
 }
 
 .qa-body {
-  padding: 0 0 var(--space-4xl);
+  padding: 1rem 0.5rem;
 
   font-size: var(--text-lg);
   line-height: var(--lh-body);
