@@ -159,7 +159,7 @@
                     </div>
 
                     <!-- RIGHT: Form -->
-                    <div class="contact-form-wrap">
+                    <div class="contact-form-wrap" id="query">
                         <form class="contact-form" id="contactForm" action="<?= BASE_URL ?>/contact-submit"
                             method="post" novalidate>
                             <div class="form-header">

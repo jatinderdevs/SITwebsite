@@ -12,5 +12,10 @@ Disallow: /config.php
 Disallow: /composer.json
 Disallow: /composer.lock
 Disallow: /bak.course.php
+Disallow: /.git/
+Disallow: /.env
+
+# Prefer non-www HTTPS (matches your canonicals)
+# Host is handled by .htaccess redirects
 
 Sitemap: https://sit.vic.edu.au/sitemap.xml

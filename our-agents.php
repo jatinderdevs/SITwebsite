@@ -77,7 +77,7 @@
                             <span>Partner with SIT</span>
                         </div>
                     </a>
-                    <a href="<?= BASE_URL ?>/contact" class="oa-q-card">
+                    <a href="<?= BASE_URL ?>/contact#query" class="oa-q-card">
                         <div class="oa-q-icon"><i class="fa fa-comments-o" aria-hidden="true"></i></div>
                         <div>
                             <strong>Contact us</strong>
@@ -200,7 +200,8 @@
                 </div>
 
                 <div class="oa-empty" id="agentEmpty" hidden>
-                    <p>No agents match your search. Try a different name or <a href="<?= BASE_URL ?>/contact">contact us
+                    <p>No agents match your search. Try a different name or <a
+                            href="<?= BASE_URL ?>/contact#query">contact us
                             directly</a>.</p>
                 </div>
             </div>

@@ -204,6 +204,7 @@
   list-style: none;
   cursor: pointer;
   padding: var(--space-2xl) 0.2rem;
+  border-bottom: 1px solid #dfdfdf;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -279,10 +280,10 @@ summary h3 {
 
 .qa-body {
   padding: 1rem 0.5rem;
-
+  text-align: justify;
   font-size: var(--text-lg);
   line-height: var(--lh-body);
-  color: #3e4a5a;
+
   font-family: var(--font-body);
 }
 

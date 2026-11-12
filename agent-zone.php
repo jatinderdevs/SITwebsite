@@ -393,7 +393,7 @@
                                     <span>info@sit.vic.edu.au</span>
                                 </div>
                             </a>
-                            <a href="<?= BASE_URL ?>/contact" class="method">
+                            <a href="<?= BASE_URL ?>/contact#query" class="method">
                                 <i class="fa fa-comments-o" aria-hidden="true"></i>
                                 <div>
                                     <strong>Contact form</strong>
@@ -406,7 +406,8 @@
                         <div class="cta-card">
                             <h3>Ready to talk?</h3>
                             <p>We’re happy to discuss partnership, courses and student applications.</p>
-                            <a href="<?= BASE_URL ?>/contact" class="btn-sit btn-secondary-sit">Go to contact form →</a>
+                            <a href="<?= BASE_URL ?>/contact#query" class="btn-sit btn-secondary-sit">Go to contact form
+                                →</a>
                             <a href="mailto:info@sit.vic.edu.au" class="cta-mail">or email info@sit.vic.edu.au</a>
                         </div>
                     </div>
@@ -430,7 +431,8 @@
                         <div class="cta-actions">
                             <a href="#apply" class="btn-sit btn-secondary-sit">Apply now <span
                                     class="arrow">→</span></a>
-                            <a href="<?= BASE_URL ?>/contact" class="btn-sit btn-secondary-outline-sit">Contact us</a>
+                            <a href="<?= BASE_URL ?>/contact#query" class="btn-sit btn-secondary-outline-sit">Contact
+                                us</a>
                         </div>
                     </div>
                 </div>

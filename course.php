@@ -146,8 +146,9 @@ $ogImage = rtrim(BASE_URL, '/') . '/public/imgs/courses/' . ($course['thumbnail'
                 <p><?= htmlspecialchars($course['short_desc']) ?></p>
 
                 <div class="header-actions">
-                    <a href="<?= BASE_URL ?>/contact" class="btn-sit btn-secondary-sit">Apply Now →</a>
-                    <a href="#" class="btn-sit btn-secondary-outline-sit">Download Course Guide</a>
+                    <a href="<?= BASE_URL ?>/contact#query" class="btn-sit btn-secondary-sit">Apply Now →</a>
+                    <a href="<?= BASE_URL ?>/contact#query" class="btn-sit btn-secondary-outline-sit">Need
+                        Assistance ?</a>
                 </div>
 
                 <div class="quick-facts">
@@ -195,7 +196,7 @@ $ogImage = rtrim(BASE_URL, '/') . '/public/imgs/courses/' . ($course['thumbnail'
                                     Book a free 15-minute call with an advisor — we'll walk through
                                     entry requirements and pathway options for your situation.
                                 </p>
-                                <a href="<?= BASE_URL ?>/contact">Talk to an advisor →</a>
+                                <a href="<?= BASE_URL ?>/contact#query">Talk to an advisor →</a>
                             </div>
                             <div class="text-center p-3">
                                 <img src="https://sit.vic.edu.au/assets/img/ntr.png" width="80" class="img-fluid"
@@ -302,7 +303,7 @@ $ogImage = rtrim(BASE_URL, '/') . '/public/imgs/courses/' . ($course['thumbnail'
                                 <span class="plus"></span>
                             </summary>
                             <div class="qa-body">
-                                <p><?= nl2br(htmlspecialchars($course['packaging_rules'] ?? '')) ?></p>
+                                <p><?= nl2br($course['packaging_rules'] ?? '')?></p>
                             </div>
                         </details>
 
@@ -429,7 +430,7 @@ $ogImage = rtrim(BASE_URL, '/') . '/public/imgs/courses/' . ($course['thumbnail'
                                 you find the right course and campus.
                             </p>
                             <div class="cta-actions">
-                                <a href="<?= BASE_URL ?>/contact" class="btn-sit btn-secondary-sit">
+                                <a href="<?= BASE_URL ?>/contact#query" class="btn-sit btn-secondary-sit">
                                     Talk to us <span class="arrow">→</span>
                                 </a>
                                 <a href="<?= BASE_URL ?>/courses" class="btn-sit btn-secondary-outline-sit">

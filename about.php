@@ -85,7 +85,7 @@
                     </div>
 
                     <div class="intro-aside">
-                        <img src="<?= BASE_URL ?>/public/imgs/about-students.gif"
+                        <img class="img-fluid" src="<?= BASE_URL ?>/public/imgs/about-students.gif"
                             alt="Students training at State Institute of Training" />
                         <div class="trust-strip">
                             <div class="trust-item">
@@ -311,7 +311,7 @@
                             <p>
                                 Our team can help with entry requirements, pathways and campus options.
                             </p>
-                            <a href="<?= BASE_URL ?>/contact" class="btn-sit btn-lime-sit">Contact us</a>
+                            <a href="<?= BASE_URL ?>/contact#query" class="btn-sit btn-lime-sit">Contact us</a>
                         </div>
                     </div>
                 </div>
@@ -332,7 +332,7 @@
                             you find the right course and campus.
                         </p>
                         <div class="cta-actions">
-                            <a href="<?= BASE_URL ?>/contact" class="btn-sit btn-secondary-sit">Talk to us
+                            <a href="<?= BASE_URL ?>/contact#query" class="btn-sit btn-secondary-sit">Talk to us
                                 <span class="arrow"><svg width="25px" height="100%" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path d="M6 18L18 6M18 6H10M18 6V14" stroke="currentColor" stroke-width="2"

@@ -229,7 +229,7 @@ Licensing/Regulatory Information: No licensing, legislative or certification req
 
 <a href="https://training.gov.au/Training/Details/MEM31925/qualdetails">https://training.gov.au/Training/Details/MEM31925</a>
 ',
-    'mode'               => 'Face-to-face classroom + Practical training in workshop + Mandatory work-based training (work placement).',
+    'mode'               => 'Face-to-face  + workshop + Mandatory work-based training.',
     'mode_text'          => 'This delivery of this course has 3 components:
 • Face-to-face classroom sessions
 • Practical training and assessment in an operational workplace environment with purpose-built workshop
@@ -311,14 +311,14 @@ This qualification should not be used for VET in Schools unless the students are
 In some jurisdictions, units in this qualification may relate to licensing or regulatory requirements. Licensing and regulatory information is included in the relevant units of competency.
 
 Licensing/Regulatory Information: No licensing, legislative or certification requirements apply to this qualification at the time of publication. Local regulations should be checked.',
-    'units'              => '20 units of competency: 5 core units + Group A electives (4–8) + Group B electives (minimum 7).',
+    'units'              => '20 units (5 core units + Group A electives (4–8) + Group B electives (minimum 7).',
     'packaging_rules'    => 'The requirement for achievement of the MEM50222 Diploma of Engineering - Technical is achievement of competence in twenty (20) units of competency made up of:
 • all five (5) core units of competency, and
 • completion of a minimum of four (4) to a maximum of eight (8) Group A elective units
 • completion of a minimum of seven (7) Group B elective units
 
 A maximum of three (3) Group B elective units, that are relevant to work as engineering technician within metal, engineering, manufacturing and associated industries and do not duplicate skills and knowledge already available in units within this qualification, may be chosen from this Training Package, other endorsed Training Packages and accredited courses where those units are available for inclusion in Diploma qualifications.',
-    'mode'               => 'Face-to-face at State Institute of Training premises.',
+    'mode'               => 'Face-to-face',
     'mode_text'          => 'The mode of delivery for this qualification will be Face to Face at State Institute of Training - SIT premises.',
     'location_text'      => '• Pakenham Campus - Level 1, 29 James Street, Pakenham VIC 3810
 • Melbourne Campus - Level 5, 255 William Street, Melbourne VIC 3000',
@@ -390,9 +390,9 @@ A maximum of two (2) Group A elective units, that are relevant to work in a high
     'full_description'   => 'This qualification reflects the role of individuals who apply project management skills and knowledge in a variety of contexts, across a number of industry sectors. The job roles that relate to this qualification may include Project Manager and Project Team Leader.
 
 Individuals in these roles have project leadership and management roles and are responsible for achieving project objectives. They possess a sound theoretical knowledge base and use a range of specialised, technical and managerial competencies to initiate, plan, execute and evaluate work and/or the work of others.',
-    'units'              => '12 units of competency: 8 core units + 4 elective units.',
+    'units'              => '12 units (8 core, 4 elective)',
     'packaging_rules'    => 'Total number of units = 12 units (8 core, 4 elective).',
-    'mode'               => 'Face-to-face at State Institute of Training premises.',
+    'mode'               => 'Face-to-face',
     'mode_text'          => 'The mode of delivery for this qualification will be Face to Face at State Institute of Training - SIT premises.
 
 All Units of Competency will be delivered as standalone Units in this qualification. There is no work based training or work placements in this course.',

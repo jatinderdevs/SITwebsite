@@ -178,7 +178,8 @@
 
                     <!-- RIGHT: BUTTONS -->
                     <div class="navbar-buttons d-flex align-items-center">
-                        <a href="<?= BASE_URL ?>/contact" class="btn btn_custom btn_custom_blue">Apply Online</a>
+                        <a href="https://forms.sit.vic.edu.au/forms/sit-college-refund-form-5jeptp"
+                            class="btn btn_custom btn_custom_blue">Apply Online</a>
                         <a href="<?= BASE_URL ?>/contact" class="ml-2 btn btn_custom btn_custom_highlight">Contact
                             us</a>
                     </div>

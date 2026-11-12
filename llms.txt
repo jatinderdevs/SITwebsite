@@ -1,6 +1,6 @@
 # State Institute of Training (SIT)
 
-> Registered Training Organisation (RTO No. 45205, CRICOS 03948A) delivering hands-on vocational training in Building & Construction, Engineering, and Business & Management. Campuses in Melbourne, Pakenham (Victoria) and Brisbane (Queensland), Australia.
+> Registered Training Organisation (RTO No. 45205, CRICOS 03948A) delivering hands-on vocational training in Building & Construction, Engineering, and Business & Management. Campuses in Melbourne and Pakenham (Victoria) and Brisbane (Queensland), Australia.
 
 Website: https://sit.vic.edu.au
 Contact: info@sit.vic.edu.au | Phone: +61 3 8383 4447
@@ -8,7 +8,7 @@ Hours: Monday–Friday, 9:00 am – 5:00 pm (AEST)
 
 ## About
 
-State Institute of Training provides nationally recognised VET qualifications for domestic and international students. Training is practical and industry-focused, with workshops and face-to-face delivery.
+State Institute of Training is a privately owned RTO providing nationally recognised VET qualifications for domestic and international students. Training is practical and industry-focused, with workshops and face-to-face delivery. SIT does not use third-party delivery for training and assessment.
 
 ## Campuses
 
@@ -20,7 +20,7 @@ State Institute of Training provides nationally recognised VET qualifications fo
 
 - [Home](https://sit.vic.edu.au/): Overview of SIT and pathways
 - [Courses](https://sit.vic.edu.au/courses): Full course listing with filters
-- [About](https://sit.vic.edu.au/about): About SIT
+- [About](https://sit.vic.edu.au/about): About SIT, campuses and commitment
 - [Contact](https://sit.vic.edu.au/contact): Enquiry form and campus maps
 - [Student Support](https://sit.vic.edu.au/student-support): Forms, policies, orientation, helplines
 - [Agent Zone](https://sit.vic.edu.au/agent-zone): Information for education agents / partners
@@ -37,7 +37,7 @@ State Institute of Training provides nationally recognised VET qualifications fo
 
 ### Engineering
 
-- [MEM31925 Certificate III in Engineering – Fabrication Trade](https://sit.vic.edu.au/engineering/certificate-iii-in-engineering-fabrication-trade) — CRICOS 119160G · 62 weeks (includes work placement)
+- [MEM31925 Certificate III in Engineering – Fabrication Trade](https://sit.vic.edu.au/engineering/certificate-III-in-engineering-fabrication-trade) — CRICOS 119160G · 62 weeks (includes work placement)
 - [MEM40119 Certificate IV in Engineering (Pathway Course)](https://sit.vic.edu.au/engineering/certificate-iv-in-engineering-pathway-entry) — CRICOS 108266K · 30 weeks
 - [MEM50222 Diploma of Engineering – Technical](https://sit.vic.edu.au/engineering/diploma-of-engineering-technical) — CRICOS 117580C · 52 weeks
 - [MEM80125 Graduate Diploma of Engineering](https://sit.vic.edu.au/engineering/graduate-diploma-of-engineering) — CRICOS 119070J · 104 weeks

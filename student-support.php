@@ -78,7 +78,7 @@
                             <span>info@sit.vic.edu.au · Reply in 1–2 days</span>
                         </div>
                     </a>
-                    <a href="<?= BASE_URL ?>/contact" class="qh-card">
+                    <a href="<?= BASE_URL ?>/contact#query" class="qh-card">
                         <div class="qh-icon"><i class="fa fa-comments-o" aria-hidden="true"></i></div>
                         <div>
                             <strong>Send a message</strong>
@@ -459,7 +459,7 @@
                             We’re here Mon–Fri, 9am–5pm.
                         </p>
                         <div class="cta-actions">
-                            <a href="<?= BASE_URL ?>/contact" class="btn-sit btn-secondary-sit">Contact us <span
+                            <a href="<?= BASE_URL ?>/contact#query" class="btn-sit btn-secondary-sit">Contact us <span
                                     class="arrow">→</span></a>
                             <a href="tel:0383834447" class="btn-sit btn-secondary-outline-sit">03 8383 4447</a>
                         </div>
