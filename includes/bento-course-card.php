@@ -53,7 +53,7 @@ $locText   = !empty($locations) ? implode(' + ', $locations) : '';
 ?>
 <article class="<?= htmlspecialchars($cardClasses) ?>">
     <div class="sit-bento-image">
-        <img src="<?= htmlspecialchars($course['thumbnail'] ?? '') ?>"
+        <img src="<?= BASE_URL ?>/public/imgs/courses/<?= htmlspecialchars($course['thumbnail'])?>"
             alt="<?= htmlspecialchars($course['code'] . ' ' . $course['title']) ?>" loading="lazy" />
     </div>
     <div class="sit-bento-body">

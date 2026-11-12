@@ -216,3 +216,92 @@
     display: none;
   }
 }
+
+/* ================= GALLERY: VIDEO REELS ================= */
+
+/* videos get the same start state as the images (GSAP reveals them on scroll) */
+.g-item video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  object-fit: cover;
+}
+
+.g-item.g-video {
+  cursor: pointer;
+  background: #0f0d2d;
+  transition: box-shadow 0.3s ease;
+}
+/* video fills the card without influencing its size */
+.g-item.g-video video {
+  position: absolute;
+  inset: 0;
+}
+.g-item.g-video:focus-visible {
+  outline: 3px solid var(--lime-green);
+  outline-offset: 3px;
+}
+.g-item.g-video.is-playing {
+  box-shadow:
+    0 30px 60px -25px rgba(27, 22, 80, 0.5),
+    0 0 0 3px var(--lime-green);
+}
+
+/* reel size: portrait 9:16 – width comes from the aspect ratio */
+.g-item.size-reel {
+  height: min(52vh, 470px);
+  aspect-ratio: 9 / 16;
+  margin-top: 0;
+}
+.g-item.size-reel.alt {
+  margin-top: 7vh; /* second reel sits a little lower, like the other items */
+}
+
+/* play / sound badge (top-left of the reel) */
+.reel-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(15, 13, 45, 0.62);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  pointer-events: none;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+/* sound is on: just the speaker icon */
+.g-video.is-playing:not(.is-muted) .reel-label {
+  display: none;
+}
+/* playing silently because the browser blocked sound: make the hint obvious */
+.g-video.is-muted .reel-badge {
+  background: var(--lime-green);
+  color: var(--primary-blue);
+}
+
+/* ================= MOBILE: native swipe row ================= */
+@media (max-width: 767px) {
+  .g-item video {
+    opacity: 1;
+    transform: none !important;
+    filter: none !important;
+  }
+  .g-item.size-reel,
+  .g-item.size-reel.alt {
+    width: 52vw; /* height follows the 9:16 ratio */
+    height: auto;
+    margin-top: 0;
+  }
+}

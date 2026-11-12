@@ -325,7 +325,7 @@ window.addEventListener("resize", () => {
 
     // ---- per-item reveal, scrubbed against the horizontal scroll itself ----
     items.forEach((item) => {
-      const img = item.querySelector("img");
+      const img = item.querySelector("img, video");
       const cap = item.querySelector(".cap");
 
       gsap.set(img, { scale: 1.3, opacity: 0, filter: "blur(10px)" });
@@ -385,7 +385,7 @@ window.addEventListener("resize", () => {
     return () => {
       gsap.set(track, { clearProps: "transform" });
       items.forEach((item) => {
-        const img = item.querySelector("img");
+        const img = item.querySelector("img, video");
         const cap = item.querySelector(".cap");
         if (img) gsap.set(img, { clearProps: "transform,filter,opacity" });
         if (cap) gsap.set(cap, { clearProps: "transform,opacity" });
@@ -394,3 +394,201 @@ window.addEventListener("resize", () => {
   });
 })();
 //end gallery script
+
+/// start Gallery video (reels) script
+(function () {
+  const section = document.getElementById("galleryPin");
+  if (!section) return;
+
+  const reels = Array.from(section.querySelectorAll(".g-video"));
+  if (!reels.length) return;
+
+  const canHover = window.matchMedia("(hover: hover) and (pointer: fine)");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  const HOVER_DELAY = 150; // ms the cursor must rest on a reel before it plays
+  const SCROLL_IDLE = 500; // ms after scrolling stops before hover may start a reel
+  //                          (the GSAP scrub keeps gliding for a moment after the wheel stops)
+
+  const ICON = {
+    idle: "fa-play",
+    sound: "fa-volume-up",
+    muted: "fa-volume-off",
+  };
+
+  let hovered = null; // reel under the mouse (after HOVER_DELAY)
+  let tapped = null; // reel switched on by tap / click / keyboard (touch screens)
+  let scrolling = false;
+  let enterTimer;
+  let idleTimer;
+  const visible = new Set(); // reels that are at least 40% on screen
+
+  const videoOf = (item) => item.querySelector("video");
+
+  /* ---------- badge + state classes ---------- */
+  function render(item, state) {
+    if (item.dataset.state === state) return;
+    item.dataset.state = state;
+    item.classList.toggle("is-playing", state !== "idle");
+    item.classList.toggle("is-muted", state === "muted");
+
+    const badge = item.querySelector(".reel-badge");
+    if (!badge) return;
+    const icon = badge.querySelector("i");
+    const label = badge.querySelector(".reel-label");
+    if (icon) icon.className = "fa " + ICON[state];
+    if (label) {
+      label.textContent =
+        state === "muted"
+          ? "Click for sound"
+          : state === "sound"
+            ? "Sound on"
+            : canHover.matches
+              ? "Hover to play"
+              : "Tap to play";
+    }
+  }
+
+  /* ---------- play / pause ---------- */
+  async function play(item) {
+    const v = videoOf(item);
+    if (!v || !v.paused) return; // already playing
+
+    v.muted = false;
+    try {
+      await v.play();
+      render(item, "sound");
+    } catch (err) {
+      // Paused or replaced before it started – nothing to do.
+      if (err && err.name === "AbortError") return;
+      // The browser blocks audible autoplay until the visitor has clicked / tapped /
+      // pressed a key on the page. Fall back to silent playback + a "Click for sound" badge.
+      v.muted = true;
+      try {
+        await v.play();
+        render(item, "muted");
+      } catch (err2) {
+        render(item, "idle");
+      }
+    }
+  }
+
+  function pause(item, reset) {
+    const v = videoOf(item);
+    if (!v) return;
+    if (!v.paused) v.pause();
+    if (reset && v.currentTime > 0) v.currentTime = 0;
+    render(item, "idle");
+  }
+
+  /* ---------- decide which reel (if any) should be playing ---------- */
+  function sync() {
+    // A tapped reel wins; otherwise the hovered one – but never while the page is scrolling.
+    const active = tapped || (!scrolling && hovered) || null;
+
+    reels.forEach((item) => {
+      if (item === active && visible.has(item)) {
+        play(item);
+      } else {
+        // Rewind when the visitor has moved on; keep position if we only paused for scrolling.
+        pause(item, item !== hovered && item !== tapped);
+      }
+    });
+  }
+
+  /* ---------- mouse: hover to play ---------- */
+  reels.forEach((item) => {
+    item.addEventListener("pointerenter", (e) => {
+      if (e.pointerType !== "mouse" || reduceMotion.matches) return;
+      clearTimeout(enterTimer);
+      enterTimer = setTimeout(() => {
+        hovered = item;
+        sync();
+      }, HOVER_DELAY);
+    });
+
+    item.addEventListener("pointerleave", (e) => {
+      if (e.pointerType !== "mouse") return;
+      clearTimeout(enterTimer);
+      if (hovered === item) {
+        hovered = null;
+        sync();
+      }
+    });
+
+    /* ---------- click / tap ---------- */
+    item.addEventListener("click", () => {
+      const v = videoOf(item);
+      if (!v) return;
+
+      if (canHover.matches && !v.paused) {
+        // Mouse, already playing: a click is a user gesture, so it can switch sound on/off.
+        v.muted = !v.muted;
+        render(item, v.muted ? "muted" : "sound");
+      } else if (canHover.matches) {
+        // Mouse, not playing (e.g. reduced-motion users): click starts it.
+        hovered = item;
+        tapped = null;
+        sync();
+      } else {
+        // Touch: tap toggles this reel (one at a time).
+        tapped = tapped === item ? null : item;
+        sync();
+      }
+    });
+
+    /* ---------- keyboard ---------- */
+    item.addEventListener("keydown", (e) => {
+      if (e.key !== "Enter" && e.key !== " ") return;
+      e.preventDefault();
+      tapped = tapped === item ? null : item;
+      sync();
+    });
+
+    render(item, "idle");
+  });
+
+  /* ---------- scrolling: pause while the track is moving ---------- */
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!scrolling) {
+        scrolling = true;
+        sync();
+      }
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(() => {
+        scrolling = false;
+        sync();
+      }, SCROLL_IDLE);
+    },
+    { passive: true },
+  );
+
+  /* ---------- stop reels that leave the screen ---------- */
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) visible.add(e.target);
+          else visible.delete(e.target);
+        });
+        sync();
+      },
+      { threshold: 0.4 },
+    );
+    reels.forEach((item) => io.observe(item));
+  } else {
+    reels.forEach((item) => visible.add(item));
+  }
+
+  /* ---------- stop everything when the tab is hidden ---------- */
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      hovered = null;
+      tapped = null;
+      sync();
+    }
+  });
+})();
+//end Gallery video script

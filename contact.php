@@ -18,9 +18,7 @@
 
         <!-- ===================== PAGE HEADER ===================== -->
         <section class="page-header">
-            <div class="page-hero-bg"><img
-                    src="https://images.pexels.com/photos/8499548/pexels-photo-8499548.jpeg?_gl=1*191jwxw*_ga*NTcwNjI5OTg5LjE3OTMxNDQyOTI.*_ga_8JE65Q40S6*czE3OTMxNDQyOTEkbzEkZzEkdDE3OTMxNDQzMjckajI0JGwwJGgw"
-                    alt=""></div>
+            <div class="page-hero-bg"><img src="<?= BASE_URL ?>/public/imgs/page-header/contact.webp" alt=""></div>
 
             <div class="page-header-inner">
                 <nav class="crumb" aria-label="Breadcrumb">
@@ -137,22 +135,33 @@
 
                     <!-- RIGHT: Form -->
                     <div class="contact-form-wrap">
-                        <form class="contact-form" id="contactForm" action="#" method="post" novalidate>
+                        <form class="contact-form" id="contactForm" action="<?= BASE_URL ?>/contact-submit"
+                            method="post" novalidate>
                             <div class="form-header">
                                 <h3>Send us a message</h3>
                                 <p>All fields marked with * are required.</p>
                             </div>
 
+                            <!-- Spam trap: hidden from people, bots fill it in -->
+                            <div aria-hidden="true"
+                                style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+                                <label for="company_website">Leave this field empty</label>
+                                <input type="text" id="company_website" name="company_website" tabindex="-1"
+                                    autocomplete="off" />
+                            </div>
+                            <!-- Filled by JS on submit: how long the form was open (ms) -->
+                            <input type="hidden" name="fill_ms" id="fillMs" value="" />
+
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="firstName">Full Name <span class="req">*</span></label>
+                                    <label for="fullName">Full Name <span class="req">*</span></label>
                                     <input type="text" id="fullName" name="fullName" placeholder="Enter full name"
-                                        required />
+                                        maxlength="100" autocomplete="name" required />
                                 </div>
                                 <div class="form-group">
-                                    <label for="lastName">Student ID Number (optional) </label>
+                                    <label for="studentid">Student ID Number (optional) </label>
                                     <input type="text" id="studentid" name="studentid"
-                                        placeholder="Enter student id number" />
+                                        placeholder="Enter student id number" maxlength="30" />
                                 </div>
                             </div>
 
@@ -160,13 +169,14 @@
                                 <div class="form-group">
                                     <label for="email">Email Address <span class="req">*</span></label>
                                     <input type="email" id="email" name="email" placeholder="Enter your email"
-                                        required />
+                                        maxlength="254" autocomplete="email" required />
                                 </div>
                                 <div class="form-group">
                                     <label for="phone">Phone Number</label>
                                     <div class="phone-input">
                                         <span class="phone-prefix">+61</span>
-                                        <input type="tel" id="phone" name="phone" placeholder="Enter phone number" />
+                                        <input type="tel" id="phone" name="phone" placeholder="Enter phone number"
+                                            maxlength="20" autocomplete="tel-national" />
                                     </div>
                                 </div>
                             </div>
@@ -195,7 +205,7 @@
                             <div class="form-group">
                                 <label for="message">Message <span class="req">*</span></label>
                                 <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help..."
-                                    required></textarea>
+                                    maxlength="5000" required></textarea>
                             </div>
 
                             <div class="form-check">
@@ -206,6 +216,9 @@
                                 </label>
                             </div>
 
+                            <!-- Success / error message from the server -->
+                            <div id="formStatus" class="form-status" role="status" aria-live="polite" hidden></div>
+
                             <button type="submit" class="btn-sit btn-primary-sit btn-submit">
                                 Submit Enquiry <span class="arrow">→</span>
                             </button>
@@ -214,6 +227,7 @@
                                 RTO No. 45205 · CRICOS 03948A · We respect your privacy.
                             </p>
                         </form>
+
                     </div>
                 </div>
             </div>
@@ -397,33 +411,111 @@
     <?php include_once('./includes/scriptfiles.php') ?>
 
     <script>
-    // ----- Contact form feedback -----
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const form = this;
-        if (!form.checkValidity()) {
-            form.reportValidity();
-            return;
-        }
+    (function() {
+        const form = document.getElementById('contactForm');
+        if (!form) return;
+
         const btn = form.querySelector('.btn-submit');
-        const original = btn.innerHTML;
-        btn.innerHTML = 'Sending…';
-        btn.disabled = true;
-        setTimeout(function() {
-            btn.innerHTML = 'Message sent ✓';
-            btn.style.background = 'var(--lime-green)';
-            btn.style.color = 'var(--primary-blue)';
-            btn.style.borderColor = 'var(--lime-green)';
-            form.reset();
-            setTimeout(function() {
-                btn.innerHTML = original;
-                btn.disabled = false;
-                btn.style.background = '';
-                btn.style.color = '';
-                btn.style.borderColor = '';
-            }, 2500);
-        }, 900);
-    });
+        const status = document.getElementById('formStatus');
+        const fillField = document.getElementById('fillMs');
+        const endpoint = form.getAttribute('action'); // <?= BASE_URL ?>/contact-submit
+        const originalBtnHtml = btn.innerHTML;
+        const pageOpenedAt = performance.now();
+
+        function showStatus(type, text) {
+            status.className = 'form-status ' + type;
+            status.textContent = text;
+            status.hidden = false;
+        }
+
+        function clearErrors() {
+            status.hidden = true;
+            form.querySelectorAll('.has-error').forEach(function(el) {
+                el.classList.remove('has-error');
+            });
+            form.querySelectorAll('.field-error').forEach(function(el) {
+                el.remove();
+            });
+        }
+
+        function showFieldErrors(errors) {
+            Object.keys(errors).forEach(function(name) {
+                const input = form.elements[name];
+                if (!input) return;
+                const group = input.closest('.form-group') || input.closest('.form-check');
+                if (!group) return;
+                group.classList.add('has-error');
+                const msg = document.createElement('span');
+                msg.className = 'field-error';
+                msg.textContent = errors[name];
+                group.appendChild(msg);
+            });
+            const first = form.querySelector('.has-error input, .has-error select, .has-error textarea');
+            if (first) first.focus();
+        }
+
+        function resetButton() {
+            btn.innerHTML = originalBtnHtml;
+            btn.disabled = false;
+            btn.style.background = '';
+            btn.style.color = '';
+            btn.style.borderColor = '';
+        }
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            clearErrors();
+
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            fillField.value = Math.round(performance.now() - pageOpenedAt);
+            btn.innerHTML = 'Sending…';
+            btn.disabled = true;
+
+            try {
+                const res = await fetch(endpoint, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    credentials: 'same-origin'
+                });
+
+                let data = null;
+                try {
+                    data = await res.json();
+                } catch (err) {}
+
+                if (res.ok && data && data.ok) {
+                    btn.innerHTML = 'Message sent ✓';
+                    btn.style.background = 'var(--lime-green)';
+                    btn.style.color = 'var(--primary-blue)';
+                    btn.style.borderColor = 'var(--lime-green)';
+                    form.reset();
+                    showStatus('success', data.message);
+                    setTimeout(resetButton, 3000);
+                    return;
+                }
+
+                if (data && data.errors) {
+                    showFieldErrors(data.errors);
+                }
+                showStatus('error', (data && data.message) ||
+                    'Something went wrong. Please try again or call us on 03 8383 4447.');
+                resetButton();
+            } catch (err) {
+                showStatus('error',
+                    'We couldn’t reach the server. Please check your connection, or call us on 03 8383 4447.'
+                );
+                resetButton();
+            }
+        });
+    })();
+
 
     // ----- Campus map switcher -----
     const campusData = {

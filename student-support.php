@@ -18,7 +18,7 @@
 
         <!-- ===================== PAGE HEADER ===================== -->
         <section class="page-header">
-            <div class="page-hero-bg"><img src="https://images.pexels.com/photos/8499548/pexels-photo-8499548.jpeg?_gl=1*191jwxw*_ga*NTcwNjI5OTg5LjE3OTMxNDQyOTI.*_ga_8JE65Q40S6*czE3OTMxNDQyOTEkbzEkZzEkdDE3OTMxNDQzMjckajI0JGwwJGgw" alt=""></div>
+            <div class="page-hero-bg"><img src="<?= BASE_URL ?>/public/imgs/page-header/support.webp" alt=""></div>
 
             <div class="page-header-inner">
                 <nav class="crumb" aria-label="Breadcrumb">
@@ -60,7 +60,7 @@
                             <span>Contact form · We’ll get back to you</span>
                         </div>
                     </a>
-                    <a href="https://www.sit.vic.edu.au/international/Student%20Handbook%20-%20International%20Students.pdf"
+                    <a href="<?= BASE_URL ?>/assets/policies/student-handbook-international-students.pdf"
                         class="qh-card" target="_blank" rel="noopener">
                         <div class="qh-icon"><i class="fa fa-book" aria-hidden="true"></i></div>
                         <div>
@@ -84,8 +84,8 @@
                 </div>
 
                 <div class="doc-grid">
-                    <a href="https://www.sit.vic.edu.au/international/applicationform.pdf"
-                        class="doc-card" target="_blank" rel="noopener">
+                    <a href="<?= BASE_URL ?>/assets/forms/application-for-enrolment-form.pdf" class="doc-card"
+                        target="_blank" rel="noopener">
                         <div class="doc-icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
                         <div class="doc-body">
                             <h3>Application for Enrolment</h3>
@@ -94,8 +94,8 @@
                         <span class="doc-action">Download PDF</span>
                     </a>
 
-                    <a href="https://www.sit.vic.edu.au/international/Refund%20Form.pdf"
-                        class="doc-card" target="_blank" rel="noopener">
+                    <a href="<?= BASE_URL ?>/assets/forms/refund-form.pdf" class="doc-card" target="_blank"
+                        rel="noopener">
                         <div class="doc-icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
                         <div class="doc-body">
                             <h3>Refund Form</h3>
@@ -104,8 +104,8 @@
                         <span class="doc-action">Download PDF</span>
                     </a>
 
-                    <a href="https://www.sit.vic.edu.au/international/Complaints%20and%20Appeals%20Form.pdf"
-                        class="doc-card" target="_blank" rel="noopener">
+                    <a href="<?= BASE_URL ?>/assets/forms/complaints-and-appeals-form.pdf" class="doc-card"
+                        target="_blank" rel="noopener">
                         <div class="doc-icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></div>
                         <div class="doc-body">
                             <h3>Complaints &amp; Appeals Form</h3>
@@ -133,13 +133,13 @@
                     <div class="policy-group">
                         <h3 class="group-title">Study &amp; progress</h3>
                         <div class="policy-list">
-                            <a href="https://www.sit.vic.edu.au/international/attendancePolicy.pdf"
-                                class="policy-item" target="_blank" rel="noopener">
+                            <a href="<?= BASE_URL ?>/assets/policies/attendance-policy.pdf" class="policy-item"
+                                target="_blank" rel="noopener">
                                 <span class="policy-name">Attendance Policy &amp; Procedure</span>
                                 <span class="policy-dl">PDF</span>
                             </a>
-                            <a href="https://www.sit.vic.edu.au/international/Course%20Progress%20Policy%20-%20International%20Students.pdf"
-                                class="policy-item" target="_blank" rel="noopener">
+                            <a href="<?= BASE_URL ?>/assets/policies/course-progress-policy.pdf" class="policy-item"
+                                target="_blank" rel="noopener">
                                 <span class="policy-name">Course Progress &amp; Attendance Monitoring</span>
                                 <span class="policy-dl">PDF</span>
                             </a>
@@ -150,7 +150,7 @@
                     <div class="policy-group">
                         <h3 class="group-title">Fees &amp; refunds</h3>
                         <div class="policy-list">
-                            <a href="https://www.sit.vic.edu.au/international/Fees,%20Charges%20and%20Refund%20Policy%20-%20V2.0.pdf"
+                            <a href="<?= BASE_URL ?>/assets/policies/fees-charges-and-refund-policy.pdf"
                                 class="policy-item" target="_blank" rel="noopener">
                                 <span class="policy-name">Fees, Charges and Refund Policy</span>
                                 <span class="policy-dl">PDF</span>
@@ -162,12 +162,12 @@
                     <div class="policy-group">
                         <h3 class="group-title">Changing your enrolment</h3>
                         <div class="policy-list">
-                            <a href="https://www.sit.vic.edu.au/international/Deferment,%20Suspension%20or%20Cancellation%20Policy.pdf"
+                            <a href="<?= BASE_URL ?>/assets/policies/deferment-suspension-cancellation-policy.pdf"
                                 class="policy-item" target="_blank" rel="noopener">
                                 <span class="policy-name">Deferment, Suspension or Cancellation</span>
                                 <span class="policy-dl">PDF</span>
                             </a>
-                            <a href="https://www.sit.vic.edu.au/international/Overseas%20Student%20Transfer%20Policy.pdf"
+                            <a href="<?= BASE_URL ?>/assets/policies/overseas-student-transfer-policy.pdf"
                                 class="policy-item" target="_blank" rel="noopener">
                                 <span class="policy-name">Overseas Student Transfer Policy</span>
                                 <span class="policy-dl">PDF</span>
@@ -179,22 +179,22 @@
                     <div class="policy-group">
                         <h3 class="group-title">Rights, entry &amp; protection</h3>
                         <div class="policy-list">
-                            <a href="https://www.sit.vic.edu.au/international/Complaints%20and%20Appeals%20Policy%20-%20International%20Students.pdf"
+                            <a href="<?= BASE_URL ?>/assets/policies/complaints-and-appeals-policy.pdf"
                                 class="policy-item" target="_blank" rel="noopener">
                                 <span class="policy-name">Complaints and Appeals Policy</span>
                                 <span class="policy-dl">PDF</span>
                             </a>
-                            <a href="https://www.sit.vic.edu.au/international/Entry%20Requirements%20and%20Selection%20Policy%20-%20International%20Students.pdf"
+                            <a href="<?= BASE_URL ?>/assets/policies/entry-equirements-and-selection-policy.pdf"
                                 class="policy-item" target="_blank" rel="noopener">
                                 <span class="policy-name">Entry Requirements and Selection</span>
                                 <span class="policy-dl">PDF</span>
                             </a>
-                            <a href="https://www.sit.vic.edu.au/international/Informing%20and%20Protecting%20Learners%20Policy.pdf"
+                            <a href="<?= BASE_URL ?>/assets/policies/informing-and-protecting-learners-policy.pdf"
                                 class="policy-item" target="_blank" rel="noopener">
                                 <span class="policy-name">Informing and Protecting Learners</span>
                                 <span class="policy-dl">PDF</span>
                             </a>
-                            <a href="https://www.sit.vic.edu.au/international/Recognition%20of%20Prior%20Learning%20and%20Credit%20Transfer%20Policy.pdf"
+                            <a href="<?= BASE_URL ?>/assets/policies/recognition-of-prior-learning-and-credit-transfer-policy.pdf"
                                 class="policy-item" target="_blank" rel="noopener">
                                 <span class="policy-name">RPL and Credit Transfer</span>
                                 <span class="policy-dl">PDF</span>
@@ -350,17 +350,20 @@
                                 <span class="hl-num">13 11 14</span>
                                 <span class="hl-desc">Crisis support &amp; suicide prevention</span>
                             </a>
-                            <a href="https://www.beyondblue.org.au/" class="helpline-card" target="_blank" rel="noopener">
+                            <a href="https://www.beyondblue.org.au/" class="helpline-card" target="_blank"
+                                rel="noopener">
                                 <strong>Beyond Blue</strong>
                                 <span class="hl-num">1300 22 4636</span>
                                 <span class="hl-desc">Anxiety, depression &amp; wellbeing</span>
                             </a>
-                            <a href="https://www.1800respect.org.au/" class="helpline-card" target="_blank" rel="noopener">
+                            <a href="https://www.1800respect.org.au/" class="helpline-card" target="_blank"
+                                rel="noopener">
                                 <strong>1800RESPECT</strong>
                                 <span class="hl-num">1800 737 732</span>
                                 <span class="hl-desc">Sexual assault &amp; domestic violence</span>
                             </a>
-                            <a href="https://www.kidshelpline.com.au/" class="helpline-card" target="_blank" rel="noopener">
+                            <a href="https://www.kidshelpline.com.au/" class="helpline-card" target="_blank"
+                                rel="noopener">
                                 <strong>Kids Helpline</strong>
                                 <span class="hl-num">1800 55 1800</span>
                                 <span class="hl-desc">Under 25 · Free counselling</span>
@@ -390,7 +393,8 @@
                         <h3>Study Australia</h3>
                         <p>Official guide to living and studying in Australia</p>
                     </a>
-                    <a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500" class="ext-card" target="_blank" rel="noopener">
+                    <a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500"
+                        class="ext-card" target="_blank" rel="noopener">
                         <h3>Home Affairs — Student visa</h3>
                         <p>Visa conditions, work rights and obligations</p>
                     </a>
@@ -398,7 +402,8 @@
                         <h3>Tuition Protection (TPS)</h3>
                         <p>How your fees are protected if a provider closes</p>
                     </a>
-                    <a href="https://www.ombudsman.gov.au/complaints/overseas-students" class="ext-card" target="_blank" rel="noopener">
+                    <a href="https://www.ombudsman.gov.au/complaints/overseas-students" class="ext-card" target="_blank"
+                        rel="noopener">
                         <h3>Overseas Student Ombudsman</h3>
                         <p>External complaints about education providers</p>
                     </a>
@@ -406,7 +411,8 @@
                         <h3>ASQA</h3>
                         <p>National regulator for vocational education</p>
                     </a>
-                    <a href="https://www.studyinaustralia.gov.au/English/Live-in-Australia/Health-and-safety" class="ext-card" target="_blank" rel="noopener">
+                    <a href="https://www.studyinaustralia.gov.au/English/Live-in-Australia/Health-and-safety"
+                        class="ext-card" target="_blank" rel="noopener">
                         <h3>Health &amp; safety in Australia</h3>
                         <p>Emergency, health insurance and staying safe</p>
                     </a>
@@ -428,7 +434,8 @@
                             We’re here Mon–Fri, 9am–5pm.
                         </p>
                         <div class="cta-actions">
-                            <a href="contact.php" class="btn-sit btn-secondary-sit">Contact us <span class="arrow">→</span></a>
+                            <a href="contact.php" class="btn-sit btn-secondary-sit">Contact us <span
+                                    class="arrow">→</span></a>
                             <a href="tel:0383834447" class="btn-sit btn-secondary-outline-sit">03 8383 4447</a>
                         </div>
                     </div>

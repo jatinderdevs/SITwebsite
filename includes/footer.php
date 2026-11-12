@@ -37,6 +37,12 @@
                     <li><a href="<?= BASE_URL ?>/agent-zone.php">Agents Zone</a></li>
                     <li><a href="<?= BASE_URL ?>/our-agents.php">Our Authorised Agents</a></li>
                 </ul>
+                <div class="socials">
+                    <a href="#" aria-label="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                    <a href="mailto:info@sit.vic.edu.au" aria-label="Email"><i class="fa fa-envelope-o"
+                            aria-hidden="true"></i></a>
+                </div>
             </div>
 
             <div class="f-col">
@@ -65,23 +71,25 @@
                 <div class="campus">
                     <address>
                         <strong>Melbourne</strong>
-                        Level 5, 255 William Street<br />
+                        Level 5, 255 William Street
                         Melbourne VIC 3000
                     </address>
                 </div>
                 <div class="campus">
                     <address>
                         <strong>Brisbane</strong>
-                        Level 3, 300 Adelaide Street<br />
+                        Level 3, 300 Adelaide Street
                         Brisbane QLD 4000
                     </address>
                 </div>
-                <div class="socials">
-                    <a href="#" aria-label="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-                    <a href="mailto:info@sit.vic.edu.au" aria-label="Email"><i class="fa fa-envelope-o"
-                            aria-hidden="true"></i></a>
+                <div class="campus">
+                    <address>
+                        <strong>Pakenham Campus</strong>
+                        Level 1, 29 James Street
+                        Pakenham VIC 3810
+                    </address>
                 </div>
+
             </div>
         </div>
 

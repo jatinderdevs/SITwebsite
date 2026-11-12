@@ -4,14 +4,35 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>State Institute of training | SIT MELBOURNE | BRISBANE</title>
 
-
+    <title>State Institute of Training | Trade Courses in Melbourne & Brisbane</title>
+    <meta name="description"
+        content="Hands-on trade training in Melbourne and Brisbane. Nationally recognised courses in building, construction, engineering and business. RTO 45205 · CRICOS 03948A." />
+    <meta name="robots" content="index, follow" />
     <?php include_once('./includes/stylefiles.php') ?>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="State Institute of Training" />
+    <meta property="og:title" content="State Institute of Training | Trade Courses in Melbourne & Brisbane" />
+    <meta property="og:description"
+        content="Hands-on trade training in Melbourne and Brisbane. Nationally recognised courses in building, construction, engineering and business." />
+    <meta property="og:url" content="<?= BASE_URL ?>/" />
+    <meta property="og:image" content="<?= BASE_URL ?>/img/logo.png" />
+    <meta property="og:locale" content="en_AU" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="State Institute of Training | Trade Courses in Melbourne & Brisbane" />
+    <meta name="twitter:description"
+        content="Hands-on trade training in Melbourne and Brisbane. Nationally recognised courses in building, construction, engineering and business." />
+    <meta name="twitter:image" content="<?= BASE_URL ?>/img/logo.png" />
+
+    <link rel="canonical" href="<?= BASE_URL ?>/" />
+
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/gallery.css" />
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/courseSection.css" />
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/aboutsection.css" />
-
 </head>
 
 <body>
@@ -32,6 +53,7 @@
                 </div>
             </div>
         </section>
+
         <div class="container">
             <section class="statement-section">
                 <div>
@@ -68,21 +90,21 @@
 
                     <div class="sit-bento-grid">
                         <?php
-            // Load courses once for the whole section
-            $courses = require ROOT_PATH . '/data/dbcourses.php';
+                        // Load courses once for the whole section
+                        $courses = require ROOT_PATH . '/data/dbcourses.php';
 
-            // Large featured course
-            $courseKey = 'cpc31020';
-            $cardStyle = 'feature';
-            include ROOT_PATH . '/includes/bento-course-card.php';
-            ?>
+                        // Large featured course
+                        $courseKey = 'cpc31020';
+                        $cardStyle = 'feature';
+                        include ROOT_PATH . '/includes/bento-course-card.php';
+                        ?>
 
                         <!-- Accent CTA -->
                         <article class="sit-bento-card sit-bento-accent">
                             <span class="sit-bento-date">2026 Intake</span>
                             <h3>Start your trade pathway</h3>
                             <p>Applications open for Melbourne and Brisbane campuses.</p>
-                            <a href="#" class="sit-bento-btn">Apply now</a>
+                            <a href="<?= BASE_URL ?>/contact" class="sit-bento-btn">Apply now</a>
                         </article>
 
                         <!-- Brand tile -->
@@ -94,22 +116,22 @@
                         </article>
 
                         <?php
-            // Engineering course (default style)
-            $courseKey = 'mem31925';
-            $cardStyle = '';
-            include ROOT_PATH . '/includes/bento-course-card.php';
+                        // Engineering course (default style)
+                        $courseKey = 'mem31925';
+                        $cardStyle = '';
+                        include ROOT_PATH . '/includes/bento-course-card.php';
 
-            // Business course (default style)
-            $courseKey = 'bsb50820';
-            $cardStyle = '';
-            include ROOT_PATH . '/includes/bento-course-card.php';
-            ?>
+                        // Business course (default style)
+                        $courseKey = 'bsb50820';
+                        $cardStyle = '';
+                        include ROOT_PATH . '/includes/bento-course-card.php';
+                        ?>
 
                         <!-- Message tile -->
                         <article class="sit-bento-card sit-bento-message">
                             <h3>Build your future with nationally recognised training</h3>
                             <p>RTO No. 45205 · CRICOS 03948A</p>
-                            <a href="<?= BASE_URL ?>/courses.php" class="sit-bento-link">Browse all courses
+                            <a href="<?= BASE_URL ?>/courses" class="sit-bento-link">Browse all courses
                                 <span>→</span></a>
                         </article>
 
@@ -122,15 +144,16 @@
                     </div>
                 </div>
             </section>
+
             <!-- ===================== ABOUT US ===================== -->
             <section class="about-section">
                 <div class="about-media">
                     <div class="about-img main">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=900&auto=format&fit=crop"
+                        <img src="<?= BASE_URL ?>/img/students/students1.jpg"
                             alt="Students working in the SIT workshop" />
                     </div>
                     <div class="about-img small">
-                        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=700&auto=format&fit=crop"
+                        <img src="<?= BASE_URL ?>/img/students/students2.jpg"
                             alt="Students collaborating on a campus project" />
                     </div>
                     <div class="about-badge">
@@ -195,6 +218,7 @@
                 </div>
             </section>
         </div>
+
         <div class="container">
             <section class="excellence">
                 <dotlottie-wc id="bg-lottie"
@@ -210,10 +234,11 @@
                     <div class="col-md-5">
                         <div class="excel_imgs reveal-up">
                             <img class="img-fluid" src="https://www.sit.vic.edu.au/assets/img/ourpartners/asqa.webp"
-                                alt="" />
-                            <img class="img-fluid" src="https://www.sit.vic.edu.au/assets/img/ntr.png" alt="" />
+                                alt="ASQA" />
+                            <img class="img-fluid" src="https://www.sit.vic.edu.au/assets/img/ntr.png"
+                                alt="Nationally Recognised Training" />
                             <img class="img-fluid" src="https://www.sit.vic.edu.au/assets/img/ourpartners/aqf.webp"
-                                alt="" />
+                                alt="Australian Qualifications Framework" />
                         </div>
                         <p class="text-center">Nationally Recognised Training</p>
                     </div>
@@ -231,7 +256,7 @@
 
                     <div class="excel_count">
                         <div class="excel_glow"></div>
-                        <h3 class="count" data-count="15" data-decimals="0" data-suffix="+">
+                        <h3 class="count" data-count="9" data-decimals="0" data-suffix="+">
                             0
                         </h3>
                         <span class="excel_bar"><span class="excel_bar_fill"></span></span>
@@ -240,7 +265,7 @@
 
                     <div class="excel_count">
                         <div class="excel_glow"></div>
-                        <h3 class="count" data-count="4.5" data-decimals="1" data-suffix="+">
+                        <h3 class="count" data-count="4.9" data-decimals="1" data-suffix="+">
                             0
                         </h3>
                         <span class="excel_bar"><span class="excel_bar_fill"></span></span>
@@ -249,6 +274,7 @@
                 </div>
             </section>
         </div>
+
         <section class="gallery-pin" id="galleryPin">
             <div class="gallery-inner">
                 <div class="gallery-heading">
@@ -262,24 +288,39 @@
                 <div class="track-viewport">
                     <div class="track" id="track">
                         <div class="g-item size-a">
-                            <img src="https://shorturl.at/EAPY0" alt="Student working with fabrication tools" />
+                            <img src="<?= BASE_URL ?>/img/students/students.jpg"
+                                alt="Student working with fabrication tools" />
                             <div class="cap">
                                 <span class="tag-mono">Workshop</span><span class="t">Fabrication Bay</span>
                             </div>
                         </div>
 
                         <div class="g-item size-b">
-                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=500&auto=format&fit=crop"
-                                alt="Classroom session" />
+                            <img src="<?= BASE_URL ?>/img/students/students1.jpg" alt="Classroom session" />
                             <div class="cap">
                                 <span class="tag-mono">Classroom</span><span class="t">Theory Session</span>
+                            </div>
+                        </div>
+
+                        <!-- ============ REEL 1 (video) ============ -->
+                        <div class="g-item g-video size-reel" tabindex="0" role="button"
+                            aria-label="Play video: Inside the workshop">
+                            <video muted loop playsinline preload="metadata" disablepictureinpicture
+                                controlslist="nodownload noremoteplayback"
+                                poster="<?= BASE_URL ?>/img/students/videos/reel1.jpg">
+                                <source src="<?= BASE_URL ?>/img/students/videos/reel1.mp4" type="video/mp4" />
+                            </video>
+                            <span class="reel-badge" aria-hidden="true"><i class="fa fa-play"></i><span
+                                    class="reel-label">Hover to play</span></span>
+                            <div class="cap">
+                                <span class="tag-mono">Reel</span><span class="t">Inside the Workshop</span>
                             </div>
                         </div>
 
                         <div class="g-item spacer"></div>
 
                         <div class="g-item size-c">
-                            <img src="https://shorturl.at/sQneP" alt="Solid plastering trade work" />
+                            <img src="<?= BASE_URL ?>/img/students/students2.jpg" alt="Solid plastering trade work" />
                             <div class="cap">
                                 <span class="tag-mono">Trade Work</span><span class="t">Solid Plastering</span>
                             </div>
@@ -301,6 +342,21 @@
                             </div>
                         </div>
 
+                        <!-- ============ REEL 2 (video) ============ -->
+                        <div class="g-item g-video size-reel alt" tabindex="0" role="button"
+                            aria-label="Play video: Student stories">
+                            <video muted loop playsinline preload="metadata" disablepictureinpicture
+                                controlslist="nodownload noremoteplayback"
+                                poster="<?= BASE_URL ?>/img/students/videos/reel.jpg">
+                                <source src="<?= BASE_URL ?>/img/students/videos/reel.mp4" type="video/mp4" />
+                            </video>
+                            <span class="reel-badge" aria-hidden="true"><i class="fa fa-play"></i><span
+                                    class="reel-label">Hover to play</span></span>
+                            <div class="cap">
+                                <span class="tag-mono">Reel</span><span class="t">Student Stories</span>
+                            </div>
+                        </div>
+
                         <div class="g-item spacer"></div>
 
                         <div class="g-item size-f">
@@ -311,10 +367,17 @@
                             </div>
                         </div>
 
-                        <div class="g-item size-a">
-                            <img src="https://shorturl.at/GGKNK" alt="Graduation moment" />
+                        <div class="g-item g-video size-reel" tabindex="0" role="button"
+                            aria-label="Play video: Inside the workshop">
+                            <video muted loop playsinline preload="metadata" disablepictureinpicture
+                                controlslist="nodownload noremoteplayback"
+                                poster="<?= BASE_URL ?>/img/students/videos/reel2.jpg">
+                                <source src="<?= BASE_URL ?>/img/students/videos/reel2.mp4" type="video/mp4" />
+                            </video>
+                            <span class="reel-badge" aria-hidden="true"><i class="fa fa-play"></i><span
+                                    class="reel-label">Hover to play</span></span>
                             <div class="cap">
-                                <span class="tag-mono">Milestones</span><span class="t">Graduation Day</span>
+                                <span class="tag-mono">Reel</span><span class="t">Inside the Workshop</span>
                             </div>
                         </div>
                     </div>
@@ -363,10 +426,6 @@
 
                     <div class="testi-slider" id="testiSlider">
                         <div class="t-card active">
-                            <div class="refl-wrap">
-                                <img src="https://lh3.googleusercontent.com/a/ACg8ocLXSfrNKwAXdbtL8DDeyy5cGZ476SRNvUxrP68b0RoRFibwOg=s64-c-rp-mo-br100"
-                                    alt="Priya S." />
-                            </div>
                             <div class="t-body">
                                 <div class="stars">★★★★★</div>
                                 <blockquote>
@@ -383,10 +442,6 @@
                             </div>
                         </div>
                         <div class="t-card">
-                            <div class="refl-wrap">
-                                <img src="https://lh3.googleusercontent.com/a-/ALV-UjU92WEvmyd8t_9HgkzbCBESTOOBEi63wrAehr3S4DBTf0dWQIiHVA=w72-h72-p-rp-mo-br100"
-                                    alt="Amara T." />
-                            </div>
                             <div class="t-body">
                                 <div class="stars">★★★★★</div>
                                 <blockquote>
@@ -410,10 +465,6 @@
                         </div>
 
                         <div class="t-card">
-                            <div class="refl-wrap">
-                                <img src="https://lh3.googleusercontent.com/a-/ALV-UjXDeMLRP5IkGL9dM6mSJ6e2qENL_xc0VLyhpw28htqZO19gyOQ=s64-c-rp-mo-br100"
-                                    alt="Daniel K." />
-                            </div>
                             <div class="t-body">
                                 <div class="stars">★★★★★</div>
                                 <blockquote>
@@ -440,9 +491,6 @@
         <?php include_once('./includes/footer.php') ?>
     </main>
     <?php include_once('./includes/scriptfiles.php') ?>
-
-
-
 </body>
 
 </html>

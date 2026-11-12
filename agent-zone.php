@@ -18,9 +18,7 @@
 
         <!-- ===================== HERO ===================== -->
         <section class="page-header az-hero">
-            <div class="page-hero-bg"><img
-                    src="https://images.pexels.com/photos/783681/pexels-photo-783681.jpeg?_gl=1*vkxn7p*_ga*NTcwNjI5OTg5LjE3OTMxNDQyOTI.*_ga_8JE65Q40S6*czE3OTMxNDg4ODMkbzIkZzEkdDE3OTMxNDkwMjQkajU5JGwwJGgw"
-                    alt=""></div>
+            <div class="page-hero-bg"><img src="<?= BASE_URL ?>/public/imgs/page-header/australia.webp" alt=""></div>
 
             <div class="page-header-inner">
                 <nav class="crumb" aria-label="Breadcrumb">

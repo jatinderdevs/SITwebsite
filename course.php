@@ -118,7 +118,7 @@ $locationsText = implode(' & ', $course['locations']);
         <!-- ===================== HERO ===================== -->
         <section class="sit-c-hero page-header">
             <div class="page-hero-bg">
-                <img src="https://www.sit.vic.edu.au/assets/img/header3.jpg"
+                <img src="<?= BASE_URL ?>/public/imgs/courses/<?= htmlspecialchars($course['thumbnail'])?>"
                     alt="<?= htmlspecialchars($fullTitle) ?> at State Institute of Training Melbourne">
             </div>
             <div class="container page-header-inner">

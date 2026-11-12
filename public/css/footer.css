@@ -239,16 +239,20 @@
   justify-content: center;
   color: var(--footer-text-strong);
   text-decoration: none;
-  font-size: 0.85rem;
+  background: var(--lime-green);
+  color: var(--primary-blue);
+
+  font-size: 1.2rem;
   transition:
     background 0.2s ease,
     border-color 0.2s ease,
     transform 0.2s ease;
 }
 .socials a:hover {
-  background: var(--sky-blue);
   border-color: var(--sky-blue);
   transform: translateY(-3px);
+  background: transparent;
+  color: var(--lime-green);
 }
 
 /* ---------- bottom bar ---------- */

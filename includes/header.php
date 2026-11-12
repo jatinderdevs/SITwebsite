@@ -80,8 +80,8 @@
                                                 <span class="desc">Melbourne & Brisbane</span>
                                             </div>
                                         </a>
-                                        <a href="<?= BASE_URL ?>/our-agents" class="mega-menu-item" target="_blank"
-                                            rel="noopener">
+                                        <a href="<?= BASE_URL ?>/our-agents#directory" class="mega-menu-item"
+                                            target="_blank" rel="noopener">
                                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                             <div>
                                                 <span class="title">Our Authorised agents</span>

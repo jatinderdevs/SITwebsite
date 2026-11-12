@@ -14,18 +14,16 @@
 
     <!-- Hero -->
     <section class=" page-header">
-        <div class="page-hero-bg"><img
-                src="https://images.pexels.com/photos/8499548/pexels-photo-8499548.jpeg?_gl=1*191jwxw*_ga*NTcwNjI5OTg5LjE3OTMxNDQyOTI.*_ga_8JE65Q40S6*czE3OTMxNDQyOTEkbzEkZzEkdDE3OTMxNDQzMjckajI0JGwwJGgw"
-                alt=""></div>
+        <div class="page-hero-bg"><img src="<?= BASE_URL ?>/public/imgs/page-header/courses.webp" alt=""></div>
 
         <div class=" page-header-inner">
             <nav class="crumb" aria-label="Breadcrumb">
-                <a href="index.php">Home</a>
+                <a href="<?= BASE_URL ?>/index">Home</a>
                 <span class="sep">/</span>
                 <span class="crumbactive">About Us</span>
             </nav>
 
-            <h1>our<br>courses.</h1>
+            <h1>our<br>courses</h1>
 
             <p>
                 Industry-focused qualifications designed for real careers in Building,
@@ -88,9 +86,9 @@
                 <article class="sit-c-card" data-category="<?= htmlspecialchars($catKey) ?>">
                     <!-- Image -->
                     <div class="sit-c-card-img">
-                        <img src="https://www.sit.vic.edu.au/assets/img/building/certiv.webp" alt="">
-                        <!-- <img src="<?= htmlspecialchars($course['thumbnail'] ?? 'https://www.sit.vic.edu.au/assets/img/building/certiv.webp') ?>"
-                            alt="<?= htmlspecialchars($course['code'] . ' ' . $course['title']) ?>" loading="lazy" /> -->
+
+                        <img src="<?= BASE_URL ?>/public/imgs/courses/<?= htmlspecialchars($course['thumbnail']) ?>"
+                            alt="<?= htmlspecialchars($course['code'] . ' ' . $course['title']) ?>" loading="lazy" />
                     </div>
 
                     <div class="sit-c-card-content">

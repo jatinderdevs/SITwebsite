@@ -19,7 +19,7 @@
 
         <!-- ===================== PAGE HEADER ===================== -->
         <section class="page-header">
-            <div class="page-hero-bg"><img src="https://images.pexels.com/photos/8499548/pexels-photo-8499548.jpeg?_gl=1*191jwxw*_ga*NTcwNjI5OTg5LjE3OTMxNDQyOTI.*_ga_8JE65Q40S6*czE3OTMxNDQyOTEkbzEkZzEkdDE3OTMxNDQzMjckajI0JGwwJGgw" alt=""></div>
+            <div class="page-hero-bg"><img src="<?= BASE_URL ?>/public/imgs/page-header/about.webp" alt=""></div>
             <div class="page-header-inner">
                 <nav class="crumb" aria-label="Breadcrumb">
                     <a href="index.php">Home</a>
@@ -274,9 +274,11 @@
                                 Explore our range of Certificate and Diploma qualifications in
                                 engineering, construction and related fields.
                             </p>
-                            <a href="courses.php" class="btn-sit btn-primary-sit">View courses <span
-                                    class="arrow"><svg width="25px" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M6 18L18 6M18 6H10M18 6V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <a href="courses.php" class="btn-sit btn-primary-sit">View courses <span class="arrow"><svg
+                                        width="25px" height="100%" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 18L18 6M18 6H10M18 6V14" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
                                     </svg></span></a>
                         </div>
                         <div class="aside-card muted">
@@ -306,9 +308,10 @@
                         </p>
                         <div class="cta-actions">
                             <a href="contact.php" class="btn-sit btn-secondary-sit">Talk to us
-                                <span
-                                    class="arrow"><svg width="25px" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M6 18L18 6M18 6H10M18 6V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <span class="arrow"><svg width="25px" height="100%" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 18L18 6M18 6H10M18 6V14" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
                                     </svg></span></a>
                             <a href="courses.php" class="btn-sit btn-secondary-outline-sit">Browse courses</a>
                         </div>
